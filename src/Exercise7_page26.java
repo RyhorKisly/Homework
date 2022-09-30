@@ -1,4 +1,4 @@
-public class Excercise7_page26 {
+public class Exercise7_page26 {
     public static void main(String[] args) {
 
         int a = 6;
