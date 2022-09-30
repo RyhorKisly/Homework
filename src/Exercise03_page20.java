@@ -1,3 +1,5 @@
+// Задание: Написать код, который выведет значения переменных на экран
+
 public class Exercise03_page20 {
     public static void main(String[] args) {
 
