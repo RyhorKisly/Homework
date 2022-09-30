@@ -1,4 +1,4 @@
-public class Exercise4_page20 {
+public class Exercise04_page20 {
     public static void main(String[] args) {
         int a = 10;
         int b = 20;

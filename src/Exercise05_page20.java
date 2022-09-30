@@ -1,4 +1,4 @@
-public class Exercise5_page20 {
+public class Exercise05_page20 {
     public static void main(String[] args) {
         int sec = 1295435;
         int s = sec % 60;            //35

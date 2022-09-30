@@ -1,4 +1,4 @@
-public class Exercise3_page20 {
+public class Exercise03_page20 {
     public static void main(String[] args) {
 
         byte b = 0x55;

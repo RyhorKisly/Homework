@@ -1,4 +1,4 @@
-public class Exercise8_page27 {
+public class Exercise08_page27 {
     public static void main(String[] args) {
 
         int x = -269;
