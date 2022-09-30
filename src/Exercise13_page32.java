@@ -8,7 +8,7 @@ public class Exercise13_page32 {
             x *= y;
             y++;
             z++;
-        } while (z <= 9);
-        System.out.println("Факторила целых чисел от 0 до 10 равен:" + x);
+        } while (z <= 24);
+        System.out.println("Факторила целых чисел от 1 до 25 равен:" + x);
     }
 }
