@@ -1,9 +1,9 @@
 public class Arrays_example {
     public static void main(String[] args) {
 
-//        int marks[] = new int [20];
+//        int marks[] = new int [100];
 //        for (int i = 0; i < marks.length; i++) {
-//            marks[i] = (int) (Math.random() * 10 + 1);
+//            marks[i] = (int) (Math.random() * 47 + 1);
 //        }
 //        for (int i = 0; i < marks.length; i++) {
 //            System.out.println("Ученик № " + i + " = " + marks[i]);
@@ -20,7 +20,7 @@ public class Arrays_example {
 //    }
 //}
 
-        int m[][] = new int [5][5];
+        int m[][] = new int[5][5];
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m.length; j++) {
                 m[i][j] = 1;

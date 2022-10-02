@@ -12,11 +12,13 @@ public class Exercise18_page38 {
             for (int i = 0; i < array.length; i++) {
                 array[i] = (int) (Math.random() * 10 + 1);
                 if (i == length - 1) {
+                    System.out.println();
                     System.out.println("Последняя цифра в массиве = " + array[i]);
+                    System.out.println();
                 }
             }
-            for (int i = 0; i < array.length; i++) {
-                System.out.println(i + " = " + array[i]);    // Для проверки
+            for (int i = 0; i < array.length; i++) {                       // Для проверки
+                System.out.println(i + " = " + array[i]);
             }
         }
     }
