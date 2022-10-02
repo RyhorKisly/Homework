@@ -16,18 +16,27 @@ public class Arrays_example {
 //            }
 //        }
 //        System.out.println("Максимальная оценка = " + maxMark);
-//
+
 //    }
 //}
 
-        int m[][] = new int[5][5];
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m.length; j++) {
-                m[i][j] = 1;
-                System.out.print(m[i][j] + " ");
-            } //for 2
-            System.out.println("");
-        } // for 1
+//        int m[][] = new int[5][5];                        // Массив квардратный двумерный
+//        for (int i = 0; i < m.length; i++) {
+//            for (int j = 0; j < m.length; j++) {
+//                m[i][j] = 1;
+//                System.out.print(m[i][j] + " ");
+//            } //for 2
+//            System.out.println("");
+//        } // for 1
+
+//        int m[][] = new int[7][7];
+//        for (int i = 0; i < m.length; i++) {
+//            for (int j = 0; j < m.length; j++) {
+//                m[j][i] = 1;
+//                System.out.print(m[i][j] + " ");
+//            } //for 2
+//            System.out.println("");
+//        } // for 1
 
 //        int[][] matrix = new int[3][];
 //        matrix[0] = new int[]{1, 2, 3, 4, 5, 6};
