@@ -4,16 +4,15 @@
 public class Exercise07_page26 {
     public static void main(String[] args) {
 
-        int a = 6;
-        int b = 17;
-        int r = 10;
+        int a = 8;
+        int b = 4;
+        int r = 4;
+        int g = (int)Math.sqrt((a * a) + (b * b));       // Вычислчем гипотенузу
 
-        if (a <= 0 || b <= 0 || r<=0) {
-            System.out.println("Not in this world)");
-        } else if ((a * a) + (b * b) > (r * r)) {
-            System.out.println("You can't cover this rectangle");
+        if (g < (2 * r)) {
+            System.out.println("Можно закрыть круглой картонкой");
         } else {
-            System.out.println("You can cover this rectangle");
+            System.out.println("Нельзя закрыть круглой картонкой");
         }
 
     }

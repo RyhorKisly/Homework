@@ -3,14 +3,15 @@
 public class Exercise12_page32 {
     public static void main(String[] args) {
 
+
+
         int x = 1;
-        int y = 2;
-        int z = 1;
-        while (z <= 9) {
+        int y = 1;
+        System.out.println("Факториал числа 0 равен: 0");
+        while (y <= 10) {
             x *= y;
-            y++;
-            z++;
+            System.out.println("Факториал числа " +  y++ +  " равен: " + x);
         }
-        System.out.println("Факторила целых чисел от 0 до 10 равен:" + x);
+
     }
 }
