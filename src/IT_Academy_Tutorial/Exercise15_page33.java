@@ -2,6 +2,7 @@
 если оно делится без остатка только на 1 и себя) и завершить цикл с
 использованием break. */
 
+package IT_Academy_Tutorial;
 public class Exercise15_page33 {
     public static void main(String[] args) {
 

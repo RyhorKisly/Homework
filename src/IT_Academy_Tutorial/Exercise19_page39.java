@@ -1,6 +1,7 @@
 /* Создайте переменную для массива из 10 элементов. Заполните его
 произвольными значениями целочисленного типа и выведите на экран элементы, стоящие на чётных позициях. */
 
+package IT_Academy_Tutorial;
 public class Exercise19_page39 {
     public static void main(String[] args) {
 

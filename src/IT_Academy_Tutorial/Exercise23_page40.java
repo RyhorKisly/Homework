@@ -6,6 +6,7 @@
  0 1 1 1 0
  1 1 1 1 1     */
 
+package IT_Academy_Tutorial;
 public class Exercise23_page40 {
     public static void main(String[] args) {
 //                                                           Второй вариант, с возможностью изменять входные данные

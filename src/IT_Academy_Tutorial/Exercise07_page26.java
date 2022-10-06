@@ -1,6 +1,7 @@
 /* Задание: Имеется прямоугольное отверстие размерами a и b, где a и b - целые числа.
 Определить, можно ли его полностью закрыть круглой картонкой радиусом r (тоже целое число). */
 
+package IT_Academy_Tutorial;
 public class Exercise07_page26 {
     public static void main(String[] args) {
 

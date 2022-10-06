@@ -1,5 +1,6 @@
 /* Задание: Вычислить призведение чисел от 1 до 25 с помощью цикла do while. */
 
+package IT_Academy_Tutorial;
 public class Exercise13_page32 {
     public static void main(String[] args) {
 

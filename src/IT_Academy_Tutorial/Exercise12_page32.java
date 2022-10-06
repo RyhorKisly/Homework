@@ -1,5 +1,6 @@
 /* Задание: Вычислить факториал целых чисел от 0 до 10 с помощью цикла while. */
 
+package IT_Academy_Tutorial;
 public class Exercise12_page32 {
     public static void main(String[] args) {
 

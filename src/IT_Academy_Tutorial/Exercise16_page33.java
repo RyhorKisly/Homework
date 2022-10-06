@@ -1,6 +1,7 @@
 /* Задание: Для целых чисел, которые деляться на 7 в диапазоне от 1 до 100, вывести на
 экран строку "Hope!" */
 
+package IT_Academy_Tutorial;
 public class Exercise16_page33 {
     public static void main(String[] args) {
 

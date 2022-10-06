@@ -1,3 +1,4 @@
+package IT_Academy_Tutorial;
 public class Arrays_example {
     public static void main(String[] args) {
 

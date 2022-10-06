@@ -1,5 +1,6 @@
 /* Задание: Посчитать сумму цифр числа 7893823445 с помощью цикла do while */
 
+package IT_Academy_Tutorial;
 public class Exercise14_page33 {
     public static void main(String[] args) {
 

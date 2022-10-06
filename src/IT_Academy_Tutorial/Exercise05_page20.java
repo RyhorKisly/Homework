@@ -1,6 +1,7 @@
 /* Задание: Задать промежуток времени в секундах в виде переменной.
 Следует вывести его на экран в виде часов минут и секунд, суток и недель. */
 
+package IT_Academy_Tutorial;
 public class Exercise05_page20 {
     public static void main(String[] args) {
         int sec = 1295435;

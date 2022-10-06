@@ -2,6 +2,7 @@
 произвольными значениями целочисленного типа. Найдите максимльный элемент
 и выведите его индекс. */
 
+package IT_Academy_Tutorial;
 public class Exercise20_page39 {
     public static void main(String[] args) {
 
