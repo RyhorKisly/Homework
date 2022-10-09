@@ -37,6 +37,7 @@ public class Time {
     public Time(int sec3) {
         this.min = sec3 / 60;
         this.hour = this.min / 60;
+        this.min %= 60;
         this.sec3 = sec3 % 60;
     }
 
