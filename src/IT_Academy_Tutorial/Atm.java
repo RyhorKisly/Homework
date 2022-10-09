@@ -16,7 +16,7 @@ public class Atm {
         Atm atm = new Atm (54, 21, 23);
         atm.withdraw();
         System.out.println();
-        atm.atmAfterWithdraw();
+        atm.printAfterWithdraw();
     }
 
     private int note20;
@@ -31,14 +31,14 @@ public class Atm {
 
     public void withdraw() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Введите сумму для снятия средств: ");
+        System.out.print("Введите сумму для снятия средств: ");
         boolean b = true;
         int i100;
         int i50;
         int i20;
         int cash = in.nextInt();
-        if (cash % 10 == 0 && cash != 30 && cash >= 20) {
 
+        if (cash % 10 == 0 && cash != 30 && cash >= 20) {
             System.out.println(b);
             System.out.println();
 
@@ -67,7 +67,7 @@ public class Atm {
             System.out.println("Введена некорректная сумма. Введите сумму кратную 20");
         }
     }
-        public void atmAfterWithdraw() {
+        public void printAfterWithdraw() {
             System.out.println("В банкомате осталось следующее количество купюр:\n"
                     + "по 100р.: " + this.note100 + ";\n"
                     + "по 50р.: " + this.note50 + ";\n"
