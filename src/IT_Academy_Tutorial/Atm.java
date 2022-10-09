@@ -11,6 +11,14 @@ package IT_Academy_Tutorial;
 import java.util.Scanner;
 
 public class Atm {
+
+    public static void main(String[] args) {
+        Atm atm = new Atm (54, 21, 23);
+        atm.withdraw();
+        System.out.println();
+        atm.atmAfterWithdraw();
+    }
+
     private int note20;
     private int note50;
     private int note100;
@@ -21,45 +29,53 @@ public class Atm {
         this.note100 = note100;
     }
 
-    public int getNote20() {
-        return this.note20;
-    }
-
-    public void setNote20(int note20) {
-        this.note20 = note20;
-    }
-
-    public int getNote50() {
-        return this.note50;
-    }
-
-    public void setNote50(int note50) {
-        this.note50 = note50;
-    }
-
-    public int getNote100() {
-        return this.note100;
-    }
-
-    public void setNote100(int note100) {
-        this.note100 = note100;
-    }
-
-
     public void withdraw() {
         Scanner in = new Scanner(System.in);
-        int x20 = 0;
-        int x50 = 0;
-        int x100 = 0;
+        System.out.println("Введите сумму для снятия средств: ");
+        boolean b = true;
+        int i100;
+        int i50;
+        int i20;
         int cash = in.nextInt();
-        //        System.out.println();
-        if (cash % 10 == 0 && cash != 10 && cash != 30) {
-            boolean b = true;
+        if (cash % 10 == 0 && cash != 30 && cash >= 20) {
+
             System.out.println(b);
             System.out.println();
-            for (int i = 0, x = 0; i < cash / 100; i++) {
+
+            for (i100 = 0; cash >= 100 && cash != 110 && cash != 130 && cash != 160 && this.note100 > 0; i100++) {
+                this.note100--;
+                cash -= 100;
             }
+            System.out.println("Количество выданных купюр по 100р.: " + i100);
+
+            for (i50 = 0; cash >= 50 && this.note50 > 0 && cash != 80 && cash != 60; i50++) {
+                this.note50--;
+                cash -= 50;
+            }
+            System.out.println("Количество выданных купюр по 50р.: " + i50);
+
+            for (i20 = 0; 0 < cash && this.note20 > 0; i20++) {
+                this.note20--;
+                cash -= 20;
+            }
+            System.out.println("Количество выданных купюр по 20р.: " + i20);
+        } else if (cash < 20) {
+            System.out.println(b = false);
+            System.out.println("Введена недостаточная сумма для вывода средств");
+        } else if (cash % 10 != 0) {
+            System.out.println(b = false);
+            System.out.println("Введена некорректная сумма. Введите сумму кратную 20");
+        }
+    }
+        public void atmAfterWithdraw() {
+            System.out.println("В банкомате осталось следующее количество купюр:\n"
+                    + "по 100р.: " + this.note100 + ";\n"
+                    + "по 50р.: " + this.note50 + ";\n"
+                    + "по 20р.: " + this.note20 + ".");
         }
 
-    }
 }
+
+
+
+
