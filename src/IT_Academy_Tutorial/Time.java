@@ -13,7 +13,7 @@ public class Time {
     public static void main(String[] args) {
 
         Time onlySeconds = new Time(234235, 235253235);
-        Time dividedTime = new Time(25367);
+        Time dividedTime = new Time(536877);
 
         onlySeconds.printOnlySeconds();
         System.out.println();
@@ -61,8 +61,8 @@ public class Time {
     }
 
     public void printOnlySeconds() {
-            System.out.println("Time1 -  Seconds: " + this.sec1 + ";" +
-                    "\n" + "Time2 -  Seconds: " + this.sec2 + ".");
+            System.out.println("Time1: " + this.sec1 + " sec;" +
+                    "\n" + "Time2: " + this.sec2 + " sec.");
     }
 
     public void printFullTime() {
