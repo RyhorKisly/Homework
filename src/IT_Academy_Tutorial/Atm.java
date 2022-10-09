@@ -57,8 +57,7 @@ public class Atm {
             boolean b = true;
             System.out.println(b);
             System.out.println();
-            for (int i = 0; i < this.note100 && i < cash / 100; i++) {
-                i =
+            for (int i = 0, x = 0; i < cash / 100; i++) {
             }
         }
 
