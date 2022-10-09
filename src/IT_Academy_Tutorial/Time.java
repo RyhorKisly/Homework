@@ -23,30 +23,30 @@ public class Time {
 
     }
 
-    private int sec1;
-    private int sec2;
-    private int sec3;
+    private int onlySec1;
+    private int onlySec2;
+    private int dividedSec;
     private int min;
     private int hour;
 
     public Time(int sec1, int sec2) {
-        this.sec1 = sec1;
-        this.sec2 = sec2;
+        this.onlySec1 = sec1;
+        this.onlySec2 = sec2;
     }
 
     public Time(int sec3) {
         this.min = sec3 / 60;
         this.hour = this.min / 60;
         this.min %= 60;
-        this.sec3 = sec3 % 60;
+        this.dividedSec = sec3 % 60;
     }
 
     public int seconds1() {
-        return this.sec1;
+        return this.onlySec1;
     }
 
     public int seconds2() {
-        return this.sec2;
+        return this.onlySec2;
     }
 
 
@@ -61,13 +61,13 @@ public class Time {
     }
 
     public void printOnlySeconds() {
-            System.out.println("Time1: " + this.sec1 + " sec;" +
-                    "\n" + "Time2: " + this.sec2 + " sec.");
+            System.out.println("Time1: " + this.onlySec1 + " sec;" +
+                    "\n" + "Time2: " + this.onlySec2 + " sec.");
     }
 
     public void printFullTime() {
             System.out.println("Time1 - Hours: " + this.hour + "; "
-                    +  "Minutes: " + this.min + "; " + "Seconds: " + this.sec3 + ".");
+                    +  "Minutes: " + this.min + "; " + "Seconds: " + this.dividedSec + ".");
 
     }
 
