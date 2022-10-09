@@ -13,10 +13,12 @@ import java.util.Scanner;
 public class Atm {
 
     public static void main(String[] args) {
+
         Atm atm = new Atm (54, 21, 23);
         atm.withdraw();
         System.out.println();
         atm.printAfterWithdraw();
+
     }
 
     private int note20;
