@@ -9,11 +9,11 @@
 
 package IT_Academy_Tutorial;
 
-public class Exercise24Page48 {
+public class Time {
     public static void main(String[] args) {
 
-        Exercise24Page48 onlySeconds = new Exercise24Page48(234235, 235253235);
-        Exercise24Page48 dividedTime = new Exercise24Page48(25367);
+        Time onlySeconds = new Time(234235, 235253235);
+        Time dividedTime = new Time(25367);
 
         onlySeconds.printOnlySeconds();
         System.out.println();
@@ -29,12 +29,12 @@ public class Exercise24Page48 {
     private int min;
     private int hour;
 
-    public Exercise24Page48(int sec1, int sec2) {
+    public Time(int sec1, int sec2) {
         this.sec1 = sec1;
         this.sec2 = sec2;
     }
 
-    public Exercise24Page48(int sec3) {
+    public Time(int sec3) {
         this.min = sec3 / 60;
         this.hour = this.min / 60;
         this.sec3 = sec3 % 60;
@@ -60,11 +60,13 @@ public class Exercise24Page48 {
     }
 
     public void printOnlySeconds() {
-            System.out.println("Time1 -  Seconds: " + this.sec1 + ";\n" + "Time2 -  Seconds: " + this.sec2 + ".");
+            System.out.println("Time1 -  Seconds: " + this.sec1 + ";" +
+                    "\n" + "Time2 -  Seconds: " + this.sec2 + ".");
     }
 
     public void printFullTime() {
-            System.out.println("Time1 - Hours: " + this.hour + "; " +  "Minutes: " + this.min + "; " + "Seconds: " + this.sec3 + ".");
+            System.out.println("Time1 - Hours: " + this.hour + "; "
+                    +  "Minutes: " + this.min + "; " + "Seconds: " + this.sec3 + ".");
 
     }
 
