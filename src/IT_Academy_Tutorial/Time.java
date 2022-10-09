@@ -12,12 +12,11 @@ package IT_Academy_Tutorial;
 public class Time {
     public static void main(String[] args) {
 
-        Time dividedTime = new Time(7, 49, 53);
-        Time onlySeconds = new Time();
+        Time time1 = new Time(7, 49, 53);
+        Time time2 = new Time(45684);
 
-        dividedTime.printFullTime();
-        dividedTime.printFullSeconds();
-        System.out.println();
+        time1.printTime();
+        time2.printTime();
 
     }
 
@@ -31,33 +30,17 @@ public class Time {
         this.hour = hour;
     }
 
-    public Time() {
-        int seconds = this.sec + (this.min * 60) + (this.hour * 3600);
+    public Time(int sec) {
+        this.sec = sec % 60;
+        this.min = sec / 60;
+        this.hour = this.min / 60;
+        this.min = sec % 60;
     }
 
-    public int fullSeconds() {
-        int fullSeconds = this.sec + (this.min * 60) + (this.hour * 3600);
-        return fullSeconds;
+    public void printTime() {
+        System.out.println("Hours: " + this.hour + "; "
+                +  "Minutes: " + this.min + "; " + "Seconds: " + this.sec + ".");
     }
-
-    public void printFullSeconds() {
-            System.out.println("Time: " + fullSeconds() + " sec;");
-    }
-
-    public void printFullTime() {
-            System.out.println("Hours: " + this.hour + "; "
-                    +  "Minutes: " + this.min + "; " + "Seconds: " + this.sec + ".");
-    }
-
-    //    public void compareTo() {
-//        if (this.seconds1() > this.seconds2()) {
-//            System.out.println("Time1 more then Time2");
-//        } else if (this.seconds1() < this.seconds2()) {
-//            System.out.println("Time1 less then Time2");
-//        } else {
-//            System.out.println("equal");
-//        }
-//    }
 
 }
 
