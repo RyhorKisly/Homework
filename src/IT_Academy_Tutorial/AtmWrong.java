@@ -10,11 +10,11 @@
 package IT_Academy_Tutorial;
 import java.util.Scanner;
 
-public class Atm {
+public class AtmWrong {
 
     public static void main(String[] args) {
 
-        Atm atm = new Atm (54, 21, 23);
+        AtmWrong atm = new AtmWrong(54, 21, 23);
         atm.withdraw();
         System.out.println();
         atm.printAfterWithdraw();
@@ -25,7 +25,7 @@ public class Atm {
     private int note50;
     private int note100;
 
-    public Atm(int note20, int note50, int note100) {
+    public AtmWrong(int note20, int note50, int note100) {
         this.note20 = note20;
         this.note50 = note50;
         this.note100 = note100;

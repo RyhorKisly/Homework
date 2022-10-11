@@ -4,7 +4,7 @@ package IT_Academy_Tutorial;
 
 import java.math.BigInteger;
 
-public class Exercise13_page32 {
+public class Exercise13_page32_BigInteger {
     public static void main(String[] args) {
 
         BigInteger result = BigInteger.ONE;
