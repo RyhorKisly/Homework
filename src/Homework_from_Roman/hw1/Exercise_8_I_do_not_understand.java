@@ -1,4 +1,4 @@
-package Homework_from_Roman.Arrays;
+package Homework_from_Roman.hw1;
 
 //		Задание *
 //		N студентов стоят в очереди за стипендией. Каждый студент имеет учебный рейтинг.

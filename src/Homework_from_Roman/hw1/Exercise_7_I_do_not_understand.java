@@ -7,7 +7,7 @@
 //
 //		Для предложенного массива это: 1, 4, 9 = 14.
 
-package Homework_from_Roman.Arrays;
+package Homework_from_Roman.hw1;
 
 public class Exercise_7_I_do_not_understand {
     public static void main(String[] args) {

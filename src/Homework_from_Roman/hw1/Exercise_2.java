@@ -7,7 +7,7 @@ n = 7
 Сумма всех четных до 7го.  равна 2 + 8 = 10.
 */
 
-package Homework_from_Roman.Arrays;
+package Homework_from_Roman.hw1;
 
 public class Exercise_2 {
     public static void main(String[] args) {

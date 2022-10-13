@@ -3,7 +3,7 @@
 треугольной матрицей или же нет.
 */
 
-package Homework_from_Roman.Arrays;
+package Homework_from_Roman.hw1;
 
 public class Exercise_5 {
     public static void main(String[] args) {

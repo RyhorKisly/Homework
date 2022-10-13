@@ -3,7 +3,7 @@
 сумму и разности.
 */
 
-package Homework_from_Roman.Arrays;
+package Homework_from_Roman.hw1;
 
 public class Exercise_6 {
     public static void main(String[] args) {

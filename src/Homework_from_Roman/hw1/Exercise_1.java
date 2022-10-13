@@ -4,7 +4,7 @@
 встречается число "n" то в сумму его включать не нужно.
  */
 
-package Homework_from_Roman.Arrays;
+package Homework_from_Roman.hw1;
 
 public class Exercise_1 {
     public static void main(String[] args) {

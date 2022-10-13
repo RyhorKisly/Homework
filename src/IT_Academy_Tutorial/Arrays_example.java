@@ -58,5 +58,14 @@ public class Arrays_example {
 //            System.out.println("");
 //        }
 
+//        int[] marks = {6, 4, 3, 12, 5};
+//        for(int i = 0; i < marks.length; i++) {
+//            System.out.println(marks[i]);
+//        }
+//        for(int element : marks) {
+//            System.out.println(element);
+//        }
+
+
     }
 }

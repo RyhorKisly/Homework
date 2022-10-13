@@ -1,8 +1,6 @@
 /* Дан некоторый массив, суть задания инвертировать его. */
 
-package Homework_from_Roman.Arrays;
-
-import java.util.Arrays;
+package Homework_from_Roman.hw1;
 
 public class Exercise_3 {
     public static void main(String[] args) {

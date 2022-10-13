@@ -3,7 +3,7 @@
 положительных или отрицательных.
 */
 
-package Homework_from_Roman.Arrays;
+package Homework_from_Roman.hw1;
 
 public class Exercise_4 {
     public static void main(String[] args) {
