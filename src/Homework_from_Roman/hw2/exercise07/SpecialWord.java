@@ -12,11 +12,14 @@ public class SpecialWord {
         public static void findWordWithFirstAndLastLetterA(String str) {
             Pattern p = Pattern.compile("\\b[Аа][а-яА-Я]+[Аа]\\b");
             Matcher m = p.matcher(str);
-            int i;
-            for (i = 0; m.find(); i++) {
-                System.out.println(m.group());
+            int i = 0;
+            while(m.find()) {
+                i++;
+                    System.out.println(m.group());
             }
-            System.out.println("Количество слов с тремя буквами \"с\": " + i);
+            if (i == 0) {
+                System.out.println("Нет таких слов");
+            }
         }
 
         public static void main(String[] args) {
