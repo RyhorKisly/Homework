@@ -31,26 +31,6 @@ public class Box {
         this.height = height;
     }
 
-//    public Box(String box) {                                         // нужно создать объект в конструкторе?
-//        int length = RANDOM.nextInt(10);                             // или просто конструктор,
-//        this.length = length;                                        // а в Main создать объект???
-//        int width = RANDOM.nextInt(10);
-//        this.width = width;
-//        int height = RANDOM.nextInt(10);
-//        this.height = height;
-//        if (box.equals("Box[1,2,3]") && (length * width * height != 0)) {
-//            Box box2  = new Box ("BoxType", length, width, height);
-//            box2.typeBox();
-//        } else if (box.equals("Box[1,2]") && (length * width != 0)) {
-//            Box box2  = new Box ("BoxType", length, width, 0);
-//            box2.typeBox();
-//        } else if (box.equals("Box[2]") && length != 0) {
-//            Box box2  = new Box ("BoxType", length, length, length);
-//            box2.typeBox();
-//        }
-//
-//    }
-
     public Box(String box) {
         int length = RANDOM.nextInt(10);
         int width = RANDOM.nextInt(10);
