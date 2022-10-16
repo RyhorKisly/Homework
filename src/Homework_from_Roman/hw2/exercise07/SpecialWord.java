@@ -13,7 +13,7 @@ public class SpecialWord {
             Pattern p = Pattern.compile("\\b[Аа][а-яА-Я]+[Аа]\\b");
             Matcher m = p.matcher(str);
             int i = 0;
-            while(m.find()) {
+            while (m.find()) {
                 i++;
                     System.out.println(m.group());
             }

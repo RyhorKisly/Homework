@@ -13,7 +13,7 @@ public class NumberOfCard {
         Pattern p = Pattern.compile("\\b\\d{4}[-]\\d{4}[-]\\d{4}[-]\\d{4}\\b");
         Matcher m = p.matcher(str);
         int i = 0;
-        while(m.find()) {
+        while (m.find()) {
             i++;
             System.out.println(m.group());
         }
