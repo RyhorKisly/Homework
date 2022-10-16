@@ -8,8 +8,8 @@ import java.util.regex.Pattern;
 public class String_example {
     public static void main(String[] args) {
 
-//        char x = "Hello World".charAt(0);
-//        System.out.println(x);
+        char x = "Hello World".charAt(0);
+        System.out.println(x);
 
 //        String str = "Тестовая, строка, с несколькими,, запятыми";           //Перебор элементов строки
 //        int n = 0;
@@ -24,6 +24,7 @@ public class String_example {
 
 //        String str = "Тестовая, строка, с несколькими,, запятыми";            //Поиск элементов строки
 //        int p = 0;
+//        int n = 0;
 //        while(p != -1) {
 //            p = str.indexOf(',',p);                      // ищет запятую пока не наёдет, потом только следующий шаг
 //            if (p != -1) {
@@ -41,11 +42,11 @@ public class String_example {
 //        System.out.println("Test multiply spaces".replaceFirst("s+", "t"));  // метод для regex
 //        System.out.println("Test multiply spaces".replaceAll("s+", "t"));  // метод для regex
 
-//        Pattern p = Pattern.compile(" +- +");                               // Классы для углубленной работой с
-//        Matcher m = p.matcher("Test - string - test");                      // regex
-//        while(m.find()) {
-//            System.out.println(m.start() + " " + m.end());
-//        }
+        Pattern p = Pattern.compile(" +- +");                               // Классы для углубленной работой с
+        Matcher m = p.matcher("Test - string - test");                      // regex
+        while(m.find()) {
+            System.out.println(m.start() + " " + m.end());
+        }
 
 //        Pattern pattern = Pattern.compile("www\\.(\\w+)\\.by");              // использование regex как группы
 //        Matcher matcher = pattern.matcher("www.google.by");
