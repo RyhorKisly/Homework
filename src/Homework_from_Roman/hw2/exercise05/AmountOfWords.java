@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class AmountOfWords {
 
     public static void findAmountOfWordsWithThreeLetterC(String str) {
-        Pattern p = Pattern.compile("[Сс]([а-рт-яА-РТ-Я-_]*)[Сс]([а-рт-яА-РТ-Я-_]*)[Сс]([а-рт-яА-РТ-Я-_\\d]*)");
+        Pattern p = Pattern.compile("[Сс]([а-рт-яА-РТ-Я-_\\d]*)[Сс]([а-рт-яА-РТ-Я-_\\d]*)[Сс]([а-рт-яА-РТ-Я-_\\d]*)");
         Matcher m = p.matcher(str);
         int i;
         for (i = 0; m.find(); i++) {
