@@ -24,61 +24,52 @@ public class Box {
     private int height;
     private static final Random RANDOM = new Random();
 
-    public Box(String typeOfBox, int length, int width, int height) {
-        this.typeOfBox = typeOfBox;
+    public Box(int length, int width, int height) {
         this.length = length;
         this.width = width;
         this.height = height;
     }
 
-    public Box(String box) {
-        int length = RANDOM.nextInt(10);
-        int width = RANDOM.nextInt(10);
-        int height = RANDOM.nextInt(10);
-        if (box.equals("Box[1,2,3]") && (length * width * height != 0)) {
-            Box box2  = new Box ("BoxType", length, width, height);
-            this.length = length;
-            this.width = width;
-            this.height = height;
-        } else if (box.equals("Box[1,2]") && (length * width != 0)) {
-            this.length = length;
-            this.width = width;
-            this.height = 0;
-        } else if (box.equals("Box[2]") && length != 0) {
-            this.length = length;
-            this.width = length;
-            this.height = length;
-        }
-    }
-
-    public String getTypeOfBox() {
-        return typeOfBox;
-    }
-
-    public void print() {
-        System.out.println(
-                "Тип коробки: " + typeOfBox +
-                        " Длина: " + length +
-                        "; Ширина: " + width +
-                        "; Высота: " + height + "."
-        );
-    }
-
     public void printTypeBox() {
         if (length * width * height < 0) {
-            typeOfBox = "Неизвестный тип коробки:";
+            System.out.println("Неизвестный тип коробки");
         }else if (length == width && width == height && (length != 0)) {
-            typeOfBox = "Это Куб:";
+            System.out.println("Тип коробки: Куб");
         } else if (height == 0 && (length * width != 0)) {
-            typeOfBox = "Это конверт:";
+            System.out.println("Тип коробки: Конверт.");
         } else if ((length * width * height != 0)) {
-            typeOfBox = "Это обычная коробка:";
+            System.out.println("Тип коробки: Обычная коробка.");
         }  else {
-            typeOfBox = "Неизвестный тип коробки:";
+            System.out.println("Неизвестный тип коробки");
         }
-        print();
     }
 
-
+//    public Box(String box) {
+//        int length = RANDOM.nextInt(10);
+//        int width = RANDOM.nextInt(10);
+//        int height = RANDOM.nextInt(10);
+//        if (box.equals("Box[1,2,3]") && (length * width * height != 0)) {
+//            Box box2  = new Box (length, width, height);
+//            this.length = length;
+//            this.width = width;
+//            this.height = height;
+//        } else if (box.equals("Box[1,2]") && (length * width != 0)) {
+//            this.length = length;
+//            this.width = width;
+//            this.height = 0;
+//        } else if (box.equals("Box[2]") && length != 0) {
+//            this.length = length;
+//            this.width = length;
+//            this.height = length;
+//        }
+//    }
+//
+//    public void print() {
+//        System.out.println(
+//                "Тип коробки: " + typeOfBox +
+//                        " Длина: " + length +
+//                        "; Ширина: " + width +
+//                        "; Высота: " + height + "."
+//        );
 
 }

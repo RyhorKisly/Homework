@@ -4,11 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Box box = new Box("BoxType:", 6, 7,3);
+        Box box = new Box(6, 6,0);
         box.printTypeBox();
-        System.out.println();
-        Box box2 = new Box("Box[1,2]");
-        box2.printTypeBox();
+
 
     }
 
