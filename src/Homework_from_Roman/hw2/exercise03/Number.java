@@ -37,4 +37,18 @@ public class Number {
         System.out.println(average);
     }
 
+    public static void main(String[] args) {
+
+        Number number = new Number();
+        
+        number.consume(10);
+        number.consume(5);
+        number.consume(5);
+        number.consume(5);
+        number.consume(5);
+
+        number.avg();
+
+    }
+
 }
