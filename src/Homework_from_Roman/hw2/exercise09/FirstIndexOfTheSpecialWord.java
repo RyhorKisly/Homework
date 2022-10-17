@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class FirstIndexOfTheSpecialWord {
 
     public static void findSpecialWord(String str, String searchWord) {
-        Pattern p = Pattern.compile(searchWord);
+        Pattern p = Pattern.compile(searchWord, Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(str);
         int i = 0;
         while (m.find()) {
