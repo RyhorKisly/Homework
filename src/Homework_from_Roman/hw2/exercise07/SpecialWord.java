@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class SpecialWord {
 
         public static void findWordWithFirstAndLastLetterA(String str) {
-            Pattern p = Pattern.compile("\\b[Аа][а-яА-Я]+[Аа]\\b");
+            Pattern p = Pattern.compile("\\b[Аа][а-яА-Я]*[Аа]\\b");
             Matcher m = p.matcher(str);
             int i = 0;
             while (m.find()) {
@@ -23,7 +23,7 @@ public class SpecialWord {
         }
 
         public static void main(String[] args) {
-            String str = "Аппетитна была твоя еда. Особенно арбуз. Анкара, я съел там три абрикоса";
+            String str = "Аппетитна а была твоя еда. Особенно арбуз. Анкара, я съел там три абрикоса";
             findWordWithFirstAndLastLetterA(str);
 
         }
