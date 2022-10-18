@@ -14,6 +14,8 @@
 
 package Homework_from_Roman.hw2_classes_and_regexp.exercise04;
 
+import Homework_from_Roman.hw2_classes_and_regexp.Solution;
+
 import java.util.Random;
 
 import static Homework_from_Roman.hw2_classes_and_regexp.exercise04.Brand.*;
@@ -34,11 +36,10 @@ public class Car {
         }
     }
 
-    public void setColor(Color newColor) {
+    public void setColor(String newColor) {
         for(Color col : brand.getColors()) {
-            if(col.name().equals(newColor.toUpperCase())) {                       //col.name().equals(newColor.toUpperCase())
+            if(col.name().equals(newColor.toUpperCase())) {
                 color = col;
-                System.out.println(color);
             }
         }
     }
@@ -51,7 +52,7 @@ public class Car {
     public static void main(String[] args) {
 
         Car car = new Car(AUDI, BLUE);
-        car.setColor(RED);
+        car.setColor("RED");
         car.printNewColor();
 
         }
