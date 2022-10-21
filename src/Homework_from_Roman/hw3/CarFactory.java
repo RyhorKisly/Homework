@@ -2,9 +2,6 @@ package Homework_from_Roman.hw3;
 
 import Homework_from_Roman.hw3.componentsOfAuto.*;
 
-import static Homework_from_Roman.hw3.StockOfCars.*;
-import static Homework_from_Roman.hw3.componentsOfAuto.Color.*;
-
 
 public class CarFactory extends Service {
 
