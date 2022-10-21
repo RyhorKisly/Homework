@@ -2,34 +2,56 @@ package Homework_from_Roman.hw3;
 
 import Homework_from_Roman.hw3.componentsOfAuto.*;
 
-public abstract class Car{
+public class Car{
 
-    Color color;
-    Brand brand;
-    YearOfIssue yearOfIssue;
-    WheelSize wheelSize;
-    EngineVolume engineVolume;
-    OptionList optionList;
+    private Color color;
+    private final Brand brand;
+    private final YearOfIssue yearOfIssue;
+    private WheelSize wheelSize;
+    private final EngineVolume engineVolume;
+    private OptionList optionList;
+    private final String[] array;
 
-    public Car(){
+    public Car(int lengthOfOptionList) {
+        this.array = new String[lengthOfOptionList];
     }
 
-    public Car(Color color, WheelSize wheelSize, OptionList optionList) {
-        this.color = color;
-        this.wheelSize = wheelSize;
-        this.optionList = optionList;
-    }
 
-    public Car(Color color, Brand brand, YearOfIssue yearOfIssue, WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
+    public Car(Color color, Brand brand, YearOfIssue yearOfIssue, WheelSize wheelSize, EngineVolume engineVolume) {
         this.color = color;
         this.brand = brand;
         this.yearOfIssue = yearOfIssue;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
-        this.optionList = optionList;
     }
 
-    public void changeOptions() {}
+    public Color changeColor(Color color) {
+        this.color = color;
+        System.out.println("Новый цвет авто: " + color);
+        return this.color;
+    }
 
+    public WheelSize changeWheelSize(WheelSize wheelSize) {
+        this.wheelSize = wheelSize;
+        System.out.println("Новый размер колёс: " + wheelSize);
+        return this.wheelSize;
+    }
+
+    public OptionList getOptionList() {
+        return optionList;
+    }
+
+    public StringBuffer addOption() {
+
+    }
+
+
+    public static void main(String[] args) {
+        Car car = new Car(Color.RED, Brand.BMW, YearOfIssue.NEW, WheelSize.MEDIUM, EngineVolume.BIG_VOLUME);
+        car.changeColor(Color.WHITE);
+        car.changeWheelSize(WheelSize.SMALL);
+
+
+    }
 
 }

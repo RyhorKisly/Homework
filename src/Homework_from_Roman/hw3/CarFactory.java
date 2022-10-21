@@ -3,13 +3,13 @@ package Homework_from_Roman.hw3;
 import Homework_from_Roman.hw3.componentsOfAuto.*;
 
 
-public class CarFactory extends Service {
+public class CarFactory{
 
     public CarFactory() {
     }
 
     public void listOfBrand() {
-        System.out.println("Доступные марки 24машин:");
+        System.out.println("Доступные марки машин:");
         for(Brand element : Brand.values()) {
             System.out.println(element);
         }
