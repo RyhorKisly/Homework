@@ -6,7 +6,7 @@ public enum YearOfIssue {
     OLD(2021),
     NEW(2022);
 
-    private int year;
+    public int year;
 
     YearOfIssue (int year) {
         this.year = year;

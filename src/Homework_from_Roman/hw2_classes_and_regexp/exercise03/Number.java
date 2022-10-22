@@ -41,11 +41,7 @@ public class Number {
         Number number = new Number(5);
         
         number.consume(10);
-        number.consume(5);
-        number.consume(5);
-        number.consume(5);
-        number.consume(17);
-        number.consume(5);
+
 
         number.avg();
 
