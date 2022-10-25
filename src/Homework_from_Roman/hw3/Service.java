@@ -5,6 +5,7 @@ import Homework_from_Roman.hw3.componentsOfAuto.*;
 public class Service {
     private int index = 1;
 
+
     public Color changeColor(Car car, Color color) {
         car.setColor(color);
         System.out.println("Новый цвет авто: " + color);

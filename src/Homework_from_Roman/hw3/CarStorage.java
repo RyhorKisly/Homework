@@ -11,13 +11,13 @@ public class CarStorage {
             WheelSize.MEDIUM, EngineVolume.BIG_VOLUME, OptionList.LEATHER_SEATS);
 
     public CarStorage() {
-        this.cars[0] = car1;
-        this.cars[1] = car2;
+//        this.cars[0] = car1;
+//        this.cars[1] = car2;
     }
 
-    public Car[] getCars() {
-        return cars;
-    }
+//    public Car[] getCars() {
+//        return cars;
+//    }
 
 
 

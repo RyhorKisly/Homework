@@ -43,6 +43,20 @@ public class CarFactory{
         System.out.println();
     }
 
+    public Car createCar(Car car, CarStorage carStorage) {
+        if (car.getModel() == carStorage.car1.getModel() &&
+                carStorage.car1.getYearOfIssue() == car.getYearOfIssue() &&
+                carStorage.car1.getEngineVolume() == car.getEngineVolume()) {
+            return carStorage.car1;
+        } else if (car.getModel() == carStorage.car2.getModel() &&
+                carStorage.car2.getYearOfIssue() == car.getYearOfIssue() &&
+                carStorage.car2.getEngineVolume() == car.getEngineVolume()) {
+            return carStorage.car2;
+            } else {
+            return car;
+        }
+    }
+
 //    public Car[] carStorage(Car car1, Car car2) {         //Создал класс CarStorage
 //        Car[] cars = new Car[2];
 //        cars[0] = car1;
