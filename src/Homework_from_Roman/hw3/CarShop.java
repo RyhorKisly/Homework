@@ -14,7 +14,6 @@ public class CarShop {
 
     public Car orderCar(Color color, Model model, int yearOfIssue,
                           WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
-        System.out.println(carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList));
         return carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
     }
 
