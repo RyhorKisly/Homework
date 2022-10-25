@@ -12,16 +12,10 @@ public class CarShop {
         this.carFactory = carFactory;
     }
 
-    public Car orderCar(Color color, Model model, YearOfIssue yearOfIssue,
+    public Car orderCar(Color color, Model model, int yearOfIssue,
                           WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
-        Car car = carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
-        service.changeColor(car, color);
-        service.changeWheelSize(car, wheelSize);
-        return car;
+        System.out.println(carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList));
+        return carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
     }
-
-
-
-
 
 }

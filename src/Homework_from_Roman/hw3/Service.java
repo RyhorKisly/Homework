@@ -6,16 +6,22 @@ public class Service {
     private int index = 1;
 
 
-    public Color changeColor(Car car, Color color) {
+    public static Color changeColor(Car car, Color color) {
         car.setColor(color);
 //        System.out.println("Новый цвет авто: " + color);
         return car.getColor();
     }
 
-    public WheelSize changeWheelSize(Car car, WheelSize wheelSize) {
+    public static WheelSize changeWheelSize(Car car, WheelSize wheelSize) {
         car.setWheelSize(wheelSize);
 //        System.out.println("Новый размер колёс: " + wheelSize);
         return car.getWheelSize();
+    }
+
+    public static String[] changeOptionList(Car car, OptionList optionList) {
+        car.setArrayOptionList(optionList);
+//        System.out.println("Новая опция: " + wheelSize);
+        return car.getArrayOptionList();
     }
 
     public void addOption(Car car, OptionList optionList) {

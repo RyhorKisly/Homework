@@ -8,12 +8,12 @@ public class Car{
 
     private Color color;
     private final Model model;
-    private final YearOfIssue yearOfIssue;
+    private final int yearOfIssue;
     private WheelSize wheelSize;
     private final EngineVolume engineVolume;
     String[] arrayOptionList = new String[3];
 
-    public Car(Color color, Model model, YearOfIssue yearOfIssue, WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
+    public Car(Color color, Model model, int yearOfIssue, WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
         this.color = color;
         this.model = model;
         this.yearOfIssue = yearOfIssue;
@@ -27,7 +27,7 @@ public class Car{
         return "Информация об авто: \n" +
                 "Цвет: " + this.color + "; " +
                 "Марка: " + this.model + "; " +
-                "Год выпуска: " + this.yearOfIssue + "(" + this.yearOfIssue.year + ")" + "; " +
+                "Год выпуска: " + this.yearOfIssue + "; " +
                 "Размер колёс: " + this.wheelSize + "(" + this.wheelSize.size + ")" + "; " +
                 "Объём двигателя: " + this.engineVolume + "(" + this.engineVolume.volume  + ")" + ";\n" +
                 "Cписок опций: " + Arrays.toString(arrayOptionList) + ".";
@@ -41,7 +41,7 @@ public class Car{
         return model;
     }
 
-    public YearOfIssue getYearOfIssue() {
+    public int getYearOfIssue() {
         return yearOfIssue;
     }
 
@@ -65,8 +65,8 @@ public class Car{
         this.wheelSize = wheelSize;
     }
 
-    public void setArrayOptionList(String[] arrayOptionList) {
-        this.arrayOptionList = arrayOptionList;
+    public void setArrayOptionList(OptionList optionList) {
+        this.arrayOptionList[0] = String.valueOf(optionList);
     }
 
 }

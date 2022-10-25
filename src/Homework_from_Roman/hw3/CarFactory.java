@@ -11,16 +11,22 @@ public class CarFactory{
         this.service = service;
     }
 
-    public static Car createCar(Color color, Model model, YearOfIssue yearOfIssue,
+    public static Car createCar(Color color, Model model, int yearOfIssue,
                                 WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList){
         if (model == CarStorage.car1.getModel() &&
                 yearOfIssue == CarStorage.car1.getYearOfIssue()  &&
                 engineVolume == CarStorage.car1.getEngineVolume()) {
+            Service.changeColor(CarStorage.car1, color);
+            Service.changeWheelSize(CarStorage.car1, wheelSize);
+            Service.changeOptionList(CarStorage.car1, optionList);
             return CarStorage.car1;
         } else if (model == CarStorage.car2.getModel() &&
                 yearOfIssue == CarStorage.car2.getYearOfIssue()  &&
                 engineVolume == CarStorage.car2.getEngineVolume()) {
-            return CarStorage.car1;
+            Service.changeColor(CarStorage.car2, color);
+            Service.changeWheelSize(CarStorage.car2, wheelSize);
+            Service.changeOptionList(CarStorage.car2, optionList);
+            return CarStorage.car2;
         } else {
             Car car = new Car(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
             return car;
