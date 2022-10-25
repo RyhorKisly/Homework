@@ -35,12 +35,13 @@ public class Service {
 
     public void deleteOption(Car car, OptionList optionList) {
         String temp;
-        for (index = 0; index < car.arrayOptionList.length; index++) {
+        for (int index = 0; index < car.arrayOptionList.length; index++) {
             if (car.arrayOptionList[index] == String.valueOf(optionList)) {
                 temp = car.arrayOptionList[2];
                 car.arrayOptionList[2] = car.arrayOptionList[index];
                 car.arrayOptionList[index] = temp;
                 car.arrayOptionList[2] = null;
+//                car.arrayOptionList[0] = null;
                 break;
             } else {
                 System.out.println("У автомобился нет такой опции");

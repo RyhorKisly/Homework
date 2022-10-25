@@ -12,11 +12,6 @@ public class Main {
         carShop.orderCar(Color.RED, Model.OCTAVIA, 2022,
                 WheelSize.BIG, EngineVolume.BIG_VOLUME, OptionList.LEATHER_SEATS);
 
-        service.addOption(carShop.orderCar(Color.RED, Model.OCTAVIA, 2022,
-                WheelSize.BIG, EngineVolume.BIG_VOLUME, OptionList.LEATHER_SEATS), OptionList.AUTOMATIC_TRANSMISSION);
-
-
-
 
     }
 }
