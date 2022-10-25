@@ -5,33 +5,21 @@ import Homework_from_Roman.hw3.componentsOfAuto.*;
 
 public class CarFactory{
 
-    Brand brand;
-    Color color;
-    YearOfIssue yearOfIssue;
-    WheelSize wheelSize;
-    EngineVolume engineVolume;
+    private Service service;
 
-    public CarFactory(Brand brand, Color color, YearOfIssue yearOfIssue,
-                      WheelSize wheelSize, EngineVolume engineVolume) {
-        this.brand = brand;
-        this.yearOfIssue = yearOfIssue;
-        this.engineVolume = engineVolume;
-        this.color = color;
-        this.wheelSize = wheelSize;
+    public CarFactory(Service service) {
+        this.service = service;
     }
 
-    public CarFactory() {
-    }
-
-    public void listOfBrand() {
+    public void printListOfModels() {
         System.out.println("Доступные марки машин:");
-        for(Brand element : Brand.values()) {
+        for(Model element : Model.values()) {
             System.out.println(element);
         }
         System.out.println();
     }
 
-    public void listOfColor() {
+    public void printListOfColors() {
         System.out.println("Доступные цвета машин:");
         for(Color element : Color.values()) {
             System.out.println(element);
@@ -39,7 +27,7 @@ public class CarFactory{
         System.out.println();
     }
 
-    public void listOfWheelSize() {
+    public void printListOfWheelSizes() {
         System.out.println("Доступные размеры колёс:");
         for(WheelSize element : WheelSize.values()) {
             System.out.println(element + "(" + element.size + ")");
@@ -47,7 +35,7 @@ public class CarFactory{
         System.out.println();
     }
 
-    public void listOfEngineVolume() {
+    public void printListOfEngineVolumes() {
         System.out.println("Доступные объёмы двигателя:");
         for(EngineVolume element : EngineVolume.values()) {
             System.out.println(element + "(" + element.volume + ")");
@@ -55,35 +43,13 @@ public class CarFactory{
         System.out.println();
     }
 
-    public String toString() {
-        return "Информация об авто с завода: \n" +
-                "Марка: " + this.brand + "; " +
-                "Цвет: " + this.color + "; " +
-                "Год выпуска: " + this.yearOfIssue + "(" + this.yearOfIssue.year + ")" + "; " +
-                "Размер колёс: " + this.wheelSize + "(" + this.wheelSize.size + ")" + "; " +
-                "Объём двигателя: " + this.engineVolume + "(" + this.engineVolume.volume  + ")" + ".";
-    }
-
-    public static void main(String[] args) {
-        CarFactory carFactory = new CarFactory();
-        carFactory.listOfBrand();
-        carFactory.listOfColor();
-        carFactory.listOfWheelSize();
-        carFactory.listOfEngineVolume();
-        System.out.println();
-
-        Stock newAutoFromStock = new Stock(Brand.AUDI, Color.WHITE, YearOfIssue.NEW, WheelSize.BIG,
-                EngineVolume.MEDIUM_VOLUME);
-
-        CarFactory newAutoFromFactory = new CarFactory(Brand.AUDI, Color.WHITE, YearOfIssue.NEW, WheelSize.BIG,
-                EngineVolume.MEDIUM_VOLUME);
-
-        System.out.println(newAutoFromStock.toString());
-        System.out.println();
-        System.out.println(newAutoFromFactory.toString());
+//    public Car[] carStorage(Car car1, Car car2) {         //Создал класс CarStorage
+//        Car[] cars = new Car[2];
+//        cars[0] = car1;
+//        cars[1] = car2;
+//        return cars;
+//    }
 
 
-
-    }
 
 }
