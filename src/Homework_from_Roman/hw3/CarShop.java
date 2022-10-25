@@ -10,7 +10,7 @@ public class CarShop {
         this.carFactory = carFactory;
     }
 
-    public void orderCar(CarFactory carFactory) {
+    public Car orderCar(CarFactory carFactory) {
         return carFactory.createCar();
     }
 
