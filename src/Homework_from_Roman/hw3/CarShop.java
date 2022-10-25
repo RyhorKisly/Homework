@@ -14,8 +14,13 @@ public class CarShop {
 
     public Car orderCar(Color color, Model model, YearOfIssue yearOfIssue,
                           WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
-        return CarFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
+        Car car = carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
+        service.changeColor(car, color);
+        service.changeWheelSize(car, wheelSize);
+        return car;
     }
+
+
 
 
 
