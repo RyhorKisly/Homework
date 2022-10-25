@@ -65,16 +65,4 @@ public class CarFactory{
         System.out.println();
     }
 
-
-
-
-//    public Car[] carStorage(Car car1, Car car2) {         //Создал класс CarStorage
-//        Car[] cars = new Car[2];
-//        cars[0] = car1;
-//        cars[1] = car2;
-//        return cars;
-//    }
-
-
-
 }

@@ -11,14 +11,6 @@ public class CarStorage {
             WheelSize.MEDIUM, EngineVolume.BIG_VOLUME, OptionList.AUTOMATIC_TRANSMISSION);
 
     public CarStorage() {
-//        this.cars[0] = car1;
-//        this.cars[1] = car2;
     }
-
-//    public Car[] getCars() {
-//        return cars;
-//    }
-
-
 
 }
