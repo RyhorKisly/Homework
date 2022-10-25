@@ -43,21 +43,6 @@ public class CarFactory{
         System.out.println();
     }
 
-    public Car createCar() {
-        Car car = new Car(Color.RED, Model.RAPID, YearOfIssue.NEW,
-                WheelSize.BIG, EngineVolume.BIG_VOLUME, OptionList.LEATHER_SEATS);
-        if (car.getModel() == CarStorage.car1.getModel() &&
-                CarStorage.car1.getYearOfIssue() == car.getYearOfIssue() &&
-                CarStorage.car1.getEngineVolume() == car.getEngineVolume()) {
-            return CarStorage.car1;
-        } else if (car.getModel() == CarStorage.car2.getModel() &&
-                CarStorage.car2.getYearOfIssue() == car.getYearOfIssue() &&
-                CarStorage.car2.getEngineVolume() == car.getEngineVolume()) {
-            return CarStorage.car2;
-            } else {
-            return car;
-        }
-    }
 
 //    public Car[] carStorage(Car car1, Car car2) {         //Создал класс CarStorage
 //        Car[] cars = new Car[2];

@@ -10,8 +10,17 @@ public class CarShop {
         this.carFactory = carFactory;
     }
 
-    public Car orderCar(CarFactory carFactory) {
-        return carFactory.createCar();
+    public Car orderCar(Car car, CarStorage carStorage) {
+        if (car.getModel() == carStorage.car1.getModel() &&
+                carStorage.car1.getYearOfIssue() == car.getYearOfIssue() &&
+                carStorage.car1.getEngineVolume() == car.getEngineVolume()) {
+            return carStorage.car1;
+        } else if (car.getModel() == carStorage.car2.getModel() &&
+                carStorage.car2.getYearOfIssue() == car.getYearOfIssue() &&
+                carStorage.car2.getEngineVolume() == car.getEngineVolume()) {
+            return carStorage.car2;
+        } else {
+            return car;
+        }
     }
-
 }
