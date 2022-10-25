@@ -14,8 +14,9 @@ public class CarShop {
 
     public Car orderCar(Color color, Model model, YearOfIssue yearOfIssue,
                           WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
-        Car car = new Car(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
-        return car;
+        return CarFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
     }
+
+
 
 }

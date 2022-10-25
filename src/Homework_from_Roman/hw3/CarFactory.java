@@ -11,6 +11,22 @@ public class CarFactory{
         this.service = service;
     }
 
+    public static Car createCar(Color color, Model model, YearOfIssue yearOfIssue,
+                                WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList){
+        if (model == CarStorage.car1.getModel() &&
+                yearOfIssue == CarStorage.car1.getYearOfIssue()  &&
+                engineVolume == CarStorage.car1.getEngineVolume()) {
+            return CarStorage.car1;
+        } else if (model == CarStorage.car2.getModel() &&
+                yearOfIssue == CarStorage.car2.getYearOfIssue()  &&
+                engineVolume == CarStorage.car2.getEngineVolume()) {
+            return CarStorage.car1;
+        } else {
+            Car car = new Car(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
+            return car;
+        }
+    }
+
     public void printListOfModels() {
         System.out.println("Доступные марки машин:");
         for(Model element : Model.values()) {
@@ -43,20 +59,7 @@ public class CarFactory{
         System.out.println();
     }
 
-    public Car createCar(CarShop carShop){
 
-        if (model == CarStorage.car1.getModel() &&
-                yearOfIssue == CarStorage.car1.getYearOfIssue()  &&
-                engineVolume == CarStorage.car1.getEngineVolume()) {
-            return CarStorage.car1;
-        } else if (model == CarStorage.car2.getModel() &&
-                yearOfIssue == CarStorage.car2.getYearOfIssue()  &&
-                engineVolume == CarStorage.car2.getEngineVolume()) {
-            return CarStorage.car1;
-        } else {
-            return newCar;
-        }
-    }
 
 
 //    public Car[] carStorage(Car car1, Car car2) {         //Создал класс CarStorage
