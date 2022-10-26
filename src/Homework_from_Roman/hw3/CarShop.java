@@ -13,8 +13,28 @@ public class CarShop {
     }
 
     public Car orderCar(Color color, Model model, int yearOfIssue,
-                          WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
-        return carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
+                          WheelSize wheelSize, EngineVolume engineVolume, String[] arrayOptionList) {
+        return carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, arrayOptionList);
+    }
+
+    public Car changeColor(Car car, Color color) {
+        service.changeColor(car, color);
+        return car;
+    }
+
+    public Car changeWheelSize(Car car, WheelSize wheelSize) {
+        service.changeWheelSize(car, wheelSize);
+        return car;
+    }
+
+    public Car addOption(Car car, OptionList option) {
+        service.addOption(car, option);
+        return car;
+    }
+
+    public Car deleteOption(Car car, OptionList option) {
+        service.deleteOption(car, option);
+        return car;
     }
 
 }

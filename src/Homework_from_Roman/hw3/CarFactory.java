@@ -5,32 +5,33 @@ import Homework_from_Roman.hw3.componentsOfAuto.*;
 
 public class CarFactory{
 
+    static Car[] carStorage;
     private Service service;
 
-    public CarFactory(Service service) {
-        this.service = service;
+    public CarFactory(Color color, Model model, int yearOfIssue,
+                      WheelSize wheelSize, EngineVolume engineVolume, String[] arrayOptionList) {
+        Car storageCar1 = new Car(color, model, yearOfIssue, wheelSize, engineVolume, arrayOptionList);
+        Car storageCar2 = new Car(color, model, yearOfIssue, wheelSize, engineVolume, arrayOptionList);
+        Car storageCar3 = new Car(color, model, yearOfIssue, wheelSize, engineVolume, arrayOptionList);
+        carStorage = new Car[]{storageCar1, storageCar2, storageCar3};
     }
 
     public static Car createCar(Color color, Model model, int yearOfIssue,
-                                WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList){
-        if (model == CarStorage.car1.getModel() &&
-                yearOfIssue == CarStorage.car1.getYearOfIssue()  &&
-                engineVolume == CarStorage.car1.getEngineVolume()) {
-            Service.changeColor(CarStorage.car1, color);
-            Service.changeWheelSize(CarStorage.car1, wheelSize);
-            Service.changeOptionList(CarStorage.car1, optionList);
-            return CarStorage.car1;
-        } else if (model == CarStorage.car2.getModel() &&
-                yearOfIssue == CarStorage.car2.getYearOfIssue()  &&
-                engineVolume == CarStorage.car2.getEngineVolume()) {
-            Service.changeColor(CarStorage.car2, color);
-            Service.changeWheelSize(CarStorage.car2, wheelSize);
-            Service.changeOptionList(CarStorage.car2, optionList);
-            return CarStorage.car2;
-        } else {
-            Car car = new Car(color, model, yearOfIssue, wheelSize, engineVolume, optionList);
-            return car;
+                                WheelSize wheelSize, EngineVolume engineVolume, String[] arrayOptionList){
+        Car temp;
+        for(int i = 0; i < carStorage.length; i++) {
+           if (model == carStorage[i].getModel() &&
+                   yearOfIssue == carStorage[i].getYearOfIssue() &&
+                   engineVolume == carStorage[i].getEngineVolume()) {
+               return carStorage[i];
+           }
+            temp = carStorage[2];
+            carStorage[2] = carStorage[i];
+            carStorage[i] = temp;
+            carStorage[2] = null;
+           break;
         }
+        return new Car(color, model, yearOfIssue, wheelSize, engineVolume, arrayOptionList);
     }
 
     public void printListOfModels() {

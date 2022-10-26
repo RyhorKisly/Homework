@@ -11,15 +11,15 @@ public class Car{
     private final int yearOfIssue;
     private WheelSize wheelSize;
     private final EngineVolume engineVolume;
-    String[] arrayOptionList = new String[3];
+    String[] arrayOptionList;
 
-    public Car(Color color, Model model, int yearOfIssue, WheelSize wheelSize, EngineVolume engineVolume, OptionList optionList) {
+    public Car(Color color, Model model, int yearOfIssue, WheelSize wheelSize, EngineVolume engineVolume, String[] arrayOptionList) {
         this.color = color;
         this.model = model;
         this.yearOfIssue = yearOfIssue;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
-        this.arrayOptionList[0] = String.valueOf(optionList);
+        this.arrayOptionList = arrayOptionList;
 
     }
 
@@ -30,7 +30,7 @@ public class Car{
                 "Год выпуска: " + this.yearOfIssue + "; " +
                 "Размер колёс: " + this.wheelSize + "(" + this.wheelSize.size + ")" + "; " +
                 "Объём двигателя: " + this.engineVolume + "(" + this.engineVolume.volume  + ")" + ";\n" +
-                "Cписок опций: " + Arrays.toString(arrayOptionList) + ".";
+                "Cписок опций: " + Arrays.toString(arrayOptionList) + ".\n";
     }
 
     public Color getColor() {
@@ -66,7 +66,7 @@ public class Car{
     }
 
     public void setArrayOptionList(OptionList optionList) {
-        this.arrayOptionList[0] = String.valueOf(optionList);
+        arrayOptionList[0] = String.valueOf(optionList);
     }
 
 }
