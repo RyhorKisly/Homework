@@ -18,17 +18,13 @@ public class CarFactory{
 
     public static Car createCar(Color color, Model model, int yearOfIssue,
                                 WheelSize wheelSize, EngineVolume engineVolume, String[] arrayOptionList){
-        Car temp;
         for(int i = 0; i < carStorage.length; i++) {
            if (model == carStorage[i].getModel() &&
                    yearOfIssue == carStorage[i].getYearOfIssue() &&
                    engineVolume == carStorage[i].getEngineVolume()) {
                return carStorage[i];
            }
-            temp = carStorage[2];
-            carStorage[2] = carStorage[i];
-            carStorage[i] = temp;
-            carStorage[2] = null;
+            carStorage[i] = null;
            break;
         }
         return new Car(color, model, yearOfIssue, wheelSize, engineVolume, arrayOptionList);
