@@ -4,8 +4,8 @@ public class Student extends Man {
 
     private int yearOfStudy;
 
-    public Student(String name, int age, String sex, double weight, int yearOfStudy) {
-        super(name, age, sex, weight);
+    public Student(int yearOfStudy) {
+        super();
         this.yearOfStudy = yearOfStudy;
     }
 

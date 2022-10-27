@@ -1,10 +1,4 @@
-// Создать класс Man (человек), с полями: имя, возраст, пол и вес.
-// Определить методы задания имени, возраста и веса.
-// Cоздать производный класс Student, имеющий поле года обучения.
-// Определить методы задания и увеличения года обучения.
-
-
-        package Homework_from_Roman.inheritance.exerciseOne;
+package Homework_from_Roman.inheritance.exerciseOne;
 
 public class Man {
 
@@ -14,11 +8,7 @@ public class Man {
     private double weight;
 
 
-    public Man(String name, int age, String sex, double weight) {
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.weight = weight;
+    public Man() {
     }
 
     public void setName(String name) {
