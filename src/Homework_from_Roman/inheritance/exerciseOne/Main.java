@@ -13,5 +13,4 @@ public class Main {
         student.setWeight(93.5);
     }
 
-
 }
