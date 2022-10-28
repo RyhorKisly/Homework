@@ -2,11 +2,13 @@ package IT_Academy_Tutorial.exercise32.freezingDevices;
 
 public class Freezer extends FreezingDevices {
 
-    String name;
+    private String nameOfBrand;
+    private int power;
     int count;
 
-    public Freezer(String name) {
-        this.name = name;
+    public Freezer(String name, int power) {
+        this.nameOfBrand = name;
+        this.power = power;
     }
 
     public void plugIn() {

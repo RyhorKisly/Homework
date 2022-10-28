@@ -4,7 +4,8 @@ import IT_Academy_Tutorial.exercise32.Appliancable;
 
 public abstract class EatHeatingDevices implements Appliancable {
 
-    String name;
+    private String nameOfBrand;
+    private int power;
 
     public abstract void plugIn();
 

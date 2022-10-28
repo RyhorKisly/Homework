@@ -2,8 +2,8 @@ package IT_Academy_Tutorial.exercise33;
 
 public class CardPlatinum extends CardGold{
 
-    public CardPlatinum(String nameOfBank, String levelOfCard) {
-        super(nameOfBank, levelOfCard);
+    public CardPlatinum(String nameOfBank, String colorOfTheCard, String levelOfCard) {
+        super(nameOfBank, colorOfTheCard, levelOfCard);
     }
 
     public void withdrawMoney(int sumOfMoney) {

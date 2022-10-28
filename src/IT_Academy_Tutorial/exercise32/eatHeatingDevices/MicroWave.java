@@ -2,11 +2,17 @@ package IT_Academy_Tutorial.exercise32.eatHeatingDevices;
 
 public class MicroWave extends EatHeatingDevices {
 
-    String name;
+    private String nameOfBrand;
+    private int power;
     int timeOfHeating;
 
+    public MicroWave(String nameOfBrand, int power) {
+        this.nameOfBrand = nameOfBrand;
+        this.power = power;
+    }
+
     public MicroWave(String name) {
-        this.name = name;
+        this.nameOfBrand = name;
     }
 
     public void plugIn() {
