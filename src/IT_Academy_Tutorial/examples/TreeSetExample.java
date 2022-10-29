@@ -1,4 +1,4 @@
-package IT_Academy_Tutorial.examples.Collections;
+package IT_Academy_Tutorial.examples;
 
 import java.util.*;                           //В порядке возрастания сортирует
 

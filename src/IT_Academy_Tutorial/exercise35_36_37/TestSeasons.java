@@ -1,5 +1,8 @@
 package IT_Academy_Tutorial.exercise35_36_37;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class TestSeasons {
 
     Seasons season;
