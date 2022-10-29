@@ -10,11 +10,11 @@ import Homework_from_Roman.inheritance.exerciseThreeAppliance.eatHeatingDevices.
 import Homework_from_Roman.inheritance.exerciseThreeAppliance.freezingDevices.*;
 import java.util.*;
 
-public class Main {
+public class Room {
 
     public static void main(String[] args) {
 
-        Main main = new Main();
+        Room main = new Room();
         MicroWave microWave = new MicroWave("MicroWave", 750, 30.0);
         Stove stove = new Stove("Stove", 1500, 55.0);
         Toaster toaster = new Toaster("Toaster", 490, 13.5);
