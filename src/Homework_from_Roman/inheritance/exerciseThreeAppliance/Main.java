@@ -14,6 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Main main = new Main();
         MicroWave microWave = new MicroWave("MicroWave", 750, 30.0);
         Stove stove = new Stove("Stove", 1500, 55.0);
         Toaster toaster = new Toaster("Toaster", 490, 13.5);
@@ -34,7 +35,20 @@ public class Main {
         }
 
         SortedMap<Integer, String> setMap = sortPower.subMap(300, 500);
-        System.out.println(setMap);
+        System.out.println("Кухонные приборы, соответствующие заданному диапазону: " + setMap);
+
+        main.getPowerСonsumption(sortPower);
+
+    }
+
+    public void getPowerСonsumption (TreeMap<?, ?> treemap) {
+        Integer sumOfPower = 0;
+        Set<Integer> keys = (Set<Integer>) treemap.keySet();
+        for(Integer element : keys) {
+            sumOfPower += element;
+        }
+        System.out.println("Потребляемая мощность составляет: " + sumOfPower);
+
     }
 
 }
