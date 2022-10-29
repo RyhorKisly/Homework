@@ -1,6 +1,8 @@
 package IT_Academy_Tutorial.examples;
 
-import java.util.HashSet;    // Не соблюдает последовательность при добавлении
+import java.util.HashSet;                            // Не соблюдает последовательность при добавлении
+                                                     // Также есть LinkedHashSet, который делает тоже что и HashSet,
+                                                     // но выводит значения по порядку внесения в Set
 
 public class HashSetExample {
 
