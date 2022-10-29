@@ -12,14 +12,10 @@
 //
 //package Homework_from_Roman.hw2.exercise04;
 
-package Homework_from_Roman.hw2_classes_and_regexp.exercise04;
+package Homework_from_Roman.hw2_classes_and_regexp.exercise04_enum_cars;
 
-import Homework_from_Roman.hw2_classes_and_regexp.Solution;
-
-import java.util.Random;
-
-import static Homework_from_Roman.hw2_classes_and_regexp.exercise04.Brand.*;
-import static Homework_from_Roman.hw2_classes_and_regexp.exercise04.Color.*;
+import static Homework_from_Roman.hw2_classes_and_regexp.exercise04_enum_cars.Brand.*;
+import static Homework_from_Roman.hw2_classes_and_regexp.exercise04_enum_cars.Color.*;
 
 public class Car {
 
