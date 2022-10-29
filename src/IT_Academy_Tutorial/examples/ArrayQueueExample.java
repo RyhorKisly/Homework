@@ -24,7 +24,7 @@ public class ArrayQueueExample {
         System.out.printf("Queue size: %d \n", states.size());  // 5
 
         // перебор коллекции
-        while(states.peek()!=null){
+        while (states.peek() != null) {
             // извлечение c начала
             System.out.println(states.pop());
         }
@@ -34,19 +34,24 @@ public class ArrayQueueExample {
         people.addFirst(new Person("Tom"));
         people.addLast(new Person("Nick"));
         // перебор без извлечения
-        for(Person p : people){
+        for (Person p : people) {
 
             System.out.println(p.getName());
         }
     }
-}
-class Person{
 
-    private String name;
-    public Person(String value){
+    static class Person {
 
-        name=value;
+        private String name;
+
+        public Person(String value) {
+
+            name = value;
+        }
+
+        String getName() {
+            return name;
+        }
+
     }
-    String getName(){return name;}
-
 }

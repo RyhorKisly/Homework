@@ -2,7 +2,7 @@ package IT_Academy_Tutorial.examples;
 
 import java.util.ArrayList;
 
-public class ListExample {
+public class ArrayListExample {
 
     public static void main(String[] args) {
 
