@@ -4,10 +4,10 @@
 // Провести сортировку приборов в квартире на основе одного из параметров.
 // Найти кухонный прибор в квартире, соответствующий заданному диапазону параметров.
 
-package Homework_from_Roman.inheritance.exerciseThree;
+package Homework_from_Roman.inheritance.exerciseThreeAppliance;
 
-import Homework_from_Roman.inheritance.exerciseThree.eatHeatingDevices.*;
-import Homework_from_Roman.inheritance.exerciseThree.freezingDevices.*;
+import Homework_from_Roman.inheritance.exerciseThreeAppliance.eatHeatingDevices.*;
+import Homework_from_Roman.inheritance.exerciseThreeAppliance.freezingDevices.*;
 import java.util.*;
 
 public class Main {
@@ -35,12 +35,6 @@ public class Main {
 
         SortedMap<Integer, String> setMap = sortPower.subMap(300, 500);
         System.out.println(setMap);
-
-
-
-
-
-
     }
 
 }

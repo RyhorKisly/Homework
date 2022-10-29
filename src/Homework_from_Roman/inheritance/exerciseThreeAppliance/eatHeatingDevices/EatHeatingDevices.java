@@ -1,6 +1,6 @@
-package Homework_from_Roman.inheritance.exerciseThree.eatHeatingDevices;
+package Homework_from_Roman.inheritance.exerciseThreeAppliance.eatHeatingDevices;
 
-import Homework_from_Roman.inheritance.exerciseThree.Appliance;
+import Homework_from_Roman.inheritance.exerciseThreeAppliance.Appliance;
 
 public class EatHeatingDevices extends Appliance {
 

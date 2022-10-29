@@ -11,6 +11,8 @@ public class Main {
         student.setName("Gregory");
         student.setAge(29);
         student.setWeight(93.5);
+        System.out.println(student.increaseYearOfStudyOnOneYear());
+        System.out.println(student.increaseYearOfStudyOnOneYear());
     }
 
 }

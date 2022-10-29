@@ -1,4 +1,4 @@
-package Homework_from_Roman.inheritance.exerciseThree.eatHeatingDevices;
+package Homework_from_Roman.inheritance.exerciseThreeAppliance.eatHeatingDevices;
 
 public class Stove extends EatHeatingDevices {
     int stoveBurner;

@@ -1,4 +1,4 @@
-package Homework_from_Roman.inheritance.exerciseThree.freezingDevices;
+package Homework_from_Roman.inheritance.exerciseThreeAppliance.freezingDevices;
 
 public class Fridge extends FreezingDevices {
 

@@ -1,4 +1,4 @@
-package Homework_from_Roman.inheritance.exerciseThree;
+package Homework_from_Roman.inheritance.exerciseThreeAppliance;
 
 public class Appliance {
 
