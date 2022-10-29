@@ -1,12 +1,12 @@
 package Homework_from_Roman.inheritance.exerciseThree;
 
-public class Appliancable {
+public class Appliance {
 
     public String nameOfAppliance;
     private Integer power;
     private Double weight;
 
-    public Appliancable(String nameOfAppliance, Integer power, Double weight) {
+    public Appliance(String nameOfAppliance, Integer power, Double weight) {
         this.nameOfAppliance = nameOfAppliance;
         this.power = power;
         this.weight = weight;

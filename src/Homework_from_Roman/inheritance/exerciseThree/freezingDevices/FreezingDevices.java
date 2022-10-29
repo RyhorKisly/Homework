@@ -1,8 +1,8 @@
 package Homework_from_Roman.inheritance.exerciseThree.freezingDevices;
 
-import Homework_from_Roman.inheritance.exerciseThree.Appliancable;
+import Homework_from_Roman.inheritance.exerciseThree.Appliance;
 
-public class FreezingDevices extends Appliancable {
+public class FreezingDevices extends Appliance {
 
     private int powerOfFreezing;
 
