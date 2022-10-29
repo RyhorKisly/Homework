@@ -1,4 +1,4 @@
-package IT_Academy_Tutorial.examples;
+package IT_Academy_Tutorial.examples.Collections;
 
 import java.util.Comparator;
 import java.util.TreeSet;

@@ -1,4 +1,4 @@
-package IT_Academy_Tutorial.examples;
+package IT_Academy_Tutorial.examples.Collections;
 
 import java.util.HashSet;                            // Не соблюдает последовательность при добавлении
                                                      // Также есть LinkedHashSet, который делает тоже что и HashSet,
