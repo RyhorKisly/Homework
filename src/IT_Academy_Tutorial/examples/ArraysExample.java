@@ -1,5 +1,5 @@
-package IT_Academy_Tutorial;
-public class Arrays_example {
+package IT_Academy_Tutorial.examples;
+public class ArraysExample {
     public static void main(String[] args) {
 
 //        int marks[] = new int [100];

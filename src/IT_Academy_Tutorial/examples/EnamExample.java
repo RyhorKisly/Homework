@@ -1,4 +1,4 @@
-package IT_Academy_Tutorial;
+package IT_Academy_Tutorial.examples;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

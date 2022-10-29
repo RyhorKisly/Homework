@@ -1,11 +1,9 @@
-package IT_Academy_Tutorial;
+package IT_Academy_Tutorial.examples;
 
-import java.io.StringWriter;
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class String_example {
+public class StringExample {
     public static void main(String[] args) {
 
         char x = "Hello World".charAt(0);

@@ -37,7 +37,7 @@ public class TestSeasons {
                 System.out.println(element.name());
                 break;
             }
-            if(count == 3) {
+            if(count == season.values().length - 1) {
                 System.out.println(temp);
                 break;
             }
