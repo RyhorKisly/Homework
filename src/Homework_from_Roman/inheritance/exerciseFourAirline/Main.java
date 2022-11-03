@@ -23,6 +23,7 @@ public class Main {
         System.out.println(airline.getTotalCapacityOfAirLine());
         System.out.println(airline.getTotalLoadCapacity());
         airline.sortByDistance();
+        airline.findAirVehiclesCorrespondingToLoadCapacity(3000, 9000);
 
 
     }
