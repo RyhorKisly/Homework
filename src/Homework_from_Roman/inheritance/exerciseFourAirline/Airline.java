@@ -16,9 +16,6 @@ public class Airline {
         this.airVehicle = airVehicle;
     }
 
-
-
-
     public int getTotalCapacityOfAirLine() {
         int CapacityOfAirLine = 0;
         while (CapacityOfAirLine < airVehicle.length) {
