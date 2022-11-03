@@ -7,18 +7,18 @@ public class FirstApp {
 
     public static void main(String[] args) {
 
-        try {
-            int[] i = new int[3];
-            i[3] = 3;
-            System.out.println(i[3]);
-        }
-        catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        finally {                                      //можно не добавлять этот блок. Он всё равно выполнится
-            System.out.println("Блок finally");        //даже если исключения не было
-        }
-        System.out.println("Программа завершена");
+//        try {
+//            int[] i = new int[3];
+//            i[3] = 3;
+//            System.out.println(i[3]);
+//        }
+//        catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//        finally {                                      //можно не добавлять этот блок. Он всё равно выполнится
+//            System.out.println("Блок finally");        //даже если исключения не было
+//        }
+//        System.out.println("Программа завершена");
 
 
 //        int[] numbers = new int[3];
@@ -60,7 +60,6 @@ public class FirstApp {
 //        }
 //
 //    }
-
 //    public static int getFactorial(int num) throws Exception{
 //
 //        if(num<1) {
@@ -74,4 +73,6 @@ public class FirstApp {
 //        return result;
 
     }
+
+
 }
