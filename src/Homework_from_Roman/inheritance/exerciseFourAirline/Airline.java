@@ -43,11 +43,10 @@ public class Airline {
                     ": имеет следующую дальность полёта: " + p.getRangeOfFlight() + " км.");
         }
     }
+
     //Найти самолет в компании, соответствующий заданному диапазону параметров.
     public void findAirVehiclesCorrespondingToLoadCapacity(int firstValue, int lastValue) {
         try {
-
-
         int i = 0;
         Pattern p = Pattern.compile("Самолёт");
         List<AirVehicle> vehicles = new ArrayList<>();
