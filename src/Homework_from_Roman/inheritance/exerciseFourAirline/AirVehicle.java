@@ -12,6 +12,7 @@ public class AirVehicle {
         this.rangeOfFlight = rangeOfFlight;
     }
 
+
     public String getTypeOfVehicle() {
         return typeOfVehicle;
     }

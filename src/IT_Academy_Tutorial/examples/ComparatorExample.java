@@ -6,6 +6,8 @@ import java.util.TreeSet;
 public class ComparatorExample {
 
     public static void main(String[] args) {
+
+
         Comparator<Person> pcomp = new PersonNameComparator().thenComparing(new PersonAgeComparator());
         TreeSet<Person> people = new TreeSet(pcomp);
         people.add(new Person("Tom", 23));

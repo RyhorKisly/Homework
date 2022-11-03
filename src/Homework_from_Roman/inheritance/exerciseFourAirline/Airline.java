@@ -5,34 +5,52 @@
 
 package Homework_from_Roman.inheritance.exerciseFourAirline;
 
-import java.util.Collection;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
-public class Airline {
+public class Airline implements Comparable<AirVehicle>{
 
     private AirVehicle[] airVehicle;
-    private TreeMap<Integer, ? super AirVehicle> airLine;
+    private TreeSet<? super AirVehicle> airLine;
+    private AirVehicle airVehicles;
 
-    public Airline(TreeMap<Integer, ? super AirVehicle> treeMap, AirVehicle... airVehicle) {
-        this.airLine =  treeMap;
+    public Airline(AirVehicle... airVehicle) {
         this.airVehicle = airVehicle;
-        int key = 1;
-        for(int i = 0; i < airVehicle.length; i++) {
-            airLine.put(airVehicle[i].getRangeOfFlight(), airVehicle[i]);
-            System.out.println(airVehicle[i]);
-        }
-    }
-    public void getNumberOfAirVehicles(TreeMap<Integer, ? super AirVehicle> treeMap) {
-        Integer capacity = 0;
-        Set<Integer> keys = (Set<Integer>) treeMap.keySet();
-        for(Integer element : keys) {
-            capacity++;
-        }
-        System.out.println("Общая вместимость авиокомпании: " + capacity);
     }
 
-    public TreeMap<Integer, ? super AirVehicle> getAirLine() {
-        return airLine;
+//    @Override
+//    public int compareTo(AirVehicle airVehicle) {
+//        return 0;
+//    }
+    @Override
+    public int compareTo(AirVehicle airVehicle) {
+        return airVehicles.getRangeOfFlight() - airVehicle.getRangeOfFlight();
     }
+
+    public int getTotalCapacityOfAirLine() {
+        int CapacityOfAirLine = 0;
+        while (CapacityOfAirLine < airVehicle.length) {
+            CapacityOfAirLine++;
+        }
+        return CapacityOfAirLine;
+    }
+
+    public int getTotalLoadCapacity() {
+        int sumOfLoadCapacity = 0;
+        for(int i = 0; i < airVehicle.length; i++) {
+            sumOfLoadCapacity += airVehicle[i].getLoadCapacity();
+        }
+        return sumOfLoadCapacity;
+    }
+
+
+
+    public void sortByDistance() {
+        List<AirVehicle> vehicles = new ArrayList<>();
+        vehicles.addAll(Arrays.asList(airVehicle));
+        Collections.sort(vehicles);
+    }
+
+//    public TreeMap<? super AirVehicle> getAirLine() {
+//        return airLine;
+//    }
 }
