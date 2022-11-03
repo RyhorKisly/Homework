@@ -5,8 +5,8 @@
 
 package Homework_from_Roman.inheritance.exerciseFourAirline;
 
-import Homework_from_Roman.inheritance.exerciseThreeAppliance.Room;
-
+import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -21,9 +21,16 @@ public class Main {
         Quadcopter quadcopter = new Quadcopter("Квадрокоптер", 100, 300);
         TreeMap<Integer, ? super AirVehicle> airLines = new TreeMap<>();
 
-        Airline airline = new Airline(airLines);
-        airline.createAirLine(boeing, dirigible, fighter, helicopter, quadcopter);
+        Airline airline = new Airline(airLines, boeing, dirigible, fighter, helicopter, quadcopter);
+        airline.getNumberOfAirVehicles(airline.getAirLine());
+
         Set<Integer> keys = airline.getAirLine().keySet();
+
+        for(Map.Entry<Integer, ? super AirVehicle> item : airLines.entrySet()) {
+            System.out.println("Дальность полёта: " + item.getKey() +
+                    "; Название лётного средства: " + item.getValue().getClass());
+        }
+
 
     }
 

@@ -11,23 +11,18 @@ import java.util.TreeMap;
 
 public class Airline {
 
-    private AirVehicle airVehicle;
+    private AirVehicle[] airVehicle;
     private TreeMap<Integer, ? super AirVehicle> airLine;
 
-    public Airline(TreeMap<Integer, ? super AirVehicle> treeMap) {
+    public Airline(TreeMap<Integer, ? super AirVehicle> treeMap, AirVehicle... airVehicle) {
         this.airLine =  treeMap;
-    }
-
-    public TreeMap createAirLine(AirVehicle... airVehicles) {
         this.airVehicle = airVehicle;
         int key = 1;
-        for(int i = 0; i < airVehicles.length; i++) {
-            airLine.put(key++, airVehicles[i]);
-            System.out.println(airVehicles[i]);
+        for(int i = 0; i < airVehicle.length; i++) {
+            airLine.put(airVehicle[i].getRangeOfFlight(), airVehicle[i]);
+            System.out.println(airVehicle[i]);
         }
-        return airLine;
     }
-
     public void getNumberOfAirVehicles(TreeMap<Integer, ? super AirVehicle> treeMap) {
         Integer capacity = 0;
         Set<Integer> keys = (Set<Integer>) treeMap.keySet();

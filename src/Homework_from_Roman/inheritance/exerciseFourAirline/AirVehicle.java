@@ -35,4 +35,5 @@ public class AirVehicle {
     public void setRangeOfFlight(Integer rangeOfFlight) {
         this.rangeOfFlight = rangeOfFlight;
     }
+
 }
