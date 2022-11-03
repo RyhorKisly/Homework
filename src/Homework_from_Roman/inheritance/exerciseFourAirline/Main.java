@@ -5,11 +5,10 @@
 
 package Homework_from_Roman.inheritance.exerciseFourAirline;
 
-import IT_Academy_Tutorial.exercise38.Vehicle;
-
 import java.util.*;
 
 public class Main {
+
 
     public static void main(String[] args) {
 
@@ -23,14 +22,7 @@ public class Main {
         Airline airline = new Airline(boeing, dirigible, fighter, helicopter, quadcopter);
         System.out.println(airline.getTotalCapacityOfAirLine());
         System.out.println(airline.getTotalLoadCapacity());
-
-
-
-
-//        for(Map.Entry<Integer, ? super AirVehicle> item : airLines.entrySet()) {
-//            System.out.println("Дальность полёта: " + item.getKey() +
-//                    "; Название лётного средства: " + item.getTypeOfVehicle().getValue());
-//        }
+        airline.sortByDistance();
 
 
     }

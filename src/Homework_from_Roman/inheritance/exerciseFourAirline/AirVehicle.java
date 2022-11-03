@@ -1,6 +1,6 @@
 package Homework_from_Roman.inheritance.exerciseFourAirline;
 
-public class AirVehicle {
+public class AirVehicle implements Comparable<AirVehicle> {
 
     private String typeOfVehicle;
     private Integer loadCapacity;
@@ -10,6 +10,11 @@ public class AirVehicle {
         this.typeOfVehicle = typeOfVehicle;
         this.loadCapacity = loadCapacity;
         this.rangeOfFlight = rangeOfFlight;
+    }
+
+    @Override
+    public int compareTo(AirVehicle airVehicle) {
+        return this.rangeOfFlight - airVehicle.getRangeOfFlight();
     }
 
 
@@ -37,4 +42,12 @@ public class AirVehicle {
         this.rangeOfFlight = rangeOfFlight;
     }
 
+    @Override
+    public String toString() {
+        return "AirVehicle{" +
+                "typeOfVehicle='" + typeOfVehicle + '\'' +
+                ", loadCapacity=" + loadCapacity +
+                ", rangeOfFlight=" + rangeOfFlight +
+                '}';
+    }
 }

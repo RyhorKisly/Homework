@@ -7,24 +7,17 @@ package Homework_from_Roman.inheritance.exerciseFourAirline;
 
 import java.util.*;
 
-public class Airline implements Comparable<AirVehicle>{
+public class Airline {
 
     private AirVehicle[] airVehicle;
-    private TreeSet<? super AirVehicle> airLine;
     private AirVehicle airVehicles;
 
     public Airline(AirVehicle... airVehicle) {
         this.airVehicle = airVehicle;
     }
 
-//    @Override
-//    public int compareTo(AirVehicle airVehicle) {
-//        return 0;
-//    }
-    @Override
-    public int compareTo(AirVehicle airVehicle) {
-        return airVehicles.getRangeOfFlight() - airVehicle.getRangeOfFlight();
-    }
+
+
 
     public int getTotalCapacityOfAirLine() {
         int CapacityOfAirLine = 0;
@@ -42,15 +35,16 @@ public class Airline implements Comparable<AirVehicle>{
         return sumOfLoadCapacity;
     }
 
-
-
     public void sortByDistance() {
         List<AirVehicle> vehicles = new ArrayList<>();
         vehicles.addAll(Arrays.asList(airVehicle));
         Collections.sort(vehicles);
+        for(AirVehicle  p : vehicles){
+            System.out.println(p.getTypeOfVehicle() +
+                    ": имеет следующую дальность полёта: " + p.getRangeOfFlight() + " км.");
+        }
     }
 
-//    public TreeMap<? super AirVehicle> getAirLine() {
-//        return airLine;
-//    }
+
+
 }
