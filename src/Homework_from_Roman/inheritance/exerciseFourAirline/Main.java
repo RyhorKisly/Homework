@@ -28,7 +28,7 @@ public class Main {
 
         for(Map.Entry<Integer, ? super AirVehicle> item : airLines.entrySet()) {
             System.out.println("Дальность полёта: " + item.getKey() +
-                    "; Название лётного средства: " + item.getValue().getClass());
+                    "; Название лётного средства: " + item.getValue());
         }
 
 
