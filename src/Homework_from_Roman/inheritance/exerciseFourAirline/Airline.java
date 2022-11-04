@@ -12,7 +12,6 @@ import java.util.regex.Pattern;
 public class Airline {
 
     private AirVehicle[] airVehicle;
-    private AirVehicle airVehicles;
 
     public Airline(AirVehicle... airVehicle) {
         this.airVehicle = airVehicle;

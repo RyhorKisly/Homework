@@ -1,15 +1,15 @@
 package Homework_from_Roman.inheritance.exerciseFifePublicTransport;
 
-public class PublicTransport {
+public class PublicTransport implements Comparable<PublicTransport>{
 
     private String name;
-    private String typeOfEngine;
     private int fuelConsumption;
+    private int cost;
 
-    public PublicTransport(String name, String typeOfEngine, int fuelConsumption) {
+    public PublicTransport(String name, int fuelConsumption, int cost) {
         this.name = name;
-        this.typeOfEngine = typeOfEngine;
         this.fuelConsumption = fuelConsumption;
+        this.cost = cost;
     }
 
     public String getName() {
@@ -20,14 +20,6 @@ public class PublicTransport {
         this.name = name;
     }
 
-    public String getTypeOfEngine() {
-        return typeOfEngine;
-    }
-
-    public void setTypeOfEngine(String typeOfEngine) {
-        this.typeOfEngine = typeOfEngine;
-    }
-
     public int getFuelConsumption() {
         return fuelConsumption;
     }
@@ -35,4 +27,18 @@ public class PublicTransport {
     public void setFuelConsumption(int fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    @Override
+    public int compareTo(PublicTransport publicTransport) {
+        return this.fuelConsumption - publicTransport.fuelConsumption;
+    }
 }
+
