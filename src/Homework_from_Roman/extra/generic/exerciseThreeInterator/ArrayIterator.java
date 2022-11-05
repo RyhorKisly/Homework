@@ -18,18 +18,18 @@ public class ArrayIterator<T> implements Iterator<T> {
     }
 
     private T array[];
-    private int i = 0;
+    private int position = 0;
 
     public ArrayIterator(T anArray[]) {
         array = anArray;
     }
 
     public boolean hasNext() {
-        return i < array.length;
+        return position < array.length;
     }
 
     public T next() {
-            return array[i++];
+            return array[position++];
     }
 
 }
