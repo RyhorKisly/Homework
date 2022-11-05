@@ -17,15 +17,18 @@ public class Main<T> {
     public Main(T... array) {
         this.array = array;
     }
-
     public T getArrayElementByIndex (int index) {
         try {
+            if (array[index] == null){
+                throw new ArrayIndexOutOfBoundsException("Выход за пределы массива");
+            }
             System.out.println(array[index]);
             return array[index];
         } catch(ArrayIndexOutOfBoundsException ex){
-            System.out.println("Выход за пределы массива");
+            System.out.println(ex.getMessage());
+        }
+        finally {
             return array[index];
         }
     }
-
 }
