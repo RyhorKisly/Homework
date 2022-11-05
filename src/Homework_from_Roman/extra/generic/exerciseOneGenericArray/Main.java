@@ -9,7 +9,7 @@ public class Main<T> {
     public static void main(String[] args) {
 
         Main main = new Main("Привет", 234, 23.3, (byte) 8, (long) 34);
-        main.getArrayElementByIndex(5);
+        main.getArrayElementByIndex(2);
     }
 
     private T[] array;
