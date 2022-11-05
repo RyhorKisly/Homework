@@ -15,7 +15,7 @@ public class  MatrixIterator<T> implements Iterator<T> {
         this.size = countElements(matrix);
     }
 
-    public int countElements(T[][] matrix) {  //считаем количество элементов в матрице
+    private int countElements(T[][] matrix) {  //считаем количество элементов в матрице
         int count = 0;
         for (T[] row : matrix) {
             count += row.length;
@@ -42,5 +42,6 @@ public class  MatrixIterator<T> implements Iterator<T> {
             row++;
         }
         return element;
+
     }
 }
