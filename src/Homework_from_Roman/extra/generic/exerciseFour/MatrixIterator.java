@@ -6,8 +6,8 @@ import java.util.NoSuchElementException;
 public class  MatrixIterator<T> implements Iterator<T> {
     private int size;          //всего элементов в матрице
     private int position = 0;  //номер текущего элемента для "выдачи"
-    private int i = 0;       //строка текущего элемента
-    private int j = 0;       //столбец текущего элемента
+    private int i = 0;
+    private int j = 0;
     private T[][] matrix;
 
     public MatrixIterator(T[][] matrix) {
