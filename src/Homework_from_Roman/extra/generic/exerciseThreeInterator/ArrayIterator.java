@@ -1,4 +1,4 @@
-//        Написать итератор по массиву (посмотрите interface Iterator).
+//      Написать итератор по массиву (посмотрите interface Iterator).
 //        Ваш класс должен содержать 2 метода - hasNext() и next()
 
 package Homework_from_Roman.extra.generic.exerciseThreeInterator;
