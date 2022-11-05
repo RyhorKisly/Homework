@@ -40,6 +40,8 @@ public class Pair<T, S> {
 
 //        * swap() - меняет элементы местами                           ???
     public void swapFirstAndSecond() {
-
+        int[] x = new int[3];
+        int[] y = new int[3];
+        int[] z = new int[x.length + y.length];
     }
 }
