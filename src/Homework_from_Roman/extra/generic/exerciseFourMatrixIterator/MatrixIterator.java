@@ -1,4 +1,4 @@
-package Homework_from_Roman.extra.generic.exerciseFour;
+package Homework_from_Roman.extra.generic.exerciseFourMatrixIterator;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

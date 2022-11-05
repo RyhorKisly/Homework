@@ -1,4 +1,4 @@
-package Homework_from_Roman.extra.generic.exerciseFour;
+package Homework_from_Roman.extra.generic.exerciseFourMatrixIterator;
 
 public class Main {
     public static void main(String[] args) {
