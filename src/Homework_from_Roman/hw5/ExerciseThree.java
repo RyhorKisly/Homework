@@ -23,7 +23,7 @@ public class ExerciseThree {
                 if(in.next().equals("ESC")) {
                     break;
                 }
-                System.out.println("Введите число или stop слово: \"ESC\"");
+                System.out.println("Введите целое число или stop слово: \"ESC\"");
             }
         }
         while(true) {
