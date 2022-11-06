@@ -5,9 +5,8 @@
 package Homework_from_Roman.hw5;
 
 import java.io.*;
-import java.util.Scanner;
 
-public class exerciseOne {
+public class ExerciseOne {
     public static void main(String[] args) {
 
 //        Scanner scan = new Scanner(System.in);

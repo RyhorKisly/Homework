@@ -6,10 +6,9 @@
 
 package Homework_from_Roman.hw5;
 
-import java.io.IOException;
 import java.util.Scanner;
 
-public class exerciseTwo {
+public class ExerciseTwo {
     public static void main(String[] args) {
 
 
