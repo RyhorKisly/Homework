@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class ExerciseOne {
 
     private Scanner scan = new Scanner(System.in);
-    BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+    private BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 
     public void getStringByScanner() {
         try {
