@@ -6,6 +6,7 @@
 
 package Homework_from_Roman.hw5.exerciseTwo;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ExerciseTwo {
@@ -15,43 +16,33 @@ public class ExerciseTwo {
     private int accumulate = 0;
     private int sum = 0;
 
-    public void getMeanOfNumberByScanner() {
-
-    }
-
-    public static void main(String[] args) {
-
-
-        Scanner in = new Scanner(System.in);
-        int number = 0;
-        int accumulate = 0;
-        int sum = 0;
-        try{
-        while (true) {
-            if (in.hasNextInt()) {
-                accumulate++;
-                number = in.nextInt();
-                sum += number;
-                System.out.println(number);
-            } else {
-                if(in.next().equals("ESC")) {
+    public void getMeanOfNumber() {
+        try {
+            while (true) {
+                if (in.hasNextInt()) {
+                    accumulate++;
+                    number = in.nextInt();
+                    sum += number;
+                    System.out.println(number);
+                } else {
+                    if (in.next().equals("ESC")) {
                         break;
+                    }
+                    System.out.println("Введите число или stop слово: \"ESC\"");
                 }
-                System.out.println("Введите число или stop слово: \"ESC\"");
             }
-        }
-        } catch (Exception ex) {
+        } catch (NoSuchElementException | IllegalStateException ex) {
             System.out.println(ex.getMessage());
         } finally {
             try {
                 in.close();
-            } catch (Exception exc) {
-                System.out.println(exc.getMessage());
+            } catch (IllegalStateException ex) {
+                System.out.println(ex.getMessage());
             }
+
+            System.out.println("Среднее значение введённых чисел равно: " + (sum / accumulate));
+            System.out.println("Количество введённых чисел: " + accumulate);
         }
 
-
-        System.out.println("Среднее значение введённых чисел равно: " + (sum / number));
-        System.out.println("Количество введённых чисел: " + accumulate);
     }
 }
