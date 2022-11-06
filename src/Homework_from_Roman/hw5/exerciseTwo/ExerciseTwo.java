@@ -4,11 +4,21 @@
 //        "stop" слово. После чего программа выведет среднее из всех
 //        введенных значений.
 
-package Homework_from_Roman.hw5;
+package Homework_from_Roman.hw5.exerciseTwo;
 
 import java.util.Scanner;
 
 public class ExerciseTwo {
+
+    private Scanner in = new Scanner(System.in);
+    private int number = 0;
+    private int accumulate = 0;
+    private int sum = 0;
+
+    public void getMeanOfNumberByScanner() {
+
+    }
+
     public static void main(String[] args) {
 
 
