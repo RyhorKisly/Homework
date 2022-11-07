@@ -3,7 +3,7 @@
 // массива по индексу.
 
 
-        package Homework_from_Roman.generic.exerciseOne;
+        package Homework_from_Roman.extra.generic.exerciseOne;
 
 public class Keeper<T> {
 

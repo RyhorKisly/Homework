@@ -9,7 +9,12 @@ public class Main {
         calculator.chooseOperation();
         calculator.chooseSecondNumber();
         calculator.calc(calculator.getNum1(), calculator.getNum2(), calculator.getOperation());
-        calculator.getIn().close();
+
+        try {
+            calculator.getIn().close();
+        } catch (IllegalStateException ex) {
+                System.out.println(ex.getMessage());
+            }
 
         System.out.println("Результат операции: " + calculator.getResult());
 

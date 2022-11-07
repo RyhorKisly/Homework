@@ -27,7 +27,7 @@ public class Exercise_6 {
         for (int j = 0; j < array1.length; j++) {                    // создаём элементы второго массива
             for (int i = 0; i < array1.length; i++) {
                 array2[j][i] = (int) (Math.random() * 10);
-                System.out.print(array2[j][i] + " ");
+                System.out.println(array2[j][i] + " ");
             }
             System.out.println();
         }
