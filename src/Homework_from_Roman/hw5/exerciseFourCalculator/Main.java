@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) {
 
         Calculator calculator = new Calculator();
-        calculator.chooseFirstNumber();
-        calculator.chooseOperation();
-        calculator.chooseSecondNumber();
-        calculator.calc(calculator.getNum1(), calculator.getNum2(), calculator.getOperation());
 
+        int num1 = calculator.getNumber();
+        calculator.chooseOperation();
+        int num2 = calculator.getNumber();
+        calculator.calc(num1, num2, calculator.getOperation());
         try {
             calculator.getIn().close();
         } catch (IllegalStateException ex) {

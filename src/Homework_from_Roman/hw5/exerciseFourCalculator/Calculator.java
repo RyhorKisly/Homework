@@ -6,17 +6,16 @@ import java.util.Scanner;
 public class Calculator<T> {
 
     private Scanner in = new Scanner(System.in);
-    private int num1;
-    private int num2;
+    private int num;
     private char operation;
     private double result;
 
-    public int chooseFirstNumber() {
+    public int getNumber() {
         try {
-            System.out.println("Введите первое число: ");
+            System.out.println("Введите число: ");
             while (true) {
                 if (in.hasNextInt()) {
-                    num1 = in.nextInt();
+                    num = in.nextInt();
                     break;
                 } else {
                     System.out.println("Постарайтесь лучше: ");
@@ -26,25 +25,7 @@ public class Calculator<T> {
         } catch (NoSuchElementException | IllegalStateException ex) {
             System.err.println(ex.getMessage());
         }
-        return num1;
-    }
-
-    public int chooseSecondNumber() {
-        try {
-            System.out.println("Введите второе число: ");
-            while (true) {
-                if (in.hasNextInt()) {
-                    num2 = in.nextInt();
-                    break;
-                } else {
-                    System.out.println("Постарайтесь лучше: ");
-                    in.next();
-                }
-            }
-        } catch (NoSuchElementException | IllegalStateException ex) {
-            System.err.println(ex.getMessage());
-        }
-        return num2;
+        return num;
     }
 
     public char chooseOperation() {
@@ -66,9 +47,6 @@ public class Calculator<T> {
     }
 
     public double calc(int num1, int num2, char operation){
-        this.num1 = num1;
-        this.num2 = num2;
-        this.operation = operation;
         try {
             switch (operation) {
                 case '+':
@@ -92,14 +70,6 @@ public class Calculator<T> {
 
         }
         return result;
-    }
-
-    public int getNum1() {
-        return num1;
-    }
-
-    public int getNum2() {
-        return num2;
     }
 
     public double getResult() {
