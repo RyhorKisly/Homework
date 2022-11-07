@@ -52,7 +52,7 @@ public class MatrixMultiplier {
                 }
                 System.out.println();
             }
-        } catch (ArrayIndexOutOfBoundsException | NullPointerException ex){
+        } catch (NullPointerException ex){
             System.err.println(ex.getMessage());
         }
     }
