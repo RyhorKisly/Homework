@@ -1,6 +1,8 @@
 package Homework_from_Roman.hw5.exercise9_10;
 
-public class Box {
+import java.io.Serializable;
+
+public class Box implements Serializable {
     private int x;
     private int y;
     private int z;
@@ -9,6 +11,10 @@ public class Box {
         this.x = x;
         this.y = y;
         this.z = z;
+    }
+
+    public int getVolume() {
+        return x * y * z;
     }
 
     public int getX() {
