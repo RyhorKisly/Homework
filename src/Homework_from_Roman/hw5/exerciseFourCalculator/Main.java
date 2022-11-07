@@ -6,8 +6,8 @@ public class Main {
 
         Calculator calculator = new Calculator();
         calculator.chooseFirstNumber();
-        calculator.chooseSecondNumber();
         calculator.chooseOperation();
+        calculator.chooseSecondNumber();
         calculator.calc(calculator.getNum1(), calculator.getNum2(), calculator.getOperation());
         calculator.getIn().close();
 

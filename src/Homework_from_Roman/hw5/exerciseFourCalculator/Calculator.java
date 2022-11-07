@@ -48,7 +48,7 @@ public class Calculator<T> {
     }
 
     public char chooseOperation() {
-        System.out.println("Выберите операци \"+-/*\": ");
+        System.out.println("Выберите операцию \"+-/*\": ");
         try {
             while (true) {
                 if (in.hasNext()) {
@@ -89,6 +89,7 @@ public class Calculator<T> {
             }
         } catch (ArithmeticException ex) {
             System.err.println(ex.getMessage());
+
         }
         return result;
     }
