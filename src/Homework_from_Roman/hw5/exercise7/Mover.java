@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-public class OutPutAndInPut {
+public class Mover {
 
     List<String> lines;
 

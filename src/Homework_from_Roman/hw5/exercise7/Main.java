@@ -4,16 +4,14 @@
 
 package Homework_from_Roman.hw5.exercise7;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
-
 public class Main {
     public static void main(String[] args) {
 
+        Mover mover = new Mover();
+        mover.readListFormInPut(
+                "C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5\\exercise7\\INPUT");
+        mover.writeReverseListToOutPut(
+                "C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5\\exercise7\\OUTPUT");
 
-
+    }
 }
