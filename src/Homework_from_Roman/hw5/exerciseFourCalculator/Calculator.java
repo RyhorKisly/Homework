@@ -11,7 +11,7 @@ public class Calculator<T> {
     private char operation;
     private double result;
 
-    public int getFirstNumber() {
+    public int chooseFirstNumber() {
         try {
             System.out.println("Введите первое число: ");
             while (true) {
@@ -29,7 +29,7 @@ public class Calculator<T> {
         return num1;
     }
 
-    public int getSecondNumber() {
+    public int chooseSecondNumber() {
         try {
             System.out.println("Введите второе число: ");
             while (true) {
@@ -47,7 +47,7 @@ public class Calculator<T> {
         return num2;
     }
 
-    public char getOperation() {
+    public char chooseOperation() {
         System.out.println("Выберите операци \"+-/*\": ");
         try {
             while (true) {
@@ -85,7 +85,7 @@ public class Calculator<T> {
                     break;
                 default:
                     System.out.println("Операция не распознана. Повторите ввод.");
-                    result = calc(num1, num2, getOperation());
+                    result = calc(num1, num2, chooseOperation());
             }
         } catch (ArithmeticException ex) {
             System.err.println(ex.getMessage());
@@ -93,27 +93,23 @@ public class Calculator<T> {
         return result;
     }
 
-
-
-
-
-
-
-
-
-    public static void main(String[] args) {
-
-        Calculator calculator = new Calculator();
-        calculator.getFirstNumber();
-        calculator.getSecondNumber();
-        calculator.getOperation();
-        calculator.calc(calculator.num1, calculator.num2, calculator.operation);
-        calculator.in.close();
-
-        System.out.println("Результат операции: " + calculator.result);
-
-
-
+    public int getNum1() {
+        return num1;
     }
 
+    public int getNum2() {
+        return num2;
+    }
+
+    public double getResult() {
+        return result;
+    }
+
+    public char getOperation() {
+        return operation;
+    }
+
+    public Scanner getIn() {
+        return in;
+    }
 }
