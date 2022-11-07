@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ExerciseThree three = new ExerciseThree(new ArrayList<>());
-        three.getNumbers();
-        three.getSortedNumber();
+        three.writeNumbers();
+        three.sortNumbers();
     }
 }

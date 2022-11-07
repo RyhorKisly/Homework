@@ -18,7 +18,7 @@ public class ExerciseThree {
         this.arrayList = arrayList;
     }
 
-    public void getNumbers() {
+    public void writeNumbers() {
         try {
             while (true) {
                 if (in.hasNextInt()) {
@@ -51,7 +51,7 @@ public class ExerciseThree {
         }
     }
 
-    public void getSortedNumber() {
+    public void sortNumbers() {
         try {
             for (Integer element : arrayList) {
                 System.out.print(element + " ");
