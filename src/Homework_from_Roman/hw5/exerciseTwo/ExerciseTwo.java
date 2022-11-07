@@ -17,6 +17,7 @@ public class ExerciseTwo {
     private int sum = 0;
 
     public void getMeanOfNumber() {
+        System.out.println("Введите число: ");
         try {
             while (true) {
                 if (in.hasNextInt()) {
