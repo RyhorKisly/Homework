@@ -29,17 +29,11 @@ public class  MatrixIterator<T> implements Iterator<T> {
             i++;
             System.out.println();
         }
-        T element = matrix[i][j];  //запоминаем текущий элемент
-        //переходим к следующему элементу
+        T element = matrix[i][j];
         position++;
         j++;
 
         return element;
     }
 
-
-    @Override
-    public void forEachRemaining(Consumer<? super T> action) {
-        Iterator.super.forEachRemaining(action);
-    }
 }
