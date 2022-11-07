@@ -1,3 +1,7 @@
+//        5
+//        Необходимо написать программу по умножению двух матриц.
+//        Пользователь вводит матрицы с клавиатуры.
+
 package Homework_from_Roman.hw5.exerciseFifeMultiplyMatrix;
 
 public class Main {

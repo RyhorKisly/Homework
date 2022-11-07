@@ -11,10 +11,14 @@ import java.util.*;
 public class ExerciseThree {
 
     private Scanner in = new Scanner(System.in);
-    private List<Integer> arrayList = new ArrayList<>();
+    private List<Integer> arrayList;
     private int number = 0;
 
-    public void getSortedNumbers() {
+    public ExerciseThree(List<Integer> arrayList) {
+        this.arrayList = arrayList;
+    }
+
+    public void getNumbers() {
         try {
             while (true) {
                 if (in.hasNextInt()) {
@@ -45,11 +49,24 @@ public class ExerciseThree {
                 System.out.println(ex.getMessage());
             }
         }
+    }
 
-        for(Integer element : arrayList) {
-            System.out.print(element + " ");
+    public void getSortedNumber() {
+        try {
+            for (Integer element : arrayList) {
+                System.out.print(element + " ");
+            }
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println(ex.getMessage());
         }
     }
 
+    public List<Integer> getArrayList() {
+        return arrayList;
+    }
+
+    public void setArrayList(List<Integer> arrayList) {
+        this.arrayList = arrayList;
+    }
 }
 
