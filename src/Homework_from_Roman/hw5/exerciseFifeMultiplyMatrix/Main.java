@@ -11,15 +11,13 @@ public class Main {
 
         MatrixMultiplier multiplier = new MatrixMultiplier();
 
-        multiplier.setMatrix1(new int[3][3]);
-        multiplier.setMatrix2(new int[3][3]);
+        int[][] matrix1 = multiplier.getMatrixByScanner(new int[3][3]);
+        multiplier.printMatrix(matrix1);
+
+        int[][] matrix2 = multiplier.getMatrixByScanner(new int[3][3]);
+        multiplier.printMatrix(matrix2);
+
         multiplier.setMultipliedMatrix(new int[3][3]);
-
-        multiplier.chooseMatrix1();
-        multiplier.printMatrix(multiplier.getMatrix1());
-
-        multiplier.chooseMatrix2();
-        multiplier.printMatrix(multiplier.getMatrix2());
 
         try {
             multiplier.getIn().close();
@@ -28,7 +26,7 @@ public class Main {
         }
 
         System.out.println();
-        multiplier.multiplyMatrix();
+        multiplier.multiplyMatrix(matrix1, matrix2);
         System.out.println("Произведение двух матриц равно: ");
         multiplier.printMatrix(multiplier.getMultipliedMatrix());
 

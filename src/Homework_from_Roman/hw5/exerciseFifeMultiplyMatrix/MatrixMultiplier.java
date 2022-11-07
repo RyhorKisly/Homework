@@ -5,21 +5,18 @@ import java.util.Scanner;
 
 public class MatrixMultiplier {
 
-
-    private int[][] matrix1;
-    private int[][] matrix2;
     int[][] multipliedMatrix;
     private Scanner in = new Scanner(System.in);
 
-    public int[][] chooseMatrix1() {
-        System.out.println("Введите числа для первой матрицы: ");
+    public int[][] getMatrixByScanner(int[][] matrix) {
+        System.out.println("Введите числа для матрицы: ");
         try {
-            for (int i = 0; i < matrix1.length; i++) {
-                for (int j = 0; j < matrix1[i].length; j++) {
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
                     while (true) {
                         if (in.hasNextInt()) {
-                            matrix1[i][j] = in.nextInt();
-                            System.out.println(matrix1[i][j] + " ");
+                            matrix[i][j] = in.nextInt();
+                            System.out.println(matrix[i][j] + " ");
                             break;
                         } else {
                             System.out.println("Введите число: ");
@@ -31,63 +28,35 @@ public class MatrixMultiplier {
         } catch (NoSuchElementException | IllegalStateException ex) {
         System.out.println(ex.getMessage());
     }
-        return matrix1;
+        return matrix;
     }
 
-    public int[][] chooseMatrix2() {
-        System.out.println("Введите числа для второй матрицы: ");
-        try {
-            for (int i = 0; i < matrix2.length; i++) {
-                for (int j = 0; j < matrix2[i].length; j++) {
-                    while (true) {
-                        if (in.hasNextInt()) {
-                            matrix2[i][j] = in.nextInt();
-                            System.out.println(matrix2[i][j] + " ");
-                            break;
-                        } else {
-                            System.out.println("Введите число: ");
-                            in.next();
-                        }
-                    }
-                }
-            }
-        } catch (NoSuchElementException |
-                 IllegalStateException |
-                 ArrayIndexOutOfBoundsException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return matrix2;
-    }
-
-    public int[][] multiplyMatrix() {
+    public int[][] multiplyMatrix(int[][] matrix1, int[][] matrix2) {
         try {
             for (int i = 0; i < multipliedMatrix.length; i++) {
                 for (int j = 0; j < multipliedMatrix[i].length; j++) {
                     multipliedMatrix[i][j] = matrix1[i][j] * matrix2[i][j];
                 }
             }
-        } catch (ArrayIndexOutOfBoundsException ex){
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException ex){
             System.err.println(ex.getMessage());
         }
             return multipliedMatrix;
     }
 
     public void printMatrix(int[][] matrix) {
-        for (int[] subArray : matrix) {
-            for (int element : subArray) {
-                System.out.print(element + " ");
+        try {
+            for (int[] subArray : matrix) {
+                for (int element : subArray) {
+                    System.out.print(element + " ");
+                }
+                System.out.println();
             }
-            System.out.println();
+        } catch (ArrayIndexOutOfBoundsException | NullPointerException ex){
+            System.err.println(ex.getMessage());
         }
     }
 
-    public int[][] getMatrix1() {
-        return matrix1;
-    }
-
-    public int[][] getMatrix2() {
-        return matrix2;
-    }
 
     public int[][] getMultipliedMatrix() {
         return multipliedMatrix;
@@ -95,14 +64,6 @@ public class MatrixMultiplier {
 
     public Scanner getIn() {
         return in;
-    }
-
-    public void setMatrix1(int[][] matrix1) {
-        this.matrix1 = matrix1;
-    }
-
-    public void setMatrix2(int[][] matrix2) {
-        this.matrix2 = matrix2;
     }
 
     public void setMultipliedMatrix(int[][] multipliedMatrix) {
