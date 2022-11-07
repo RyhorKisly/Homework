@@ -5,10 +5,8 @@
 package Homework_from_Roman.hw5.exercise7;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
@@ -26,7 +24,6 @@ public class Main {
             ListIterator li = lines.listIterator(lines.size());
             while(li.hasPrevious()) {
                 bw.write((String)li.previous() + "\n");
-
             }
         }
         catch(IOException | NoSuchElementException ex){
