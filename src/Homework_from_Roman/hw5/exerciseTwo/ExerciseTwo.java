@@ -16,7 +16,7 @@ public class ExerciseTwo {
     private int accumulate = 0;
     private int sum = 0;
 
-    public void getMeanOfNumber() {
+    public void calcMeanOfNumbers() {
         System.out.println("Введите число: ");
         try {
             while (true) {

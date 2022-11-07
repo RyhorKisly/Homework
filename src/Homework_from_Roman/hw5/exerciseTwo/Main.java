@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         ExerciseTwo two = new ExerciseTwo();
-        two.getMeanOfNumber();
+        two.calcMeanOfNumbers();
 
     }
 }
