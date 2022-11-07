@@ -1,4 +1,8 @@
-package Homework_from_Roman.extra.generic.exerciseFourMatrixIterator;
+//      Написать итератор по двумерному массиву
+
+        package Homework_from_Roman.extra.generic.exerciseFourMatrixIterator;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,6 +14,8 @@ public class Main {
         while(matrixIterator.hasNext()) {
             System.out.print(matrixIterator.next() + " ");
         }
+
+
 
     }
 

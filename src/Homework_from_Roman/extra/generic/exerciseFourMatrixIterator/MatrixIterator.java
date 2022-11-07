@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 
 public class  MatrixIterator<T> implements Iterator<T> {
-    private int size;          //всего элементов в матрице
     private int position = 0;  //номер текущего элемента для "выдачи"
     private int i = 0;
     private int j = 0;
@@ -13,25 +12,16 @@ public class  MatrixIterator<T> implements Iterator<T> {
 
     public MatrixIterator(T[][] matrix) {
         this.matrix = matrix;
-        this.size = countElements(matrix);
-    }
-
-    private int countElements(T[][] matrix) {  //считаем количество элементов в матрице
-        int count = 0;
-        for (T[] row : matrix) {
-            count += row.length;
-        }
-        return count;
     }
 
     @Override
     public boolean hasNext() {
-        return position < size;
+        return (position < (matrix[i].length * matrix.length));
     }
 
     @Override
     public T next() {
-        if (position >= size) { //если перебрали все элементы, то бросить исключение
+        if (!hasNext()) {
             throw new NoSuchElementException();
         }
         while (i < matrix.length && j >= matrix[i].length) {
