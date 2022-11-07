@@ -13,7 +13,7 @@ public class ExerciseOne {
     private Scanner scan = new Scanner(System.in);
     private BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 
-    public void getStringByScanner() {
+    public void writeStringByScanner() {
         try {
             System.out.println("Введите что-нибудь: ");
             while (true) {
@@ -35,7 +35,7 @@ public class ExerciseOne {
 
     }
 
-    public void getStringByBufferedReader() {
+    public void writeStringByBufferedReader() {
         System.out.println("Введите что-нибудь: ");
         try {
             while(true){
