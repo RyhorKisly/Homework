@@ -15,6 +15,9 @@ public class ArrayIterator<T> implements Iterator<T> {
             System.out.println(iterator.next());
         }
 
+
+
+
     }
 
     private T array[];
@@ -29,7 +32,10 @@ public class ArrayIterator<T> implements Iterator<T> {
     }
 
     public T next() {
-            return array[position++];
+        return array[position++];
     }
 
+    public void remove() {
+        Iterator.super.remove();
+    }
 }

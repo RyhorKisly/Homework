@@ -2,6 +2,7 @@ package Homework_from_Roman.extra.generic.exerciseFourMatrixIterator;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.function.Consumer;
 
 public class  MatrixIterator<T> implements Iterator<T> {
     private int size;          //всего элементов в матрице
@@ -47,4 +48,8 @@ public class  MatrixIterator<T> implements Iterator<T> {
     }
 
 
+    @Override
+    public void forEachRemaining(Consumer<? super T> action) {
+        Iterator.super.forEachRemaining(action);
+    }
 }
