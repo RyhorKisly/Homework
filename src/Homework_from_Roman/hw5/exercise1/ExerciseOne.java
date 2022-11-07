@@ -2,7 +2,7 @@
 //        Необходимо реализовать программу, которая будет считывать
 //        строки, введенные пользователем и выводить их в консоль.
 
-package Homework_from_Roman.hw5.exerciseOne;
+package Homework_from_Roman.hw5.exercise1;
 
 import java.io.*;
 import java.util.NoSuchElementException;

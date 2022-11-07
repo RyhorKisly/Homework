@@ -4,7 +4,7 @@
 //        "stop" слово. по команде "status" необходимо вывести введенные
 //        цифры в отсортированном виде.
 
-package Homework_from_Roman.hw5.exerciseThree;
+package Homework_from_Roman.hw5.exercise3;
 
 import java.util.*;
 

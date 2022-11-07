@@ -1,4 +1,4 @@
-package Homework_from_Roman.hw5.exerciseOne;
+package Homework_from_Roman.hw5.exercise1;
 
 public class Main {
     public static void main(String[] args) {

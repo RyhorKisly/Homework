@@ -1,4 +1,4 @@
-package Homework_from_Roman.hw5.exerciseFourCalculator;
+package Homework_from_Roman.hw5.exercise4Calculator;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;

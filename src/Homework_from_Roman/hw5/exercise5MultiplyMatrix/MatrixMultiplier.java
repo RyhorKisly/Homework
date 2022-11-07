@@ -1,4 +1,4 @@
-package Homework_from_Roman.hw5.exerciseFifeMultiplyMatrix;
+package Homework_from_Roman.hw5.exercise5MultiplyMatrix;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;

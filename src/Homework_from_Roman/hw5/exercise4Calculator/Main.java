@@ -3,7 +3,7 @@
 //        Поддерживаемые операции +-/* выбор операции и ввод данных
 //        осуществляется пользователем с клавиатуры.
 
-package Homework_from_Roman.hw5.exerciseFourCalculator;
+package Homework_from_Roman.hw5.exercise4Calculator;
 
 public class Main {
 

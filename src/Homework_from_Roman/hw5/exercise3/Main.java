@@ -1,6 +1,4 @@
-package Homework_from_Roman.hw5.exerciseThree;
-
-import Homework_from_Roman.hw5.exerciseTwo.ExerciseTwo;
+package Homework_from_Roman.hw5.exercise3;
 
 import java.util.ArrayList;
 

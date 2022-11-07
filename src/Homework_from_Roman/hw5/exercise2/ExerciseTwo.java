@@ -4,7 +4,7 @@
 //        "stop" слово. После чего программа выведет среднее из всех
 //        введенных значений.
 
-package Homework_from_Roman.hw5.exerciseTwo;
+package Homework_from_Roman.hw5.exercise2;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
