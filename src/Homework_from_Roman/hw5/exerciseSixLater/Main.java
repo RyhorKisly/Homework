@@ -1,7 +1,7 @@
 //        6
 //        Задача #5, но матрицы необходимо считывать из файла (INPUT).
 
-package Homework_from_Roman.hw5.exerciseSix;
+package Homework_from_Roman.hw5.exerciseSixLater;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -34,7 +34,7 @@ public class Main {
                         Pattern p = Pattern.compile("\\b(\\d)*\\b");
                         Matcher m = p.matcher(arrayLines.get(0));
                             for (int i = 0; m.find(); i++) {
-                                System.out.println(m.group());
+
 
 
 
