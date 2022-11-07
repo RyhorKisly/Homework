@@ -8,40 +8,39 @@
 
 package Homework_from_Roman.extra.generic.exerciseTwo;
 
-public class Pair<T, S> {
+public class Pair<T> {
 
     private T first;
-    private S second;
+    private T second;
 
-    public Pair(T first, S second) {
+    public Pair(T first, T second) {
         this.first = first;
         this.second = second;
     }
 
 //        * first() - возвращает 1ый элемент
-    public T getFirst() {
+    public T first() {
         return first;
     }
 
 //        * last() - возвращает 2ой элемент
-    public S getSecond() {
+    public T last() {
         return second;
     }
 
 //        * replaceFirst() - заменяет 1ый элемент на новый
-    public void setFirst(T first) {
+    public void replaceFirst(T first) {
         this.first = first;
     }
 
 //        * replaceLast() - заменяет 2ой элемент на новый
-    public void setSecond(S second) {
+    public void replaceLast(T second) {
         this.second = second;
     }
 
-//        * swap() - меняет элементы местами                           ???
-    public void swapFirstAndSecond() {
-        int[] x = new int[3];
-        int[] y = new int[3];
-        int[] z = new int[x.length + y.length];
+//        * swap() - меняет элементы местами
+    public void swap(T first, T second) {
+        this.first = second;
+        this.second = first;
     }
 }
