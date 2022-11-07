@@ -10,7 +10,8 @@ public class MatrixMultiplier {
     private int[][] matrix2;
     int[][] multipliedMatrix;
     private Scanner in = new Scanner(System.in);
-        public int[][] chooseMatrix1() {
+
+    public int[][] chooseMatrix1() {
         System.out.println("Введите числа для первой матрицы: ");
         try {
             for (int i = 0; i < matrix1.length; i++) {
