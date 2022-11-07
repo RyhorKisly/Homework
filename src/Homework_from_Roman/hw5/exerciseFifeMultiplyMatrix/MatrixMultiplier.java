@@ -10,32 +10,7 @@ public class MatrixMultiplier {
     private int[][] matrix2;
     int[][] multipliedMatrix;
     private Scanner in = new Scanner(System.in);
-
-    public int[][] getMatrix1() {
-        return matrix1;
-    }
-
-    public int[][] getMatrix2() {
-        return matrix2;
-    }
-
-    public int[][] getMultipliedMatrix() {
-        return multipliedMatrix;
-    }
-
-    public void setMatrix1(int[][] matrix1) {
-        this.matrix1 = matrix1;
-    }
-
-    public void setMatrix2(int[][] matrix2) {
-        this.matrix2 = matrix2;
-    }
-
-    public void setMultipliedMatrix(int[][] multipliedMatrix) {
-        this.multipliedMatrix = multipliedMatrix;
-    }
-
-    public int[][] chooseMatrix1() {
+        public int[][] chooseMatrix1() {
         System.out.println("Введите числа для первой матрицы: ");
         try {
             for (int i = 0; i < matrix1.length; i++) {
@@ -103,5 +78,33 @@ public class MatrixMultiplier {
             }
             System.out.println();
         }
+    }
+
+    public int[][] getMatrix1() {
+        return matrix1;
+    }
+
+    public int[][] getMatrix2() {
+        return matrix2;
+    }
+
+    public int[][] getMultipliedMatrix() {
+        return multipliedMatrix;
+    }
+
+    public Scanner getIn() {
+        return in;
+    }
+
+    public void setMatrix1(int[][] matrix1) {
+        this.matrix1 = matrix1;
+    }
+
+    public void setMatrix2(int[][] matrix2) {
+        this.matrix2 = matrix2;
+    }
+
+    public void setMultipliedMatrix(int[][] multipliedMatrix) {
+        this.multipliedMatrix = multipliedMatrix;
     }
 }

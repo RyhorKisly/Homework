@@ -17,6 +17,12 @@ public class Main {
         multiplier.chooseMatrix2();
         multiplier.printMatrix(multiplier.getMatrix2());
 
+        try {
+            multiplier.getIn().close();
+        } catch (IllegalStateException ex) {
+            System.out.println(ex.getMessage());
+        }
+
         System.out.println();
         multiplier.multiplyMatrix();
         System.out.println("Произведение двух матриц равно: ");
