@@ -16,27 +16,26 @@ public class Mover {
         }
     }
 
-        public Box[] deSerialise(String path) {
-            try (FileInputStream fis = new FileInputStream(path);
-                 ObjectInputStream ois = new ObjectInputStream(fis))
-            {
-                Box[] boxes = (Box[]) ois.readObject();
-                this.boxes = boxes;
-            } catch (IOException | ClassNotFoundException ex) {
-                System.out.println(ex.getMessage());
-            }
-            return boxes;
+    public Box[] deSerialise(String path) {
+        try (FileInputStream fis = new FileInputStream(path);
+             ObjectInputStream ois = new ObjectInputStream(fis))
+        {
+            Box[] boxes = (Box[]) ois.readObject();
+            this.boxes = boxes;
+        } catch (IOException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
         }
+        return boxes;
+    }
 
-        public void WriteBiggestVolume (String path) {
-            try(BufferedWriter bw = new BufferedWriter(new FileWriter(path)))
-            {
-                bw.write(getBoxes()[getBoxes().length-1].getVolume());
-            } catch(IOException | NoSuchElementException ex){
-                System.out.println(ex.getMessage());
-            }
-
+    public void WriteBiggestVolume (String path) {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(path)))
+        {
+            bw.write(getBoxes()[getBoxes().length-1].getVolume());
+        } catch(IOException | NoSuchElementException ex){
+            System.out.println(ex.getMessage());
         }
+    }
 
     public Box[] getBoxes() {
         return boxes;
