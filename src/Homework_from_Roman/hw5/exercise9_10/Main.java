@@ -8,37 +8,61 @@
 package Homework_from_Roman.hw5.exercise9_10;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        Box box1 = new Box(1, 2, 3);
+        Box box3 = new Box(1, 2, 3);
         Box box2 = new Box(4, 5, 6);
-        Box box3 = new Box(7, 8, 9);
-        Box box4 = new Box(10, 11, 12);
-        Box box5 = new Box(13, 14, 15);
-        List<Box> boxes = new ArrayList<>();
-        boxes.add(box1);
-        boxes.add(box2);
-        boxes.add(box3);
-        boxes.add(box4);
-        boxes.add(box5);
+        Box box1 = new Box(7, 8, 9);
+        Box box5 = new Box(10, 11, 12);
+        Box box4 = new Box(13, 14, 15);
+        Box[] boxes = new Box[5];
+        boxes[0] = box3;
+        boxes[1] = box2;
+        boxes[2] = box1;
+        boxes[3] = box5;
+        boxes[4] = box4;
+
 
         FileOutputStream fos = new FileOutputStream("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\INPUT");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(boxes);
         oos.close();
 
-        ArrayList<Box> newBoxes= new ArrayList<>();
+
         FileInputStream fis = new FileInputStream("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\INPUT");
         ObjectInputStream ois = new ObjectInputStream(fis);
 
-        newBoxes = ((ArrayList<Box>)ois.readObject());
+        Box[] newBoxes = (Box[]) ois.readObject();
+        Arrays.sort(newBoxes);
+        for(Box element : newBoxes) {
+            System.out.println(element);
+        }
 
 
-        //осталось Отсортировать их по объёму. Вывести на экран. Записать в файл (OUTPUT) самый большой объем.
+        BufferedWriter br = null;
+        try{
+            br = new BufferedWriter(new FileWriter(new File("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\OUTPUT")));
+            br.write(newBoxes[newBoxes.length-1].getVolume());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally{
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\OUTPUT")))
+        {
+            bw.write(newBoxes[newBoxes.length-1].getVolume());
+        } catch(IOException | NoSuchElementException ex){
+            System.out.println(ex.getMessage());
+        }
 
     }
 
