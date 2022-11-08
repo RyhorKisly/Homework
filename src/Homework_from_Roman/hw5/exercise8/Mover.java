@@ -33,7 +33,7 @@ public class Mover {
                     }
                 }
             }
-        } catch(IOException | NoSuchElementException ex){
+        } catch(IOException | NoSuchElementException | ArrayIndexOutOfBoundsException ex){
             System.out.println(ex.getMessage());
         }
     }
