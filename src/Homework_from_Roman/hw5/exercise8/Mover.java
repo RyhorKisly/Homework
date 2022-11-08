@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 
 public class Mover {
 
-    List<String> lines;
+    private List<String> lines;
 
     public List<String> readListFormInPut (String path) {
         try {
@@ -24,7 +24,7 @@ public class Mover {
     }
 
 //        записать только те строки, которые есть и в первом, и во втором.
-    public void writeReverseListToOutPut (String path, List<String> lines1, List<String> lines2) {
+    public void writeSpecialStringsToOutPut (String path, List<String> lines1, List<String> lines2) {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
             for (String element1 : lines1) {
                 for (String element2 : lines2) {
@@ -37,4 +37,5 @@ public class Mover {
             System.out.println(ex.getMessage());
         }
     }
+
 }

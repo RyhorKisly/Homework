@@ -25,48 +25,18 @@ public class Main {
         boxes[3] = box5;
         boxes[4] = box4;
 
+        Mover mover = new Mover();
 
-        FileOutputStream fos = new FileOutputStream("C:\\Users\\Workstation\\IdeaProjects\\" +
+        mover.serialise("C:\\Users\\Workstation\\IdeaProjects\\" +
                 "Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\INPUT");
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(boxes);
-        oos.close();
-
-
-        FileInputStream fis = new FileInputStream("C:\\Users\\Workstation\\IdeaProjects\\" +
+        mover.deSerialise("C:\\Users\\Workstation\\IdeaProjects\\" +
                 "Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\INPUT");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-
-        Box[] newBoxes = (Box[]) ois.readObject();
-        Arrays.sort(newBoxes);
-        for(Box element : newBoxes) {
-            System.out.println(element);
-        }
+        mover.WriteBiggestVolume("C:\\Users\\Workstation\\IdeaProjects\\" +
+                "Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\OUTPUT");
 
 
-        BufferedWriter br = null;
-        try{
-            br = new BufferedWriter(new FileWriter(new File("C:\\Users\\Workstation\\IdeaProjects\\" +
-                    "Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\OUTPUT")));
-            br.write(newBoxes[newBoxes.length-1].getVolume());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally{
-            try {
-                br.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
 
 
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Workstation\\IdeaProjects\\" +
-                "Homework\\src\\Homework_from_Roman\\hw5\\exercise9_10\\OUTPUT")))
-        {
-            bw.write(newBoxes[newBoxes.length-1].getVolume());
-        } catch(IOException | NoSuchElementException ex){
-            System.out.println(ex.getMessage());
-        }
 
     }
 

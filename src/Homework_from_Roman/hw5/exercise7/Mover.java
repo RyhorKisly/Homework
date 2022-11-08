@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 
 public class Mover {
 
-    List<String> lines;
+    private List<String> lines;
 
     public void readListFormInPut (String path) {
         try {

@@ -21,7 +21,7 @@ public class Main {
         List<String> lines2 = mover.readListFormInPut("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\" +
                 "Homework_from_Roman\\hw5\\exercise8\\INPUT_2");
 
-        mover.writeReverseListToOutPut("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\" +
+        mover.writeSpecialStringsToOutPut("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\" +
                 "Homework_from_Roman\\hw5\\exercise8\\OUTPUT", lines1, lines2);
 
 
