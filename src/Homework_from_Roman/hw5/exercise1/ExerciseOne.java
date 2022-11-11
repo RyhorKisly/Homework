@@ -13,7 +13,7 @@ public class ExerciseOne {
     private Scanner scan = new Scanner(System.in);
     private BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
 
-    public void writeStringByScanner() {
+    public void readStringByScanner() {
         try {
             System.out.println("Введите что-нибудь: ");
             while (true) {
