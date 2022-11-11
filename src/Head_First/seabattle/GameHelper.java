@@ -1,7 +1,7 @@
 package Head_First.seabattle;
 import java.io.*;
 public class GameHelper {
-    public String getUerInput(String prompt) {
+    public String getUserInput(String prompt) {
         String inputLine = null;
         System.out.println(prompt + " ");
         try {
