@@ -11,35 +11,33 @@ import java.util.*;
 public class ExerciseThree {
 
     private Scanner in = new Scanner(System.in);
-    private List<Integer> arrayList;
+    private List<Integer> arrayList = new ArrayList<>();
     private int number = 0;
 
-    public ExerciseThree(List<Integer> arrayList) {
-        this.arrayList = arrayList;
-    }
-
-    public void writeNumbers() {
+    public void readNumbers() {
+        System.out.println("Введите число. stop - остановить. status - вывести среднее значение");
         try {
             while (true) {
+
                 if (in.hasNextInt()) {
                     number = in.nextInt();
                     arrayList.add(number);
                     System.out.println(number);
-                } else {
-                    if (in.next().equals("ESC")) {
+                } else if (in.next().equals("status")) {
+                        Collections.sort(arrayList);
+                        if(arrayList == null) {
+                            System.out.println("Нет чисел");
+                        } else {
+                            getNumbers();
+                        }
+
+                    } else if (in.next().equals("stop")) {
                         break;
                     }
-                    System.out.println("Введите целое число или stop слово: \"ESC\"");
-                }
+
+
             }
-            while (true) {
-                if (in.nextLine().equals("status")) {
-                    Collections.sort(arrayList);
-                    break;
-                } else {
-                    System.out.println("Введите слово \"status\"");
-                }
-            }
+
         } catch (NoSuchElementException | IllegalStateException ex) {
             System.out.println(ex.getMessage());
         } finally {
@@ -51,7 +49,8 @@ public class ExerciseThree {
         }
     }
 
-    public void sortNumbers() {
+    public void getNumbers() {
+        System.out.println("Введённые числа в отсортированном виде: ");
         try {
             for (Integer element : arrayList) {
                 System.out.print(element + " ");
@@ -61,12 +60,5 @@ public class ExerciseThree {
         }
     }
 
-    public List<Integer> getArrayList() {
-        return arrayList;
-    }
-
-    public void setArrayList(List<Integer> arrayList) {
-        this.arrayList = arrayList;
-    }
 }
 
