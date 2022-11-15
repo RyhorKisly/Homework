@@ -1,6 +1,6 @@
-package Homework_from_Roman.hw3.componentsOfAuto;
+package Homework_from_Roman.hw3.models.enums;
 
-public enum OptionList {
+public enum Option {
 
     WINDSHIELD_HEATING,
     AUTOMATIC_TRANSMISSION,

@@ -1,40 +1,44 @@
 package Homework_from_Roman.hw3;
 
-import Homework_from_Roman.hw3.componentsOfAuto.*;
+import Homework_from_Roman.hw3.factory.Factory;
+import Homework_from_Roman.hw3.models.Car;
+import Homework_from_Roman.hw3.models.enums.*;
+import Homework_from_Roman.hw3.service.Service;
+
+import java.util.Set;
 
 public class CarShop {
 
     private Service service;
-    private CarFactory carFactory;
+    private Factory factory;
 
-    public CarShop(Service service, CarFactory carFactory) {
+    public CarShop(Service service, Factory factory) {
         this.service = service;
-        this.carFactory = carFactory;
+        this.factory = factory;
     }
 
-    public Car orderCar(Color color, Model model, int yearOfIssue,
-                          WheelSize wheelSize, EngineVolume engineVolume, String[] arrayOptionList) {
-        return carFactory.createCar(color, model, yearOfIssue, wheelSize, engineVolume, arrayOptionList);
+    public Car orderCar(Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize, Set<Option> options) {
+        return factory.createCar(model, engineVolume, color, wheelSize, options);
     }
 
-    public Car changeColor(Car car, Color color) {
+    public void changeColor(Car car, Color color) {
         service.changeColor(car, color);
-        return car;
     }
 
-    public Car changeWheelSize(Car car, WheelSize wheelSize) {
-        service.changeWheelSize(car, wheelSize);
-        return car;
+    public void changeWheels(Car car, WheelSize wheelSize) {
+        service.changeWheels(car, wheelSize);
     }
 
-    public Car addOption(Car car, OptionList option) {
+    public void addOption(Car car, Option option) {
         service.addOption(car, option);
-        return car;
     }
 
-    public Car deleteOption(Car car, OptionList option) {
+    public void deleteOption(Car car, Option option) {
         service.deleteOption(car, option);
-        return car;
+    }
+
+    public void printFactorySettings() {
+        System.out.println(factory.getConfigurations());
     }
 
 }
