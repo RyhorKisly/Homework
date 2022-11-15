@@ -24,7 +24,7 @@ public class Main {
                 WheelSize.SMALL,
                 new HashSet<>()
         );
-        System.out.println("Автомобиль владельца: \n" + car.toString());
+        System.out.println("Полученный автомобиль: \n" + car.toString());
 
     }
 }

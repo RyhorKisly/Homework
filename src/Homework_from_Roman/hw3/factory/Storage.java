@@ -48,7 +48,7 @@ public class Storage {
             }
         }
         cars.addAll(removed);
-        System.out.println("Left cars in storage: ");
+        System.out.println("Осталось машин на складе: ");
         for(Car element : cars){
             System.out.println(element);
         }
