@@ -7,12 +7,12 @@ import Homework_from_Roman.hw3.service.Service;
 
 import java.util.Set;
 
-public class CarShop {
+public class ShowRoom {
 
     private Service service;
     private Factory factory;
 
-    public CarShop(Service service, Factory factory) {
+    public ShowRoom(Service service, Factory factory) {
         this.service = service;
         this.factory = factory;
     }

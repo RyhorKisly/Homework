@@ -48,6 +48,10 @@ public class Storage {
             }
         }
         cars.addAll(removed);
+        System.out.println("Left cars in storage: ");
+        for(Car element : cars){
+            System.out.println(element);
+        }
         return car;
     }
 
