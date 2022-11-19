@@ -43,6 +43,10 @@ public class Car{
         return option;
     }
 
+    public int getYear() {
+        return year;
+    }
+
     public void setColor(Color color) {
         this.color = color;
     }
