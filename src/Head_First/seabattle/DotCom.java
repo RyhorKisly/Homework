@@ -6,6 +6,11 @@ public class DotCom {
 
     private ArrayList<String> locationCells;
     private int numOfHits = 0;
+    String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String checkYourself(String userInput) {
         String result = "Мимо";

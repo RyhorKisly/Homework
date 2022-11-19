@@ -1,9 +1,11 @@
 package Head_First.seabattle;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SimpleDotComGame {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         int numOfGuesses = 0;
 
         GameHelper helper = new GameHelper();
