@@ -20,7 +20,7 @@ import static Homework_from_Roman.hw2_classes_and_regexp.exercise04_enum_cars.Co
 public class Car {
 
     private Color color;
-    private Brand brand;
+    private static Brand brand;
 
     public Car(Brand brand, Color color) {
         this.brand = brand;

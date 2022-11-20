@@ -4,7 +4,7 @@ import Homework_from_Roman.hw4.brand.enums.commonFields.*;
 
 import java.util.Set;
 
-public class Car{
+public class Car {
 
     private final int year;
     private final Model model;

@@ -5,11 +5,11 @@ import Homework_from_Roman.hw4.brand.enums.uniqueFields.WheelDrive;
 
 import java.util.Set;
 
-public class Mercedes extends Car{
+public class Mercedes<M, E, C, W> extends Car<M, E, C, W>{
 
     private final WheelDrive wheelDrive;
 
-    public Mercedes(int year, Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize, Set<Option> option, WheelDrive wheelDrive) {
+    public Mercedes(int year, M model, E engineVolume, C color, W wheelSize, Set<Option> option, WheelDrive wheelDrive) {
         super(year, model, engineVolume, color, wheelSize, option);
         this.wheelDrive = wheelDrive;
     }
