@@ -1,6 +1,8 @@
 package Homework_from_Roman.hw4.brand;
 
-import Homework_from_Roman.hw4.brand.enums.commonFields.*;
+import Homework_from_Roman.hw4.brand.enums.commonFields.colors.Color;
+import Homework_from_Roman.hw4.brand.enums.commonFields.engineVolumes.EngineVolume;
+import Homework_from_Roman.hw4.brand.enums.commonFields.models.Model;
 
 import java.util.Set;
 
