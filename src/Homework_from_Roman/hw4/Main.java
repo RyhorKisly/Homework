@@ -1,15 +1,13 @@
 package Homework_from_Roman.hw4;
 
 import Homework_from_Roman.hw4.brand.BMW;
+import Homework_from_Roman.hw4.brand.enums.colours.ColourAudi;
 import Homework_from_Roman.hw4.brand.enums.colours.ColourBMW;
 import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeBMW;
 import Homework_from_Roman.hw4.brand.enums.models.ModelBMW;
 import Homework_from_Roman.hw4.brand.enums.uniqueFields.FuelType;
 import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeBMW;
-import Homework_from_Roman.hw4.factory.Factory;
 import Homework_from_Roman.hw4.brand.Car;
-import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolume;
-import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSize;
 import Homework_from_Roman.hw4.service.Service;
 
 import java.util.HashSet;
@@ -20,6 +18,9 @@ public class Main {
 
 
         Car bmw = new BMW(2022, ModelBMW.SERIES3, EngineVolumeBMW.BIG_VOLUME, ColourBMW.BLACK, WheelSizeBMW.BIG, new HashSet<>(), FuelType.DIESEL);
+        Service service = new Service();
+        service.changeColor(bmw, ColourAudi.RED);
+        System.out.println(bmw.toString());
 
 //        Service service = new Service();
 //        Factory factory = new Factory(Color.values(), Model.values(), WheelSize.values(), EngineVolume.values());
