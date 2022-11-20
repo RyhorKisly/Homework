@@ -1,4 +1,4 @@
-package Homework_from_Roman.hw4.brand.enums.commonFields;
+package Homework_from_Roman.hw4.brand.enums;
 
 public enum Option {
 

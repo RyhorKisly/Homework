@@ -1,8 +1,11 @@
 package Homework_from_Roman.hw4.brand;
 
-import Homework_from_Roman.hw4.brand.enums.commonFields.*;
-import Homework_from_Roman.hw4.brand.enums.commonFields.engineVolumes.EngineVolume;
+import Homework_from_Roman.hw4.brand.enums.Option;
+import Homework_from_Roman.hw4.brand.enums.colors.ColorsBMW;
+import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeBMW;
+import Homework_from_Roman.hw4.brand.enums.models.ModelBMW;
 import Homework_from_Roman.hw4.brand.enums.uniqueFields.FuelType;
+import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeBMW;
 
 import java.util.Set;
 
@@ -10,8 +13,7 @@ public class BMW extends Car{
 
     private final FuelType fuelType;
 
-
-    public BMW(int year, Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize, Set<Option> option, FuelType fuelType) {
+    public BMW(int year, ModelBMW model, EngineVolumeBMW engineVolume, ColorsBMW color, WheelSizeBMW wheelSize, Set<Option> option, FuelType fuelType) {
         super(year, model, engineVolume, color, wheelSize, option);
         this.fuelType = fuelType;
     }

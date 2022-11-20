@@ -1,9 +1,11 @@
 package Homework_from_Roman.hw4.brand;
 
-import Homework_from_Roman.hw4.brand.enums.commonFields.colors.ColorsAudi;
-import Homework_from_Roman.hw4.brand.enums.commonFields.engineVolumes.EngineVolumeAudi;
-import Homework_from_Roman.hw4.brand.enums.commonFields.models.ModelAudi;
+import Homework_from_Roman.hw4.brand.enums.Option;
+import Homework_from_Roman.hw4.brand.enums.colors.ColorsAudi;
+import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeAudi;
+import Homework_from_Roman.hw4.brand.enums.models.ModelAudi;
 import Homework_from_Roman.hw4.brand.enums.uniqueFields.Transmission;
+import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeAudi;
 
 import java.util.Set;
 
@@ -11,7 +13,7 @@ public class Audi extends Car{
 
     private final Transmission transmission;
 
-    public Audi(int year, ModelAudi model, EngineVolumeAudi engineVolume, ColorsAudi color, WheelSize wheelSize, Set<Option> option, Transmission transmission) {
+    public Audi(int year, ModelAudi model, EngineVolumeAudi engineVolume, ColorsAudi color, WheelSizeAudi wheelSize, Set<Option> option, Transmission transmission) {
         super(year, model, engineVolume, color, wheelSize, option);
         this.transmission = transmission;
     }

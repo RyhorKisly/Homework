@@ -1,12 +1,14 @@
 package Homework_from_Roman.hw4.brand;
 
-import Homework_from_Roman.hw4.brand.enums.commonFields.colors.Color;
-import Homework_from_Roman.hw4.brand.enums.commonFields.engineVolumes.EngineVolume;
-import Homework_from_Roman.hw4.brand.enums.commonFields.models.Model;
+import Homework_from_Roman.hw4.brand.enums.Option;
+import Homework_from_Roman.hw4.brand.enums.colors.Color;
+import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolume;
+import Homework_from_Roman.hw4.brand.enums.models.Model;
+import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSize;
 
 import java.util.Set;
 
-public class Car {
+public abstract class Car {
 
     private final int year;
     private final Model model;

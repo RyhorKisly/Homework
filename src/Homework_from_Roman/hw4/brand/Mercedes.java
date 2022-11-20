@@ -1,15 +1,19 @@
 package Homework_from_Roman.hw4.brand;
 
-import Homework_from_Roman.hw4.brand.enums.commonFields.*;
+import Homework_from_Roman.hw4.brand.enums.Option;
+import Homework_from_Roman.hw4.brand.enums.colors.ColorsMercedes;
+import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeMercedes;
+import Homework_from_Roman.hw4.brand.enums.models.ModelMercedes;
 import Homework_from_Roman.hw4.brand.enums.uniqueFields.WheelDrive;
+import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeMercedes;
 
 import java.util.Set;
 
-public class Mercedes<M, E, C, W> extends Car<M, E, C, W>{
+public class Mercedes extends Car{
 
     private final WheelDrive wheelDrive;
 
-    public Mercedes(int year, M model, E engineVolume, C color, W wheelSize, Set<Option> option, WheelDrive wheelDrive) {
+    public Mercedes(int year, ModelMercedes model, EngineVolumeMercedes engineVolume, ColorsMercedes color, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
         super(year, model, engineVolume, color, wheelSize, option);
         this.wheelDrive = wheelDrive;
     }

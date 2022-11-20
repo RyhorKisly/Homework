@@ -2,8 +2,8 @@ package Homework_from_Roman.hw4.service;
 
 import Homework_from_Roman.hw4.brand.Car;
 import Homework_from_Roman.hw4.brand.enums.commonFields.Color;
-import Homework_from_Roman.hw4.brand.enums.commonFields.Option;
-import Homework_from_Roman.hw4.brand.enums.commonFields.WheelSize;
+import Homework_from_Roman.hw4.brand.enums.Option;
+import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSize;
 
 
 public class Service {
