@@ -1,14 +1,14 @@
 package Homework_from_Roman.hw4.service;
 
 import Homework_from_Roman.hw4.brand.Car;
-import Homework_from_Roman.hw4.brand.enums.commonFields.Color;
+import Homework_from_Roman.hw4.brand.enums.colours.Colour;
 import Homework_from_Roman.hw4.brand.enums.Option;
 import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSize;
 
 
 public class Service {
 
-        public void changeColor(Car car, Color color) {
+        public void changeColor(Car car, Colour color) {
             if (car != null && color != null && !color.equals(car.getColor())) {
                 car.setColor(color);
             }

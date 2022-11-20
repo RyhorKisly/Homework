@@ -1,7 +1,7 @@
 package Homework_from_Roman.hw4.brand;
 
 import Homework_from_Roman.hw4.brand.enums.Option;
-import Homework_from_Roman.hw4.brand.enums.colors.Color;
+import Homework_from_Roman.hw4.brand.enums.colours.Colour;
 import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolume;
 import Homework_from_Roman.hw4.brand.enums.models.Model;
 import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSize;
@@ -14,11 +14,11 @@ public abstract class Car {
     private final Model model;
     private final EngineVolume engineVolume;
 
-    private Color color;
+    private Colour color;
     private WheelSize wheelSize;
     private Set<Option> option;
 
-    public Car(int year, Model model, EngineVolume engineVolume, Color color, WheelSize wheelSize, Set<Option> option) {
+    public Car(int year, Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option) {
         this.year = year;
         this.model = model;
         this.engineVolume = engineVolume;
@@ -27,7 +27,7 @@ public abstract class Car {
         this.option = option;
     }
 
-    public Color getColor() {
+    public Colour getColor() {
         return color;
     }
 
@@ -51,7 +51,7 @@ public abstract class Car {
         return year;
     }
 
-    public void setColor(Color color) {
+    public void setColor(Colour color) {
         this.color = color;
     }
 
