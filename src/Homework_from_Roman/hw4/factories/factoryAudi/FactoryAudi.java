@@ -37,7 +37,10 @@ public class FactoryAudi implements Factory {
         fillStorageWithCars();
     }
 
-
+    @Override
+    public Car createCar() {
+        return null;
+    }
     public Car createCar(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize, Set<Option> option, Transmission transmission) {
         Audi audi = storageAudi.getCarFromStorage(model, engineVolume, colour, wheelSize, option, transmission);
         if (audi != null) {

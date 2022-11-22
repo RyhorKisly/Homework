@@ -36,7 +36,10 @@ public class FactoryBMW implements Factory {
         fillStorageWithCars();
     }
 
-
+    @Override
+    public Car createCar() {
+        return null;
+    }
     public Car createCar(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize, Set<Option> option, FuelType fuelType) {
         BMW bmw = storageBMW.getCarFromStorage(model, engineVolume, colour, wheelSize, option, fuelType);
         if (bmw != null) {
