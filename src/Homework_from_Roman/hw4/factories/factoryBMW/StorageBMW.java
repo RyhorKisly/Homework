@@ -33,7 +33,7 @@ public class StorageBMW extends Storage {
         BMW bmw = null;
         while (iterator.hasNext()) {
             BMW temp = iterator.next();
-            if (verifyModelEngine(temp, model, engineVolume)) {
+            if (verifyModelEngine(temp, model, engineVolume, fuelType)) {
                 if (bmw == null) {
                     bmw = temp;
                     iterator.remove();
@@ -55,25 +55,19 @@ public class StorageBMW extends Storage {
                     iterator.remove();
                     removed.add(bmw);
                     bmw = temp;
-                    continue;
-                }
-                if (temp.getFuelType() == fuelType && bmw.getFuelType() != fuelType) {
-                    iterator.remove();
-                    removed.add(bmw);
-                    bmw = temp;
                 }
             }
         }
         bmws.addAll(removed);
-        System.out.println("Осталось машин на складе: ");
+        System.out.println("Осталось машин BMW на складе: ");
         for(BMW element : bmws){
             System.out.println(element);
         }
         return bmw;
     }
 
-    private boolean verifyModelEngine(BMW bmw, ModelBMW model, EngineVolumeBMW engineVolume) {
-        return bmw.getModel() == model && bmw.getEngineVolume() == engineVolume;
+    private boolean verifyModelEngine(BMW bmw, ModelBMW model, EngineVolumeBMW engineVolume, FuelType fuelType) {
+        return bmw.getModel() == model && bmw.getEngineVolume() == engineVolume && bmw.getFuelType() == fuelType;
     }
 
 }

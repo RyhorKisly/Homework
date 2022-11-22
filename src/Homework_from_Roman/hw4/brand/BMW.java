@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class BMW extends Car{
 
-    private FuelType fuelType;
+    private final FuelType fuelType;
 
     public BMW(int year, ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW color, WheelSizeBMW wheelSize, Set<Option> option, FuelType fuelType) {
         super(year, model, engineVolume, color, wheelSize, option);
@@ -21,10 +21,6 @@ public class BMW extends Car{
 
     public FuelType getFuelType() {
         return fuelType;
-    }
-
-    public void setFuelType(FuelType fuelType) {
-        this.fuelType = fuelType;
     }
 
     @Override

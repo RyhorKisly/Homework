@@ -46,9 +46,6 @@ public class FactoryBMW implements FactoryTwo {
             if (bmw.getWheelSize() != wheelSize) {
                 bmw.setWheelSize(wheelSize);
             }
-            if(bmw.getFuelType() != fuelType) {
-                bmw.setFuelType(fuelType);
-            }
             if (!bmw.getOption().equals(option)) {
                 bmw.setOption(option);
             }
@@ -75,7 +72,7 @@ public class FactoryBMW implements FactoryTwo {
         BMW bmw = new BMW(YEAR, ModelBMW.SERIES3, EngineVolumeBMW.BIG_VOLUME, ColourBMW.BLACK, WheelSizeBMW.SMALL, new HashSet<>(), FuelType.DIESEL);
         this.storageBMW.addCarToStorage(bmw);
         Set<Option> option = new HashSet<>();
-        option.add(Option.AUTOMATIC_TRANSMISSION);
+        option.add(Option.REAR_VIEW_CAMERA);
         bmw = new BMW(YEAR, ModelBMW.SERIES5, EngineVolumeBMW.MEDIUM_VOLUME, ColourBMW.ORANGE, WheelSizeBMW.MEDIUM, new HashSet<>(), FuelType.PETROL);
         this.storageBMW.addCarToStorage(bmw);
     }
