@@ -33,6 +33,11 @@ public class Main {
         FactoryMercedes factoryMercedes = new FactoryMercedes(ColourMercedes.values(), ModelMercedes.values(), WheelSizeMercedes.values(), EngineVolumeMercedes.values(), WheelDrive.values());
 
 
+//        ShowRoom showRoom2 = new ShowRoom(service, factory);
+//        showRoom2.printFactoryBMWSettings();
+
+
+
 
 
         ShowRoom showRoom = new ShowRoom(serviceColor, serviceWheels, serviceOption, serviceWheelDrive, factoryMercedes, factoryAudi, factoryBMW);
