@@ -1,5 +1,6 @@
 package Homework_from_Roman.hw4;
 
+import Homework_from_Roman.hw4.brand.BMW;
 import Homework_from_Roman.hw4.brand.Car;
 import Homework_from_Roman.hw4.brand.enums.Option;
 import Homework_from_Roman.hw4.brand.enums.enumAudi.*;
@@ -22,24 +23,25 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Service serviceColor = new ServiceColor();
-        Service serviceWheels = new ServiceWheels();
-        Service serviceOption = new ServiceOption();
-        Service serviceWheelDrive = new ServiceWheelDrive();
+        ServiceColor serviceColor = new ServiceColor();
+        ServiceWheels serviceWheels = new ServiceWheels();
+        ServiceOption serviceOption = new ServiceOption();
+        ServiceWheelDrive serviceWheelDrive = new ServiceWheelDrive();
 
-        Factory factoryBMW = new FactoryBMW(ColourBMW.values(), ModelBMW.values(), WheelSizeBMW.values(), EngineVolumeBMW.values(), FuelType.values());
-        Factory factoryAudi = new FactoryAudi(ColourAudi.values(), ModelAudi.values(), WheelSizeAudi.values(), EngineVolumeAudi.values(), Transmission.values());
-        Factory factoryMercedes = new FactoryMercedes(ColourMercedes.values(), ModelMercedes.values(), WheelSizeMercedes.values(), EngineVolumeMercedes.values(), WheelDrive.values());
-
-
+        FactoryBMW factoryBMW = new FactoryBMW(ColourBMW.values(), ModelBMW.values(), WheelSizeBMW.values(), EngineVolumeBMW.values(), FuelType.values());
+        FactoryAudi factoryAudi = new FactoryAudi(ColourAudi.values(), ModelAudi.values(), WheelSizeAudi.values(), EngineVolumeAudi.values(), Transmission.values());
+        FactoryMercedes factoryMercedes = new FactoryMercedes(ColourMercedes.values(), ModelMercedes.values(), WheelSizeMercedes.values(), EngineVolumeMercedes.values(), WheelDrive.values());
 
 
-        ShowRoom showRoom = new ShowRoom(service, factory);
-//
+
+
+        ShowRoom showRoom = new ShowRoom(serviceColor, serviceWheels, serviceOption, serviceWheelDrive, factoryMercedes, factoryAudi, factoryBMW);
+
         showRoom.printFactoryBMWSettings();
         showRoom.printFactoryAudiSettings();
         showRoom.printFactoryMercedesSettings();
 
+        System.out.println();
         Car bmw = showRoom.orderBMW(
                 ModelBMW.SERIES3,
                 EngineVolumeBMW.BIG_VOLUME,
@@ -47,12 +49,14 @@ public class Main {
                 WheelSizeBMW.BIG,
                 new HashSet<>(),
                 FuelType.DIESEL);
+        System.out.println();
         Car audi = showRoom.orderAudi(
                 ModelAudi.A4,
                 EngineVolumeAudi.MEDIUM_VOLUME,
                 ColourAudi.RED, WheelSizeAudi.MEDIUM,
                 new HashSet<>(Option.REAR_VIEW_CAMERA.ordinal()),
                 Transmission.AUTOMATIC);
+        System.out.println();
         Car mercedes = showRoom.orderMercedes(
                 ModelMercedes.CLASS_C,
                 EngineVolumeMercedes.BIG_VOLUME,
@@ -60,11 +64,17 @@ public class Main {
                 new HashSet<>(),
                 WheelDrive.REAR);
 
+        showRoom.changeWheels(bmw, WheelSizeBMW.SMALL);
 
 
+        System.out.println("\n");
+        System.out.println("Полученный автомобиль BMW: \n" + bmw.toString());
+        System.out.println();
+        System.out.println("Полученный автомобиль Audi: \n" + audi.toString());
+        System.out.println();
+        System.out.println("Полученный автомобиль Mercedes: \n" + mercedes.toString());
 
 
-//        System.out.println("Полученный автомобиль: \n" + car.toString());
 
     }
 }

@@ -2,6 +2,7 @@ package Homework_from_Roman.hw4;
 
 
 import Homework_from_Roman.hw4.brand.Car;
+import Homework_from_Roman.hw4.brand.Mercedes;
 import Homework_from_Roman.hw4.brand.enums.Colour;
 import Homework_from_Roman.hw4.brand.enums.Option;
 import Homework_from_Roman.hw4.brand.enums.WheelSize;
@@ -12,8 +13,7 @@ import Homework_from_Roman.hw4.factories.Factory;
 import Homework_from_Roman.hw4.factories.factoryAudi.FactoryAudi;
 import Homework_from_Roman.hw4.factories.factoryBMW.FactoryBMW;
 import Homework_from_Roman.hw4.factories.factoryMercedes.FactoryMercedes;
-import Homework_from_Roman.hw4.service.Service;
-import Homework_from_Roman.hw4.service.ServiceColor;
+import Homework_from_Roman.hw4.service.*;
 
 import java.util.Set;
 
@@ -21,11 +21,31 @@ public class ShowRoom {
 
     private Service service;
     private ServiceColor serviceColor;
+    private ServiceWheels serviceWheels;
+    private ServiceOption serviceOption;
+    private ServiceWheelDrive serviceWheelDrive;
     private Factory factory;
     private FactoryMercedes factoryMercedes;
     private FactoryAudi factoryAudi;
     private FactoryBMW factoryBMW;
 
+    public ShowRoom(ServiceColor serviceColor, ServiceWheels serviceWheels, ServiceOption serviceOption, ServiceWheelDrive serviceWheelDrive,
+                    FactoryMercedes factoryMercedes, FactoryAudi factoryAudi, FactoryBMW factoryBMW) {
+        this.serviceColor = serviceColor;
+        this.serviceWheels = serviceWheels;
+        this.serviceOption = serviceOption;
+        this.serviceWheelDrive = serviceWheelDrive;
+        this.factoryMercedes = factoryMercedes;
+        this.factoryAudi = factoryAudi;
+        this.factoryBMW = factoryBMW;
+    }
+
+    public ShowRoom(ServiceColor serviceColor, FactoryMercedes factoryMercedes, FactoryAudi factoryAudi, FactoryBMW factoryBMW) {
+        this.serviceColor = serviceColor;
+        this.factoryMercedes = factoryMercedes;
+        this.factoryAudi = factoryAudi;
+        this.factoryBMW = factoryBMW;
+    }
 
     public ShowRoom(Service service, Factory factory) {
         this.service = service;
@@ -49,19 +69,23 @@ public class ShowRoom {
     }
 
     public void changeWheels(Car car, WheelSize wheelSize) {
-        service.changeWheels(car, wheelSize);
+        serviceWheels.changeWheels(car, wheelSize);
+    }
+
+    public void changeWheelDrive(Mercedes mercedes, WheelDrive wheelDrive) {
+        serviceWheelDrive.changeWheelDrive(mercedes, wheelDrive);
     }
 
     public void addOption(Car car, Option option) {
-        service.addOption(car, option);
+        serviceOption.addOption(car, option);
     }
 
     public void deleteOption(Car car, Option option) {
-        service.deleteOption(car, option);
+        serviceOption.deleteOption(car, option);
     }
 
     public void printFactoryBMWSettings() {
-        factoryBMW.getConfigurations();
+        System.out.println(factoryBMW.getConfigurations());
     }
 
     public void printFactoryAudiSettings() {
