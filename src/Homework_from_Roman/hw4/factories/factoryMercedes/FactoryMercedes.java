@@ -6,10 +6,9 @@ import Homework_from_Roman.hw4.brand.enums.Option;
 import Homework_from_Roman.hw4.brand.enums.colours.ColourMercedes;
 import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeMercedes;
 import Homework_from_Roman.hw4.brand.enums.models.ModelMercedes;
-import Homework_from_Roman.hw4.brand.enums.uniqueFields.FuelType;
 import Homework_from_Roman.hw4.brand.enums.uniqueFields.WheelDrive;
 import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeMercedes;
-import Homework_from_Roman.hw4.factories.FactoryTwo;
+import Homework_from_Roman.hw4.factories.Factory;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,7 +16,7 @@ import java.util.Set;
 
 import static java.lang.String.format;
 
-public class FactoryMercedes implements FactoryTwo {
+public class FactoryMercedes implements Factory {
 
     private static final int YEAR = 2022;
     private final ColourMercedes[] colour;

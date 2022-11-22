@@ -8,7 +8,7 @@ import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeBMW;
 import Homework_from_Roman.hw4.brand.enums.models.ModelBMW;
 import Homework_from_Roman.hw4.brand.enums.uniqueFields.FuelType;
 import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeBMW;
-import Homework_from_Roman.hw4.factories.FactoryTwo;
+import Homework_from_Roman.hw4.factories.Factory;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,7 +16,7 @@ import java.util.Set;
 
 import static java.lang.String.format;
 
-public class FactoryBMW implements FactoryTwo {
+public class FactoryBMW implements Factory {
 
     private static final int YEAR = 2022;
     private final ColourBMW[] colour;

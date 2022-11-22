@@ -1,20 +1,14 @@
 package Homework_from_Roman.hw4.factories.factoryAudi;
 
 import Homework_from_Roman.hw4.brand.Audi;
-import Homework_from_Roman.hw4.brand.BMW;
 import Homework_from_Roman.hw4.brand.Car;
 import Homework_from_Roman.hw4.brand.enums.Option;
 import Homework_from_Roman.hw4.brand.enums.colours.ColourAudi;
-import Homework_from_Roman.hw4.brand.enums.colours.ColourBMW;
 import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeAudi;
-import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeBMW;
 import Homework_from_Roman.hw4.brand.enums.models.ModelAudi;
-import Homework_from_Roman.hw4.brand.enums.models.ModelBMW;
-import Homework_from_Roman.hw4.brand.enums.uniqueFields.FuelType;
 import Homework_from_Roman.hw4.brand.enums.uniqueFields.Transmission;
 import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeAudi;
-import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeBMW;
-import Homework_from_Roman.hw4.factories.FactoryTwo;
+import Homework_from_Roman.hw4.factories.Factory;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -22,7 +16,7 @@ import java.util.Set;
 
 import static java.lang.String.format;
 
-public class FactoryAudi implements FactoryTwo {
+public class FactoryAudi implements Factory {
 
     private static final int YEAR = 2022;
     private final ColourAudi[] colour;
