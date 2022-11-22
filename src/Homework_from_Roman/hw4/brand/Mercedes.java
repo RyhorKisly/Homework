@@ -1,11 +1,11 @@
 package Homework_from_Roman.hw4.brand;
 
 import Homework_from_Roman.hw4.brand.enums.Option;
-import Homework_from_Roman.hw4.brand.enums.colours.ColourMercedes;
-import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeMercedes;
-import Homework_from_Roman.hw4.brand.enums.models.ModelMercedes;
-import Homework_from_Roman.hw4.brand.enums.uniqueFields.WheelDrive;
-import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeMercedes;
+import Homework_from_Roman.hw4.brand.enums.enumMercedes.ColourMercedes;
+import Homework_from_Roman.hw4.brand.enums.enumMercedes.EngineVolumeMercedes;
+import Homework_from_Roman.hw4.brand.enums.enumMercedes.ModelMercedes;
+import Homework_from_Roman.hw4.brand.enums.enumMercedes.WheelDrive;
+import Homework_from_Roman.hw4.brand.enums.enumMercedes.WheelSizeMercedes;
 
 import java.util.Set;
 

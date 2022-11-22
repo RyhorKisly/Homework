@@ -4,33 +4,20 @@ import Homework_from_Roman.hw4.brand.Audi;
 import Homework_from_Roman.hw4.brand.BMW;
 import Homework_from_Roman.hw4.brand.Car;
 import Homework_from_Roman.hw4.brand.Mercedes;
-import Homework_from_Roman.hw4.brand.enums.colours.Colour;
+import Homework_from_Roman.hw4.brand.enums.Colour;
 import Homework_from_Roman.hw4.brand.enums.Option;
-import Homework_from_Roman.hw4.brand.enums.colours.ColourAudi;
-import Homework_from_Roman.hw4.brand.enums.colours.ColourBMW;
-import Homework_from_Roman.hw4.brand.enums.colours.ColourMercedes;
-import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSize;
+import Homework_from_Roman.hw4.brand.enums.WheelSize;
 
 
-public class Service {
-    ColourBMW colourBMW;
-    ColourAudi colourAudi;
-    ColourMercedes colourMercedes;
+public abstract class Service {
+
     BMW bmw;
     Audi audi;
     Mercedes mercedes;
 
         public void changeColor(Car car, Colour colour) {
             if (car != null && colour != null && !colour.equals(car.getColor())) {
-                if(car == bmw && colour == colourBMW) {
                     car.setColor(colour);
-                } else if (car == audi && colour == colourAudi) {
-                    car.setColor(colour);
-                } else if (car == mercedes && colour == colourMercedes) {
-                    car.setColor(colour);
-                } else {
-                    System.out.println("Цвет не поменяли, выберите нужный цвет для данной марки");
-                }
             }
         }
 
@@ -41,15 +28,11 @@ public class Service {
     }
 
     public void addOption(Car car, Option option) {
-        if (car != null && option != null && car.getOption() != null) {
-            car.getOption().add(option);
-        }
+
     }
 
     public void deleteOption(Car car, Option option) {
-        if (car != null && option != null && car.getOption() != null) {
-            car.getOption().remove(option);
-        }
+
     }
 
 }

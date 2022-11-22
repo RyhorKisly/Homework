@@ -1,17 +1,12 @@
 package Homework_from_Roman.hw4.factories.factoryBMW;
 
 import Homework_from_Roman.hw4.brand.BMW;
-import Homework_from_Roman.hw4.brand.Car;
 import Homework_from_Roman.hw4.brand.enums.Option;
-import Homework_from_Roman.hw4.brand.enums.colours.Colour;
-import Homework_from_Roman.hw4.brand.enums.colours.ColourBMW;
-import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolume;
-import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolumeBMW;
-import Homework_from_Roman.hw4.brand.enums.models.Model;
-import Homework_from_Roman.hw4.brand.enums.models.ModelBMW;
-import Homework_from_Roman.hw4.brand.enums.uniqueFields.FuelType;
-import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSize;
-import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSizeBMW;
+import Homework_from_Roman.hw4.brand.enums.enumBMW.ColourBMW;
+import Homework_from_Roman.hw4.brand.enums.enumBMW.EngineVolumeBMW;
+import Homework_from_Roman.hw4.brand.enums.enumBMW.ModelBMW;
+import Homework_from_Roman.hw4.brand.enums.enumBMW.FuelType;
+import Homework_from_Roman.hw4.brand.enums.enumBMW.WheelSizeBMW;
 import Homework_from_Roman.hw4.factories.Storage;
 
 import java.util.ArrayList;

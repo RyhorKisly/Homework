@@ -2,10 +2,10 @@ package Homework_from_Roman.hw4.factories;
 
 import Homework_from_Roman.hw4.brand.Car;
 import Homework_from_Roman.hw4.brand.enums.Option;
-import Homework_from_Roman.hw4.brand.enums.colours.Colour;
-import Homework_from_Roman.hw4.brand.enums.engineVolumes.EngineVolume;
-import Homework_from_Roman.hw4.brand.enums.models.Model;
-import Homework_from_Roman.hw4.brand.enums.wheelSizes.WheelSize;
+import Homework_from_Roman.hw4.brand.enums.Colour;
+import Homework_from_Roman.hw4.brand.enums.EngineVolume;
+import Homework_from_Roman.hw4.brand.enums.Model;
+import Homework_from_Roman.hw4.brand.enums.WheelSize;
 
 import java.util.*;
 
