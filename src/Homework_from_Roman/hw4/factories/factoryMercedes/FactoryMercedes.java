@@ -1,13 +1,13 @@
 package Homework_from_Roman.hw4.factories.factoryMercedes;
 
-import Homework_from_Roman.hw4.brand.Mercedes;
-import Homework_from_Roman.hw4.brand.Car;
-import Homework_from_Roman.hw4.brand.enums.Option;
-import Homework_from_Roman.hw4.brand.enums.enumMercedes.ColourMercedes;
-import Homework_from_Roman.hw4.brand.enums.enumMercedes.EngineVolumeMercedes;
-import Homework_from_Roman.hw4.brand.enums.enumMercedes.ModelMercedes;
-import Homework_from_Roman.hw4.brand.enums.enumMercedes.WheelDrive;
-import Homework_from_Roman.hw4.brand.enums.enumMercedes.WheelSizeMercedes;
+import Homework_from_Roman.hw4.cars.Mercedes;
+import Homework_from_Roman.hw4.cars.Car;
+import Homework_from_Roman.hw4.enums.Option;
+import Homework_from_Roman.hw4.enums.enumMercedes.ColourMercedes;
+import Homework_from_Roman.hw4.enums.enumMercedes.EngineVolumeMercedes;
+import Homework_from_Roman.hw4.enums.enumMercedes.ModelMercedes;
+import Homework_from_Roman.hw4.enums.enumMercedes.WheelDrive;
+import Homework_from_Roman.hw4.enums.enumMercedes.WheelSizeMercedes;
 import Homework_from_Roman.hw4.factories.Factory;
 
 import java.util.Arrays;

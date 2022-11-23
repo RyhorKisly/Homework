@@ -1,11 +1,10 @@
 package Homework_from_Roman.hw4;
 
-import Homework_from_Roman.hw4.brand.BMW;
-import Homework_from_Roman.hw4.brand.Car;
-import Homework_from_Roman.hw4.brand.enums.Option;
-import Homework_from_Roman.hw4.brand.enums.enumAudi.*;
-import Homework_from_Roman.hw4.brand.enums.enumBMW.*;
-import Homework_from_Roman.hw4.brand.enums.enumMercedes.*;
+import Homework_from_Roman.hw4.cars.Car;
+import Homework_from_Roman.hw4.enums.Option;
+import Homework_from_Roman.hw4.enums.enumAudi.*;
+import Homework_from_Roman.hw4.enums.enumBMW.*;
+import Homework_from_Roman.hw4.enums.enumMercedes.*;
 import Homework_from_Roman.hw4.factories.Factory;
 import Homework_from_Roman.hw4.factories.factoryAudi.FactoryAudi;
 import Homework_from_Roman.hw4.factories.factoryBMW.FactoryBMW;

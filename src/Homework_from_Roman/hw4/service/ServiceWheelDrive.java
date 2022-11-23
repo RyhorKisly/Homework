@@ -1,7 +1,7 @@
 package Homework_from_Roman.hw4.service;
 
-import Homework_from_Roman.hw4.brand.Mercedes;
-import Homework_from_Roman.hw4.brand.enums.enumMercedes.WheelDrive;
+import Homework_from_Roman.hw4.cars.Mercedes;
+import Homework_from_Roman.hw4.enums.enumMercedes.WheelDrive;
 
 public class ServiceWheelDrive extends Service{
 

@@ -1,4 +1,4 @@
-package Homework_from_Roman.hw4.brand.enums;
+package Homework_from_Roman.hw4.enums;
 
 public enum Option {
 

@@ -1,7 +1,7 @@
 package Homework_from_Roman.hw4.service;
 
-import Homework_from_Roman.hw4.brand.Car;
-import Homework_from_Roman.hw4.brand.enums.Option;
+import Homework_from_Roman.hw4.cars.Car;
+import Homework_from_Roman.hw4.enums.Option;
 
 public class ServiceOption extends Service{
 

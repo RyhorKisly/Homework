@@ -1,6 +1,6 @@
-package Homework_from_Roman.hw4.brand.enums.enumBMW;
+package Homework_from_Roman.hw4.enums.enumBMW;
 
-import Homework_from_Roman.hw4.brand.enums.EngineVolume;
+import Homework_from_Roman.hw4.enums.EngineVolume;
 
 public enum EngineVolumeBMW implements EngineVolume {
 

@@ -1,11 +1,11 @@
-package Homework_from_Roman.hw4.brand;
+package Homework_from_Roman.hw4.cars;
 
-import Homework_from_Roman.hw4.brand.enums.Option;
-import Homework_from_Roman.hw4.brand.enums.enumAudi.ColourAudi;
-import Homework_from_Roman.hw4.brand.enums.enumAudi.EngineVolumeAudi;
-import Homework_from_Roman.hw4.brand.enums.enumAudi.ModelAudi;
-import Homework_from_Roman.hw4.brand.enums.enumAudi.Transmission;
-import Homework_from_Roman.hw4.brand.enums.enumAudi.WheelSizeAudi;
+import Homework_from_Roman.hw4.enums.Option;
+import Homework_from_Roman.hw4.enums.enumAudi.ColourAudi;
+import Homework_from_Roman.hw4.enums.enumAudi.EngineVolumeAudi;
+import Homework_from_Roman.hw4.enums.enumAudi.ModelAudi;
+import Homework_from_Roman.hw4.enums.enumAudi.Transmission;
+import Homework_from_Roman.hw4.enums.enumAudi.WheelSizeAudi;
 
 import java.util.Set;
 
