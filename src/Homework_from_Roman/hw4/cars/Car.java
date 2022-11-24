@@ -1,14 +1,11 @@
 package Homework_from_Roman.hw4.cars;
 
 import Homework_from_Roman.hw4.enums.Option;
-import Homework_from_Roman.hw4.enums.Colour;
-import Homework_from_Roman.hw4.enums.EngineVolume;
-import Homework_from_Roman.hw4.enums.Model;
-import Homework_from_Roman.hw4.enums.WheelSize;
+import Homework_from_Roman.hw4.enums.*;
 
 import java.util.Set;
 
-public class Car {
+public abstract class Car {
 
     private final int year;
     private final Model model;

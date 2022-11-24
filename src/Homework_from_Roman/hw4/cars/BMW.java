@@ -1,11 +1,7 @@
 package Homework_from_Roman.hw4.cars;
 
 import Homework_from_Roman.hw4.enums.Option;
-import Homework_from_Roman.hw4.enums.enumBMW.ColourBMW;
-import Homework_from_Roman.hw4.enums.enumBMW.EngineVolumeBMW;
-import Homework_from_Roman.hw4.enums.enumBMW.ModelBMW;
-import Homework_from_Roman.hw4.enums.enumBMW.FuelType;
-import Homework_from_Roman.hw4.enums.enumBMW.WheelSizeBMW;
+import Homework_from_Roman.hw4.enums.enumBMW.*;
 
 import java.util.Set;
 

@@ -4,9 +4,8 @@ import Homework_from_Roman.hw4.enums.WheelSize;
 
 public enum WheelSizeMercedes implements WheelSize {
 
-    SMALL(20),
-    MEDIUM(22),
-    BIG(24);
+    SMALLEST(14),
+    VERY_BIG(24);
 
     private int size;
 

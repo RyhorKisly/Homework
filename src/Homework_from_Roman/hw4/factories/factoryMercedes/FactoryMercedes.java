@@ -75,11 +75,11 @@ public class FactoryMercedes implements Factory {
 
     public void fillStorageWithCars() {
         // Any custom logic about creating initial cars.
-        Mercedes mercedes = new Mercedes(YEAR, ModelMercedes.CLASS_C, EngineVolumeMercedes.BIG_VOLUME, ColourMercedes.GREY, WheelSizeMercedes.SMALL, new HashSet<>(), WheelDrive.ALL);
+        Mercedes mercedes = new Mercedes(YEAR, ModelMercedes.CLASS_C, EngineVolumeMercedes.BIG_VOLUME, ColourMercedes.GREY, WheelSizeMercedes.SMALLEST, new HashSet<>(), WheelDrive.ALL);
         this.storageMercedes.addCarToStorage(mercedes);
         Set<Option> option = new HashSet<>();
         option.add(Option.LEATHER_SEATS);
-        mercedes = new Mercedes(YEAR, ModelMercedes.CLASS_E, EngineVolumeMercedes.MEDIUM_VOLUME, ColourMercedes.WHITE, WheelSizeMercedes.MEDIUM, new HashSet<>(), WheelDrive.REAR);
+        mercedes = new Mercedes(YEAR, ModelMercedes.CLASS_E, EngineVolumeMercedes.MEDIUM_VOLUME, ColourMercedes.WHITE, WheelSizeMercedes.VERY_BIG, new HashSet<>(), WheelDrive.REAR);
         this.storageMercedes.addCarToStorage(mercedes);
     }
 

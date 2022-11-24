@@ -73,7 +73,7 @@ public class FactoryAudi implements Factory {
 
     public void fillStorageWithCars() {
         // Any custom logic about creating initial cars.
-        Audi audi = new Audi(YEAR, ModelAudi.A4, EngineVolumeAudi.BIG_VOLUME, ColourAudi.RED, WheelSizeAudi.SMALL, new HashSet<>(), Transmission.AUTOMATIC);
+        Audi audi = new Audi(YEAR, ModelAudi.A4, EngineVolumeAudi.BIG_VOLUME, ColourAudi.RED, WheelSizeAudi.VERY_SMALL, new HashSet<>(), Transmission.AUTOMATIC);
         this.storageAudi.addCarToStorage(audi);
         Set<Option> option = new HashSet<>();
         option.add(Option.REAR_VIEW_CAMERA);

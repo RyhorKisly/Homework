@@ -3,11 +3,7 @@ package Homework_from_Roman.hw4.factories.factoryBMW;
 import Homework_from_Roman.hw4.cars.BMW;
 import Homework_from_Roman.hw4.cars.Car;
 import Homework_from_Roman.hw4.enums.Option;
-import Homework_from_Roman.hw4.enums.enumBMW.ColourBMW;
-import Homework_from_Roman.hw4.enums.enumBMW.EngineVolumeBMW;
-import Homework_from_Roman.hw4.enums.enumBMW.ModelBMW;
-import Homework_from_Roman.hw4.enums.enumBMW.FuelType;
-import Homework_from_Roman.hw4.enums.enumBMW.WheelSizeBMW;
+import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.factories.Factory;
 
 import java.util.Arrays;
@@ -25,6 +21,7 @@ public class FactoryBMW implements Factory {
     private final EngineVolumeBMW[] engineVolume;
     private final FuelType[] fuelTypes;
     private final StorageBMW storageBMW;
+    Car car;
 
     public FactoryBMW(ColourBMW[] colour, ModelBMW[] model, WheelSizeBMW[] wheelSize, EngineVolumeBMW[] engineVolume, FuelType[] fuelTypes) {
         this.colour = colour;
@@ -76,7 +73,7 @@ public class FactoryBMW implements Factory {
         this.storageBMW.addCarToStorage(bmw);
         Set<Option> option = new HashSet<>();
         option.add(Option.REAR_VIEW_CAMERA);
-        bmw = new BMW(YEAR, ModelBMW.SERIES5, EngineVolumeBMW.MEDIUM_VOLUME, ColourBMW.ORANGE, WheelSizeBMW.MEDIUM, new HashSet<>(), FuelType.PETROL);
+        bmw = new BMW(YEAR, ModelBMW.SERIES5, EngineVolumeBMW.MEDIUM_VOLUME, ColourBMW.BLACK, WheelSizeBMW.BIG, new HashSet<>(), FuelType.PETROL);
         this.storageBMW.addCarToStorage(bmw);
     }
 
