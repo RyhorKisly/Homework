@@ -47,10 +47,6 @@ public class Car {
         return option;
     }
 
-    public int getYear() {
-        return year;
-    }
-
     public void setColor(Colour color) {
         this.color = color;
     }
@@ -71,8 +67,7 @@ public class Car {
                 ", engineVolume=" + engineVolume +
                 ", color=" + color +
                 ", wheelSize=" + wheelSize +
-                ", option=" + option +
-                '}';
+                ", option=" + option;
     }
 
 }

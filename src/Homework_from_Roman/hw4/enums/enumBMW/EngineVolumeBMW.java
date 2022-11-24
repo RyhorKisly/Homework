@@ -8,7 +8,7 @@ public enum EngineVolumeBMW implements EngineVolume {
     MEDIUM_VOLUME(2.2),
     BIG_VOLUME(4.2);
 
-    public double volume;
+    private double volume;
 
     EngineVolumeBMW(double volume) {
         this.volume = volume;

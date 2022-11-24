@@ -24,14 +24,9 @@ public class Audi extends Car{
 
     @Override
     public String toString() {
-        return "Audi{" +
-                "year=" + super.getYear() +
-                ", model=" + super.getModel() +
-                ", engineVolume=" + super.getEngineVolume() +
-                ", color=" + super.getColor() +
-                ", wheelSize=" + super.getWheelSize() +
-                ", option=" + super.getOption() +
-                "transmission=" + transmission +
+        return "Audi {" +
+                super.toString() +
+                ", transmission=" + transmission +
                 '}';
     }
 }

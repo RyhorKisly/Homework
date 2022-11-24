@@ -8,7 +8,7 @@ public enum WheelSizeBMW implements WheelSize {
     MEDIUM(20),
     BIG(22);
 
-    public int size;
+    private int size;
 
     WheelSizeBMW(int size) {
         this.size = size;

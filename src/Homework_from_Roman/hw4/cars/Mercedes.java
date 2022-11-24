@@ -28,14 +28,10 @@ public class Mercedes extends Car{
 
     @Override
     public String toString() {
-        return "Mercedes{" +
-                "year=" + super.getYear() +
-                ", model=" + super.getModel() +
-                ", engineVolume=" + super.getEngineVolume() +
-                ", color=" + super.getColor() +
-                ", wheelSize=" + super.getWheelSize() +
-                ", option=" + super.getOption() +
-                "wheelDrive=" + wheelDrive +
+        return "Mercedes {" +
+                super.toString() +
+                ", wheelDrive=" + wheelDrive +
                 '}';
     }
+
 }

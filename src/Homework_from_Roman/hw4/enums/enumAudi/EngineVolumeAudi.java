@@ -8,7 +8,7 @@ public enum EngineVolumeAudi implements EngineVolume {
     MEDIUM_VOLUME(2.6),
     BIG_VOLUME(3.6);
 
-    public double volume;
+    private final double volume;
 
     EngineVolumeAudi(double volume) {
         this.volume = volume;

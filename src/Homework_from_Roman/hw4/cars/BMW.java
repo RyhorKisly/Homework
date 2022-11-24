@@ -24,14 +24,9 @@ public class BMW extends Car{
 
     @Override
     public String toString() {
-        return "BMW{" +
-                "year=" + super.getYear() +
-                ", model=" + super.getModel() +
-                ", engineVolume=" + super.getEngineVolume() +
-                ", color=" + super.getColor() +
-                ", wheelSize=" + super.getWheelSize() +
-                ", option=" + super.getOption() +
-                "fuelType=" + fuelType +
+        return "BMW {" +
+                super.toString() +
+                ", fuelType=" + fuelType +
                 '}';
     }
 }
