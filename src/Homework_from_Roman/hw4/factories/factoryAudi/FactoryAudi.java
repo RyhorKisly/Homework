@@ -33,12 +33,6 @@ public class FactoryAudi extends Factory {
         fillStorageWithCars();
     }
 
-    public Car createAudi(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize,
-                         Set<Option> option, Transmission transmission) {
-        return createCar(model, engineVolume, colour, wheelSize,
-                option, transmission);
-    }
-
     @Override
     protected Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
                          Set<Option> option, SpecialOption transmission) {
@@ -59,6 +53,12 @@ public class FactoryAudi extends Factory {
         }
         return new Audi(YEAR, (ModelAudi) model, (EngineVolumeAudi) engineVolume, (ColourAudi) colour,
                 (WheelSizeAudi) wheelSize, option, (Transmission) transmission);
+    }
+
+    public Car createAudi(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize,
+                          Set<Option> option, Transmission transmission) {
+        return createCar(model, engineVolume, colour, wheelSize,
+                option, transmission);
     }
 
     public String getConfigurations() {

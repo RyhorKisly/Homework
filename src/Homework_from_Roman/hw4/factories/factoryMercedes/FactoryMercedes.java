@@ -32,12 +32,6 @@ public class FactoryMercedes extends Factory {
         fillStorageWithCars();
     }
 
-    public Car createMercedes(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize,
-                         Set<Option> option, WheelDrive wheelDrive) {
-        return createCar(model, engineVolume, colour, wheelSize,
-                option, wheelDrive);
-    }
-
     @Override
     protected Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
                          Set<Option> option, SpecialOption wheelDrive) {
@@ -58,6 +52,12 @@ public class FactoryMercedes extends Factory {
         }
         return new Mercedes(YEAR, (ModelMercedes) model, (EngineVolumeMercedes) engineVolume, (ColourMercedes) colour,
                 (WheelSizeMercedes) wheelSize, option, (WheelDrive) wheelDrive);
+    }
+
+    public Car createMercedes(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize,
+                              Set<Option> option, WheelDrive wheelDrive) {
+        return createCar(model, engineVolume, colour, wheelSize,
+                option, wheelDrive);
     }
 
     public String getConfigurations() {

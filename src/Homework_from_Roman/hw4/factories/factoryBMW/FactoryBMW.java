@@ -29,11 +29,6 @@ public class FactoryBMW extends Factory {
         fillStorageWithCars();
     }
 
-    public Car createBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize,
-                          Set<Option> option, FuelType fuelType) {
-        return createCar(model, engineVolume, colour, wheelSize,
-                option, fuelType);
-    }
     @Override
     protected Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
                          Set<Option> option, SpecialOption fuelType) {
@@ -54,6 +49,12 @@ public class FactoryBMW extends Factory {
         modelBMW = (ModelBMW) model;
         return new BMW(YEAR, modelBMW, (EngineVolumeBMW) engineVolume, (ColourBMW) colour,
                 (WheelSizeBMW) wheelSize, option, (FuelType) fuelType);
+    }
+
+    public Car createBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize,
+                         Set<Option> option, FuelType fuelType) {
+        return createCar(model, engineVolume, colour, wheelSize,
+                option, fuelType);
     }
 
     public String getConfigurations() {
