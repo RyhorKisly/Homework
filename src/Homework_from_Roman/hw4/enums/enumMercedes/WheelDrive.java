@@ -1,6 +1,8 @@
 package Homework_from_Roman.hw4.enums.enumMercedes;
 
-public enum WheelDrive {
+import Homework_from_Roman.hw4.enums.SpecialOption;
+
+public enum WheelDrive implements SpecialOption {
     FRONT,
     REAR,
     ALL
