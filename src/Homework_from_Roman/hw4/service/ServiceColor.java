@@ -5,6 +5,7 @@ import Homework_from_Roman.hw4.enums.Colour;
 import Homework_from_Roman.hw4.enums.enumAudi.ColourAudi;
 import Homework_from_Roman.hw4.enums.enumBMW.ColourBMW;
 import Homework_from_Roman.hw4.enums.enumMercedes.ColourMercedes;
+import Homework_from_Roman.hw4.exeptions.WrongColourException;
 
 import java.util.Arrays;
 
@@ -23,10 +24,10 @@ public class ServiceColor implements Service {
                         Arrays.toString(ColourMercedes.values()).contains(car.getColor().toString())) {
                     car.setColor(colour);
                 } else {
-                    throw new IllegalArgumentException("WRONG COLOUR");
+                    throw new WrongColourException("WRONG COLOUR");
                 }
             }
-        } catch (IllegalArgumentException | NullPointerException ex) {
+        } catch (WrongColourException | NullPointerException ex) {
             ex.printStackTrace();
         }
     }

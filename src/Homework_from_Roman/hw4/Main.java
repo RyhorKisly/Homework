@@ -12,9 +12,7 @@ import Homework_from_Roman.hw4.factories.factoryAudi.FactoryAudi;
 import Homework_from_Roman.hw4.factories.factoryBMW.FactoryBMW;
 import Homework_from_Roman.hw4.factories.factoryMercedes.FactoryMercedes;
 import Homework_from_Roman.hw4.service.*;
-import org.w3c.dom.ls.LSOutput;
 
-import java.util.Arrays;
 import java.util.HashSet;
 
 
@@ -30,11 +28,8 @@ public class Main {
         FactoryAudi factoryAudi = new FactoryAudi(ColourAudi.values(), ModelAudi.values(), WheelSizeAudi.values(), EngineVolumeAudi.values(), Transmission.values());
         FactoryMercedes factoryMercedes = new FactoryMercedes(ColourMercedes.values(), ModelMercedes.values(), WheelSizeMercedes.values(), EngineVolumeMercedes.values(), WheelDrive.values());
 
-
         ShowRoom showRoom = new ShowRoom(serviceColor, serviceWheels, serviceOption, factoryMercedes, factoryAudi, factoryBMW);
 
-
-//
         showRoom.printFactoryBMWSettings();
         showRoom.printFactoryAudiSettings();
         showRoom.printFactoryMercedesSettings();
