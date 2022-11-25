@@ -10,22 +10,28 @@ public abstract class Car {
     private final int year;
     private final Model model;
     private final EngineVolume engineVolume;
+    private final SpecialOption specialOption;
 
     private Colour color;
     private WheelSize wheelSize;
     private Set<Option> option;
 
-    public Car(int year, Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option) {
+    public Car(int year, Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option, SpecialOption specialOption) {
         this.year = year;
         this.model = model;
         this.engineVolume = engineVolume;
         this.color = color;
         this.wheelSize = wheelSize;
         this.option = option;
+        this.specialOption = specialOption;
     }
 
     public Colour getColor() {
         return color;
+    }
+
+    public SpecialOption getSpecialOption() {
+        return specialOption;
     }
 
     public Model getModel() {

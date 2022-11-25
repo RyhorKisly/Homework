@@ -1,11 +1,9 @@
 package Homework_from_Roman.hw4.factories;
 
+import Homework_from_Roman.hw4.cars.BMW;
 import Homework_from_Roman.hw4.cars.Car;
-import Homework_from_Roman.hw4.enums.Option;
-import Homework_from_Roman.hw4.enums.Colour;
-import Homework_from_Roman.hw4.enums.EngineVolume;
-import Homework_from_Roman.hw4.enums.Model;
-import Homework_from_Roman.hw4.enums.WheelSize;
+import Homework_from_Roman.hw4.enums.*;
+import Homework_from_Roman.hw4.enums.enumBMW.*;
 
 import java.util.*;
 
@@ -17,13 +15,13 @@ public class Storage {
         cars.add(car);
     }
 
-    public Car getCarFromStorage(Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option) {
+    public Car getCarFromStorage(Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option, SpecialOption specialOption) {
         Iterator<Car> iterator = cars.listIterator();
         List<Car> removed = new ArrayList<>();
         Car car = null;
         while (iterator.hasNext()) {
             Car temp = iterator.next();
-            if (verifyModelEngine(temp, model, engineVolume)) {
+            if (verifyModelEngine(temp, model, engineVolume, specialOption)) {
                 if (car == null) {
                     car = temp;
                     iterator.remove();
@@ -56,8 +54,8 @@ public class Storage {
         return car;
     }
 
-    private boolean verifyModelEngine(Car car, Model model, EngineVolume engineVolume) {
-        return car.getModel() == model && car.getEngineVolume() == engineVolume;
+    private boolean verifyModelEngine(Car car, Model model, EngineVolume engineVolume, SpecialOption specialOption) {
+        return car.getModel() == model && car.getEngineVolume() == engineVolume && car.getSpecialOption() == specialOption;
     }
 
 }

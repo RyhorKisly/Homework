@@ -36,10 +36,6 @@ public class FactoryMercedes implements Factory {
         fillStorageWithCars();
     }
 
-    @Override
-    public Car createCar() {
-        return null;
-    }
     public Car createCar(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
         Mercedes mercedes = storageMercedes.getCarFromStorage(model, engineVolume, colour, wheelSize, option, wheelDrive);
         if (mercedes != null) {
