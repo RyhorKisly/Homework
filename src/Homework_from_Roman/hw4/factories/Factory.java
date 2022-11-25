@@ -1,16 +1,20 @@
 package Homework_from_Roman.hw4.factories;
 
+import Homework_from_Roman.hw4.cars.BMW;
+import Homework_from_Roman.hw4.cars.Car;
 import Homework_from_Roman.hw4.enums.*;
-import Homework_from_Roman.hw4.enums.enumBMW.ColourBMW;
+import Homework_from_Roman.hw4.enums.enumBMW.*;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 
 import static java.lang.String.format;
 
 public abstract class Factory {
 
-    private static final int YEAR = 2022;
     private final Colour[] colour;
     private final Model[] model;
     private final WheelSize[] wheelSize;

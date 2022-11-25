@@ -3,6 +3,7 @@ package Homework_from_Roman.hw4.factories.factoryBMW;
 import Homework_from_Roman.hw4.cars.BMW;
 import Homework_from_Roman.hw4.cars.Car;
 import Homework_from_Roman.hw4.enums.Option;
+import Homework_from_Roman.hw4.enums.SpecialOption;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.factories.Factory;
 import Homework_from_Roman.hw4.factories.Storage;
@@ -43,7 +44,6 @@ public class FactoryBMW extends Factory {
         }
         return new BMW(YEAR, model, engineVolume, colour, wheelSize, option, fuelType);
     }
-
 
     public String getConfigurations() {
         return format(
