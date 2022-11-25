@@ -2,14 +2,12 @@ package Homework_from_Roman.hw4;
 
 
 import Homework_from_Roman.hw4.cars.Car;
-import Homework_from_Roman.hw4.cars.Mercedes;
 import Homework_from_Roman.hw4.enums.Colour;
 import Homework_from_Roman.hw4.enums.Option;
 import Homework_from_Roman.hw4.enums.WheelSize;
 import Homework_from_Roman.hw4.enums.enumAudi.*;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.enums.enumMercedes.*;
-import Homework_from_Roman.hw4.factories.Factory;
 import Homework_from_Roman.hw4.factories.factoryAudi.FactoryAudi;
 import Homework_from_Roman.hw4.factories.factoryBMW.FactoryBMW;
 import Homework_from_Roman.hw4.factories.factoryMercedes.FactoryMercedes;
@@ -19,12 +17,12 @@ import java.util.Set;
 
 public class ShowRoom {
 
-    private ServiceColor serviceColor;
-    private ServiceWheels serviceWheels;
-    private ServiceOption serviceOption;
-    private FactoryMercedes factoryMercedes;
-    private FactoryAudi factoryAudi;
-    private FactoryBMW factoryBMW;
+    private final ServiceColor serviceColor;
+    private final ServiceWheels serviceWheels;
+    private final ServiceOption serviceOption;
+    private final FactoryMercedes factoryMercedes;
+    private final FactoryAudi factoryAudi;
+    private final FactoryBMW factoryBMW;
 
     public ShowRoom(ServiceColor serviceColor, ServiceWheels serviceWheels, ServiceOption serviceOption, FactoryMercedes factoryMercedes, FactoryAudi factoryAudi, FactoryBMW factoryBMW) {
         this.serviceColor = serviceColor;
