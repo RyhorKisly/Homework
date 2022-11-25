@@ -8,8 +8,6 @@ import Homework_from_Roman.hw4.enums.SpecialOption;
 import Homework_from_Roman.hw4.enums.enumAudi.*;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.enums.enumMercedes.*;
-import Homework_from_Roman.hw4.factories.Factory;
-import Homework_from_Roman.hw4.factories.Storage;
 import Homework_from_Roman.hw4.factories.factoryAudi.FactoryAudi;
 import Homework_from_Roman.hw4.factories.factoryBMW.FactoryBMW;
 import Homework_from_Roman.hw4.factories.factoryMercedes.FactoryMercedes;
@@ -26,14 +24,13 @@ public class Main {
         ServiceColor serviceColor = new ServiceColor();
         ServiceWheels serviceWheels = new ServiceWheels();
         ServiceOption serviceOption = new ServiceOption();
-        ServiceWheelDrive serviceWheelDrive = new ServiceWheelDrive();
 
         FactoryBMW factoryBMW = new FactoryBMW(ColourBMW.values(), ModelBMW.values(), WheelSizeBMW.values(), EngineVolumeBMW.values(), FuelType.values());
         FactoryAudi factoryAudi = new FactoryAudi(ColourAudi.values(), ModelAudi.values(), WheelSizeAudi.values(), EngineVolumeAudi.values(), Transmission.values());
         FactoryMercedes factoryMercedes = new FactoryMercedes(ColourMercedes.values(), ModelMercedes.values(), WheelSizeMercedes.values(), EngineVolumeMercedes.values(), WheelDrive.values());
 
 
-        ShowRoom showRoom = new ShowRoom(serviceColor, serviceWheels, serviceOption, serviceWheelDrive, factoryMercedes, factoryAudi, factoryBMW);
+        ShowRoom showRoom = new ShowRoom(serviceColor, serviceWheels, serviceOption, factoryMercedes, factoryAudi, factoryBMW);
 
 
 //

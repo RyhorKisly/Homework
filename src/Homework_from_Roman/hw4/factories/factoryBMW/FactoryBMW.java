@@ -22,7 +22,6 @@ public class FactoryBMW extends Factory {
     private final EngineVolumeBMW[] engineVolume;
     private final FuelType[] fuelTypes;
     private final Storage<FuelType> storage;
-    Car car;
 
     public FactoryBMW(ColourBMW[] colour, ModelBMW[] model, WheelSizeBMW[] wheelSize, EngineVolumeBMW[] engineVolume, FuelType[] fuelTypes) {
         super(colour, model, wheelSize, engineVolume);

@@ -19,22 +19,17 @@ import java.util.Set;
 
 public class ShowRoom {
 
-    private Service service;
     private ServiceColor serviceColor;
     private ServiceWheels serviceWheels;
     private ServiceOption serviceOption;
-    private ServiceWheelDrive serviceWheelDrive;
-    private Factory factory;
     private FactoryMercedes factoryMercedes;
     private FactoryAudi factoryAudi;
     private FactoryBMW factoryBMW;
 
-    public ShowRoom(ServiceColor serviceColor, ServiceWheels serviceWheels, ServiceOption serviceOption, ServiceWheelDrive serviceWheelDrive,
-                    FactoryMercedes factoryMercedes, FactoryAudi factoryAudi, FactoryBMW factoryBMW) {
+    public ShowRoom(ServiceColor serviceColor, ServiceWheels serviceWheels, ServiceOption serviceOption, FactoryMercedes factoryMercedes, FactoryAudi factoryAudi, FactoryBMW factoryBMW) {
         this.serviceColor = serviceColor;
         this.serviceWheels = serviceWheels;
         this.serviceOption = serviceOption;
-        this.serviceWheelDrive = serviceWheelDrive;
         this.factoryMercedes = factoryMercedes;
         this.factoryAudi = factoryAudi;
         this.factoryBMW = factoryBMW;
@@ -60,9 +55,6 @@ public class ShowRoom {
         serviceWheels.changeWheels(car, wheelSize);
     }
 
-    public void changeWheelDrive(Mercedes mercedes, WheelDrive wheelDrive) {
-        serviceWheelDrive.changeWheelDrive(mercedes, wheelDrive);
-    }
 
     public void addOption(Car car, Option option) {
         serviceOption.addOption(car, option);
