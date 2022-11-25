@@ -40,18 +40,6 @@ public class ShowRoom {
         this.factoryBMW = factoryBMW;
     }
 
-    public ShowRoom(ServiceColor serviceColor, FactoryMercedes factoryMercedes, FactoryAudi factoryAudi, FactoryBMW factoryBMW) {
-        this.serviceColor = serviceColor;
-        this.factoryMercedes = factoryMercedes;
-        this.factoryAudi = factoryAudi;
-        this.factoryBMW = factoryBMW;
-    }
-
-    public ShowRoom(Service service, Factory factory) {
-        this.service = service;
-        this.factory = factory;
-    }
-
     public Car orderMercedes(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
         return factoryMercedes.createCar(model, engineVolume, colour, wheelSize, option, wheelDrive);
     }

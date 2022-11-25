@@ -7,7 +7,7 @@ import Homework_from_Roman.hw4.enums.enumBMW.*;
 
 import java.util.*;
 
-public class Storage {
+public class Storage<T> {
 
     private final List<Car> cars = new ArrayList<>();
 
@@ -15,7 +15,7 @@ public class Storage {
         cars.add(car);
     }
 
-    public Car getCarFromStorage(Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option, SpecialOption specialOption) {
+    public Car getCarFromStorage(Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option, T specialOption) {
         Iterator<Car> iterator = cars.listIterator();
         List<Car> removed = new ArrayList<>();
         Car car = null;
@@ -54,7 +54,7 @@ public class Storage {
         return car;
     }
 
-    private boolean verifyModelEngine(Car car, Model model, EngineVolume engineVolume, SpecialOption specialOption) {
+    private boolean verifyModelEngine(Car car, Model model, EngineVolume engineVolume, T specialOption) {
         return car.getModel() == model && car.getEngineVolume() == engineVolume && car.getSpecialOption() == specialOption;
     }
 

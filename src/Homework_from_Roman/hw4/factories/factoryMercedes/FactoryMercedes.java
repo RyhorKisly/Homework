@@ -9,6 +9,7 @@ import Homework_from_Roman.hw4.enums.enumMercedes.ModelMercedes;
 import Homework_from_Roman.hw4.enums.enumMercedes.WheelDrive;
 import Homework_from_Roman.hw4.enums.enumMercedes.WheelSizeMercedes;
 import Homework_from_Roman.hw4.factories.Factory;
+import Homework_from_Roman.hw4.factories.Storage;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,7 +17,7 @@ import java.util.Set;
 
 import static java.lang.String.format;
 
-public class FactoryMercedes implements Factory {
+public class FactoryMercedes extends Factory {
 
     private static final int YEAR = 2022;
     private final ColourMercedes[] colour;
@@ -24,20 +25,22 @@ public class FactoryMercedes implements Factory {
     private final WheelSizeMercedes[] wheelSize;
     private final EngineVolumeMercedes[] engineVolume;
     private WheelDrive[] wheelDrive;
-    private final StorageMercedes storageMercedes;
+    private final Storage<WheelDrive> storage;
 
     public FactoryMercedes(ColourMercedes[] colour, ModelMercedes[] model, WheelSizeMercedes[] wheelSize, EngineVolumeMercedes[] engineVolume, WheelDrive[] wheelDrive) {
+        super(colour, model, wheelSize, engineVolume);
         this.colour = colour;
         this.model = model;
         this.wheelSize = wheelSize;
         this.engineVolume = engineVolume;
         this.wheelDrive = wheelDrive;
-        this.storageMercedes = new StorageMercedes();
+        this.storage = new Storage<>();
         fillStorageWithCars();
     }
 
+
     public Car createCar(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
-        Mercedes mercedes = storageMercedes.getCarFromStorage(model, engineVolume, colour, wheelSize, option, wheelDrive);
+        Mercedes mercedes = (Mercedes) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, wheelDrive);
         if (mercedes != null) {
             if (mercedes.getColor() != colour) {
                 mercedes.setColor(colour);
@@ -72,11 +75,11 @@ public class FactoryMercedes implements Factory {
     public void fillStorageWithCars() {
         // Any custom logic about creating initial cars.
         Mercedes mercedes = new Mercedes(YEAR, ModelMercedes.CLASS_C, EngineVolumeMercedes.BIG_VOLUME, ColourMercedes.GREY, WheelSizeMercedes.SMALLEST, new HashSet<>(), WheelDrive.ALL);
-        this.storageMercedes.addCarToStorage(mercedes);
+        this.storage.addCarToStorage(mercedes);
         Set<Option> option = new HashSet<>();
         option.add(Option.LEATHER_SEATS);
         mercedes = new Mercedes(YEAR, ModelMercedes.CLASS_E, EngineVolumeMercedes.MEDIUM_VOLUME, ColourMercedes.WHITE, WheelSizeMercedes.VERY_BIG, new HashSet<>(), WheelDrive.REAR);
-        this.storageMercedes.addCarToStorage(mercedes);
+        this.storage.addCarToStorage(mercedes);
     }
 
 

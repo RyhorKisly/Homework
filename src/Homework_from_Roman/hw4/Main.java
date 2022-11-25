@@ -4,10 +4,12 @@ import Homework_from_Roman.hw4.cars.BMW;
 import Homework_from_Roman.hw4.cars.Car;
 import Homework_from_Roman.hw4.cars.Mercedes;
 import Homework_from_Roman.hw4.enums.Option;
+import Homework_from_Roman.hw4.enums.SpecialOption;
 import Homework_from_Roman.hw4.enums.enumAudi.*;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.enums.enumMercedes.*;
 import Homework_from_Roman.hw4.factories.Factory;
+import Homework_from_Roman.hw4.factories.Storage;
 import Homework_from_Roman.hw4.factories.factoryAudi.FactoryAudi;
 import Homework_from_Roman.hw4.factories.factoryBMW.FactoryBMW;
 import Homework_from_Roman.hw4.factories.factoryMercedes.FactoryMercedes;
@@ -19,11 +21,7 @@ import java.util.HashSet;
 
 public class Main {
 
-private static ColourBMW colourBMW;
-    static ColourBMW[] bmwColours = ColourBMW.values();
-
     public static void main(String[] args) {
-
 
         ServiceColor serviceColor = new ServiceColor();
         ServiceWheels serviceWheels = new ServiceWheels();
@@ -36,17 +34,19 @@ private static ColourBMW colourBMW;
 
 
         ShowRoom showRoom = new ShowRoom(serviceColor, serviceWheels, serviceOption, serviceWheelDrive, factoryMercedes, factoryAudi, factoryBMW);
+
+
 //
-//        showRoom.printFactoryBMWSettings();
-//        showRoom.printFactoryAudiSettings();
-//        showRoom.printFactoryMercedesSettings();
+        showRoom.printFactoryBMWSettings();
+        showRoom.printFactoryAudiSettings();
+        showRoom.printFactoryMercedesSettings();
 
         System.out.println();
         Car bmw = showRoom.orderBMW(
                 ModelBMW.SERIES3,
                 EngineVolumeBMW.BIG_VOLUME,
                 ColourBMW.BLACK,
-                WheelSizeBMW.BIG,
+                WheelSizeBMW.SMALL,
                 new HashSet<>(),
                 FuelType.DIESEL);
         System.out.println();
