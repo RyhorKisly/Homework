@@ -3,6 +3,7 @@ package Homework_from_Roman.hw4.factories.factoryMercedes;
 import Homework_from_Roman.hw4.cars.Mercedes;
 import Homework_from_Roman.hw4.cars.Car;
 import Homework_from_Roman.hw4.enums.*;
+import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.enums.enumMercedes.ColourMercedes;
 import Homework_from_Roman.hw4.enums.enumMercedes.EngineVolumeMercedes;
 import Homework_from_Roman.hw4.enums.enumMercedes.ModelMercedes;
@@ -31,8 +32,14 @@ public class FactoryMercedes extends Factory {
         fillStorageWithCars();
     }
 
+    public Car createMercedes(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize,
+                         Set<Option> option, WheelDrive wheelDrive) {
+        return createCar(model, engineVolume, colour, wheelSize,
+                option, wheelDrive);
+    }
+
     @Override
-    public Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
+    protected Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
                          Set<Option> option, SpecialOption wheelDrive) {
         Mercedes mercedes = (Mercedes) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
                 option, (WheelDrive) wheelDrive);

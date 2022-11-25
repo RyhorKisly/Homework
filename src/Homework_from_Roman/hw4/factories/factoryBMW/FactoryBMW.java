@@ -15,6 +15,8 @@ import static java.lang.String.format;
 
 public class FactoryBMW extends Factory {
 
+    ModelBMW modelBMW;
+
     private static final int YEAR = 2022;
     private final FuelType[] fuelTypes;
     private final Storage<FuelType> storage;
@@ -27,8 +29,13 @@ public class FactoryBMW extends Factory {
         fillStorageWithCars();
     }
 
+    public Car createBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize,
+                          Set<Option> option, FuelType fuelType) {
+        return createCar(model, engineVolume, colour, wheelSize,
+                option, fuelType);
+    }
     @Override
-    public Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
+    protected Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
                          Set<Option> option, SpecialOption fuelType) {
         BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, (FuelType) fuelType);
         if (bmw != null) {
@@ -44,7 +51,8 @@ public class FactoryBMW extends Factory {
             System.out.println("Автомобиль BMW взяли со склада");
             return bmw;
         }
-        return new BMW(YEAR, (ModelBMW) model, (EngineVolumeBMW) engineVolume, (ColourBMW) colour,
+        modelBMW = (ModelBMW) model;
+        return new BMW(YEAR, modelBMW, (EngineVolumeBMW) engineVolume, (ColourBMW) colour,
                 (WheelSizeBMW) wheelSize, option, (FuelType) fuelType);
     }
 

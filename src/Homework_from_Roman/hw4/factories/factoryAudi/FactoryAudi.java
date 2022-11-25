@@ -8,6 +8,7 @@ import Homework_from_Roman.hw4.enums.enumAudi.EngineVolumeAudi;
 import Homework_from_Roman.hw4.enums.enumAudi.ModelAudi;
 import Homework_from_Roman.hw4.enums.enumAudi.Transmission;
 import Homework_from_Roman.hw4.enums.enumAudi.WheelSizeAudi;
+import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.factories.Factory;
 import Homework_from_Roman.hw4.factories.Storage;
 
@@ -32,8 +33,14 @@ public class FactoryAudi extends Factory {
         fillStorageWithCars();
     }
 
+    public Car createAudi(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize,
+                         Set<Option> option, Transmission transmission) {
+        return createCar(model, engineVolume, colour, wheelSize,
+                option, transmission);
+    }
+
     @Override
-    public Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
+    protected Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
                          Set<Option> option, SpecialOption transmission) {
         Audi audi = (Audi) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
                 option, (Transmission) transmission);
