@@ -2,8 +2,7 @@ package Homework_from_Roman.hw4.factories.factoryBMW;
 
 import Homework_from_Roman.hw4.cars.BMW;
 import Homework_from_Roman.hw4.cars.Car;
-import Homework_from_Roman.hw4.enums.Option;
-import Homework_from_Roman.hw4.enums.SpecialOption;
+import Homework_from_Roman.hw4.enums.*;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.factories.Factory;
 import Homework_from_Roman.hw4.factories.Storage;
@@ -20,15 +19,18 @@ public class FactoryBMW extends Factory {
     private final FuelType[] fuelTypes;
     private final Storage<FuelType> storage;
 
-    public FactoryBMW(ColourBMW[] colour, ModelBMW[] model, WheelSizeBMW[] wheelSize, EngineVolumeBMW[] engineVolume, FuelType[] fuelTypes) {
+    public FactoryBMW(ColourBMW[] colour, ModelBMW[] model, WheelSizeBMW[] wheelSize,
+                      EngineVolumeBMW[] engineVolume, FuelType[] fuelTypes) {
         super(colour, model, wheelSize, engineVolume);
         this.fuelTypes = fuelTypes;
         this.storage = new Storage<>();
         fillStorageWithCars();
     }
 
-    public Car createCar(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize, Set<Option> option, FuelType fuelType) {
-        BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, fuelType);
+    @Override
+    public Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
+                         Set<Option> option, SpecialOption fuelType) {
+        BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, (FuelType) fuelType);
         if (bmw != null) {
             if (bmw.getColor() != colour) {
                 bmw.setColor(colour);
@@ -42,7 +44,8 @@ public class FactoryBMW extends Factory {
             System.out.println("Автомобиль BMW взяли со склада");
             return bmw;
         }
-        return new BMW(YEAR, model, engineVolume, colour, wheelSize, option, fuelType);
+        return new BMW(YEAR, (ModelBMW) model, (EngineVolumeBMW) engineVolume, (ColourBMW) colour,
+                (WheelSizeBMW) wheelSize, option, (FuelType) fuelType);
     }
 
     public String getConfigurations() {

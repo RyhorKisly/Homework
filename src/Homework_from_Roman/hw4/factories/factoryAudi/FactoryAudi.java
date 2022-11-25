@@ -2,8 +2,7 @@ package Homework_from_Roman.hw4.factories.factoryAudi;
 
 import Homework_from_Roman.hw4.cars.Audi;
 import Homework_from_Roman.hw4.cars.Car;
-import Homework_from_Roman.hw4.enums.Option;
-import Homework_from_Roman.hw4.enums.SpecialOption;
+import Homework_from_Roman.hw4.enums.*;
 import Homework_from_Roman.hw4.enums.enumAudi.ColourAudi;
 import Homework_from_Roman.hw4.enums.enumAudi.EngineVolumeAudi;
 import Homework_from_Roman.hw4.enums.enumAudi.ModelAudi;
@@ -25,15 +24,19 @@ public class FactoryAudi extends Factory {
     private final Transmission[] transmission;
     private final Storage<Transmission> storage;
 
-    public FactoryAudi(ColourAudi[] colour, ModelAudi[] model, WheelSizeAudi[] wheelSize, EngineVolumeAudi[] engineVolume, Transmission[] transmission) {
+    public FactoryAudi(ColourAudi[] colour, ModelAudi[] model, WheelSizeAudi[] wheelSize,
+                       EngineVolumeAudi[] engineVolume, Transmission[] transmission) {
         super(colour, model, wheelSize, engineVolume);
         this.transmission = transmission;
         this.storage = new Storage<>();
         fillStorageWithCars();
     }
 
-    public Car createCar(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize, Set<Option> option, Transmission transmission) {
-        Audi audi = (Audi) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, transmission);
+    @Override
+    public Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
+                         Set<Option> option, SpecialOption transmission) {
+        Audi audi = (Audi) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
+                option, (Transmission) transmission);
         if (audi != null) {
             if (audi.getColor() != colour) {
                 audi.setColor(colour);
@@ -47,9 +50,9 @@ public class FactoryAudi extends Factory {
             System.out.println("Автомобиль Audi взяли со склада");
             return audi;
         }
-        return new Audi(YEAR, model, engineVolume, colour, wheelSize, option, transmission);
+        return new Audi(YEAR, (ModelAudi) model, (EngineVolumeAudi) engineVolume, (ColourAudi) colour,
+                (WheelSizeAudi) wheelSize, option, (Transmission) transmission);
     }
-
 
     public String getConfigurations() {
         return format(

@@ -2,7 +2,7 @@ package Homework_from_Roman.hw4.factories.factoryMercedes;
 
 import Homework_from_Roman.hw4.cars.Mercedes;
 import Homework_from_Roman.hw4.cars.Car;
-import Homework_from_Roman.hw4.enums.Option;
+import Homework_from_Roman.hw4.enums.*;
 import Homework_from_Roman.hw4.enums.enumMercedes.ColourMercedes;
 import Homework_from_Roman.hw4.enums.enumMercedes.EngineVolumeMercedes;
 import Homework_from_Roman.hw4.enums.enumMercedes.ModelMercedes;
@@ -20,19 +20,22 @@ import static java.lang.String.format;
 public class FactoryMercedes extends Factory {
 
     private static final int YEAR = 2022;
-    private WheelDrive[] wheelDrive;
+    private WheelDrive[] wheelDrives;
     private final Storage<WheelDrive> storage;
 
-    public FactoryMercedes(ColourMercedes[] colour, ModelMercedes[] model, WheelSizeMercedes[] wheelSize, EngineVolumeMercedes[] engineVolume, WheelDrive[] wheelDrive) {
+    public FactoryMercedes(ColourMercedes[] colour, ModelMercedes[] model, WheelSizeMercedes[] wheelSize,
+                           EngineVolumeMercedes[] engineVolume, WheelDrive[] wheelDrives) {
         super(colour, model, wheelSize, engineVolume);
-        this.wheelDrive = wheelDrive;
+        this.wheelDrives = wheelDrives;
         this.storage = new Storage<>();
         fillStorageWithCars();
     }
 
-
-    public Car createCar(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
-        Mercedes mercedes = (Mercedes) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, wheelDrive);
+    @Override
+    public Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
+                         Set<Option> option, SpecialOption wheelDrive) {
+        Mercedes mercedes = (Mercedes) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
+                option, (WheelDrive) wheelDrive);
         if (mercedes != null) {
             if (mercedes.getColor() != colour) {
                 mercedes.setColor(colour);
@@ -46,9 +49,9 @@ public class FactoryMercedes extends Factory {
             System.out.println("Автомобиль Mercedes взяли со склада");
             return mercedes;
         }
-        return new Mercedes(YEAR, model, engineVolume, colour, wheelSize, option, wheelDrive);
+        return new Mercedes(YEAR, (ModelMercedes) model, (EngineVolumeMercedes) engineVolume, (ColourMercedes) colour,
+                (WheelSizeMercedes) wheelSize, option, (WheelDrive) wheelDrive);
     }
-
 
     public String getConfigurations() {
         return format(
@@ -57,7 +60,7 @@ public class FactoryMercedes extends Factory {
                 Arrays.toString(ModelMercedes.values()),
                 Arrays.toString(WheelSizeMercedes.values()),
                 Arrays.toString(EngineVolumeMercedes.values()),
-                Arrays.toString(wheelDrive)
+                Arrays.toString(wheelDrives)
         );
     }
 
