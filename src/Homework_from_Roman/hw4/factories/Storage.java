@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Storage<T> {
 
-    private final List<Car> cars = new ArrayList<>();
+    public final List<Car> cars = new ArrayList<>();
 
     public void addCarToStorage(Car car) {
         cars.add(car);

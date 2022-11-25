@@ -12,6 +12,7 @@ import Homework_from_Roman.hw4.factories.factoryAudi.FactoryAudi;
 import Homework_from_Roman.hw4.factories.factoryBMW.FactoryBMW;
 import Homework_from_Roman.hw4.factories.factoryMercedes.FactoryMercedes;
 import Homework_from_Roman.hw4.service.*;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -59,7 +60,7 @@ public class Main {
                 EngineVolumeMercedes.BIG_VOLUME,
                 ColourMercedes.GREY, WheelSizeMercedes.VERY_BIG,
                 new HashSet<>(),
-                WheelDrive.REAR);
+                WheelDrive.ALL);
 
         showRoom.changeColor(bmw, ColourBMW.ORANGE);
         showRoom.changeWheels(audi, WheelSizeAudi.VERY_SMALL);

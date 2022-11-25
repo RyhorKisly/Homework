@@ -10,15 +10,7 @@ public class Mercedes extends Car{
     private WheelDrive wheelDrive;
 
     public Mercedes(int year, ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes color, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
-       super (year, model, engineVolume, color, wheelSize, option);
-        this.wheelDrive = wheelDrive;
-    }
-
-    public WheelDrive getWheelDrive() {
-        return wheelDrive;
-    }
-
-    public void setWheelDrive(WheelDrive wheelDrive) {
+       super (year, model, engineVolume, color, wheelSize, option, wheelDrive);
         this.wheelDrive = wheelDrive;
     }
 

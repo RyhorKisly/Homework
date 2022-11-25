@@ -16,19 +16,11 @@ import static java.lang.String.format;
 public class FactoryBMW extends Factory {
 
     private static final int YEAR = 2022;
-    private final ColourBMW[] colour;
-    private final ModelBMW[] model;
-    private final WheelSizeBMW[] wheelSize;
-    private final EngineVolumeBMW[] engineVolume;
     private final FuelType[] fuelTypes;
     private final Storage<FuelType> storage;
 
     public FactoryBMW(ColourBMW[] colour, ModelBMW[] model, WheelSizeBMW[] wheelSize, EngineVolumeBMW[] engineVolume, FuelType[] fuelTypes) {
         super(colour, model, wheelSize, engineVolume);
-        this.colour = colour;
-        this.model = model;
-        this.wheelSize = wheelSize;
-        this.engineVolume = engineVolume;
         this.fuelTypes = fuelTypes;
         this.storage = new Storage<>();
         fillStorageWithCars();
@@ -55,22 +47,23 @@ public class FactoryBMW extends Factory {
 
     public String getConfigurations() {
         return format(
-                "FactoryBMW can produce: colors: %s, models: %s, wheelSizes: %s, engineVolumes: %s",
-                Arrays.toString(colour),
-                Arrays.toString(model),
-                Arrays.toString(wheelSize),
-                Arrays.toString(engineVolume),
+                "FactoryBMW can produce: colors: %s, models: %s, wheelSizes: %s, engineVolumes: %s, fuelTypes: %s",
+                Arrays.toString(ColourBMW.values()),
+                Arrays.toString(ModelBMW.values()),
+                Arrays.toString(WheelSizeBMW.values()),
+                Arrays.toString(EngineVolumeBMW.values()),
                 Arrays.toString(fuelTypes)
         );
     }
 
     public void fillStorageWithCars() {
-        // Any custom logic about creating initial cars.
-        BMW bmw = new BMW(YEAR, ModelBMW.SERIES3, EngineVolumeBMW.BIG_VOLUME, ColourBMW.BLACK, WheelSizeBMW.SMALL, new HashSet<>(), FuelType.DIESEL);
+        BMW bmw = new BMW(YEAR, ModelBMW.SERIES3, EngineVolumeBMW.BIG_VOLUME, ColourBMW.BLACK,
+                WheelSizeBMW.SMALL, new HashSet<>(), FuelType.DIESEL);
         this.storage.addCarToStorage(bmw);
         Set<Option> option = new HashSet<>();
         option.add(Option.REAR_VIEW_CAMERA);
-        bmw = new BMW(YEAR, ModelBMW.SERIES5, EngineVolumeBMW.MEDIUM_VOLUME, ColourBMW.BLACK, WheelSizeBMW.BIG, new HashSet<>(), FuelType.PETROL);
+        bmw = new BMW(YEAR, ModelBMW.SERIES5, EngineVolumeBMW.MEDIUM_VOLUME, ColourBMW.BLACK,
+                WheelSizeBMW.BIG, new HashSet<>(), FuelType.PETROL);
         this.storage.addCarToStorage(bmw);
     }
 

@@ -1,13 +1,14 @@
 package Homework_from_Roman.hw4.factories;
 
 import Homework_from_Roman.hw4.enums.*;
+import Homework_from_Roman.hw4.enums.enumBMW.ColourBMW;
 
 import java.util.Arrays;
 
 
 import static java.lang.String.format;
 
-public class Factory {
+public abstract class Factory {
 
     private static final int YEAR = 2022;
     private final Colour[] colour;
@@ -30,5 +31,7 @@ public class Factory {
                 Arrays.toString(engineVolume)
         );
     }
+
+    public abstract void fillStorageWithCars();
 
 }

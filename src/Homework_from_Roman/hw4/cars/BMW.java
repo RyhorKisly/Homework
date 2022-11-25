@@ -10,12 +10,8 @@ public class BMW extends Car{
     private final FuelType fuelType;
 
     public BMW(int year, ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW color, WheelSizeBMW wheelSize, Set<Option> option, FuelType fuelType) {
-        super(year, model, engineVolume, color, wheelSize, option);
+        super(year, model, engineVolume, color, wheelSize, option, fuelType);
         this.fuelType = fuelType;
-    }
-
-    public FuelType getFuelType() {
-        return fuelType;
     }
 
     @Override

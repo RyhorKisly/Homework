@@ -21,20 +21,12 @@ import static java.lang.String.format;
 public class FactoryAudi extends Factory {
 
     private static final int YEAR = 2022;
-    private final ColourAudi[] colour;
-    private final ModelAudi[] model;
-    private final WheelSizeAudi[] wheelSize;
-    private final EngineVolumeAudi[] engineVolume;
 
     private final Transmission[] transmission;
     private final Storage<Transmission> storage;
 
     public FactoryAudi(ColourAudi[] colour, ModelAudi[] model, WheelSizeAudi[] wheelSize, EngineVolumeAudi[] engineVolume, Transmission[] transmission) {
         super(colour, model, wheelSize, engineVolume);
-        this.colour = colour;
-        this.model = model;
-        this.wheelSize = wheelSize;
-        this.engineVolume = engineVolume;
         this.transmission = transmission;
         this.storage = new Storage<>();
         fillStorageWithCars();
@@ -61,22 +53,24 @@ public class FactoryAudi extends Factory {
 
     public String getConfigurations() {
         return format(
-                "FactoryAudi can produce: colors: %s, models: %s, wheelSizes: %s, engineVolumes: %s",
-                Arrays.toString(colour),
-                Arrays.toString(model),
-                Arrays.toString(wheelSize),
-                Arrays.toString(engineVolume),
+                "FactoryAudi can produce: colors: %s, models: %s, wheelSizes: %s, engineVolumes: %s, transmission: %s",
+                Arrays.toString(ColourAudi.values()),
+                Arrays.toString(ModelAudi.values()),
+                Arrays.toString(WheelSizeAudi.values()),
+                Arrays.toString(EngineVolumeAudi.values()),
                 Arrays.toString(transmission)
         );
     }
 
     public void fillStorageWithCars() {
         // Any custom logic about creating initial cars.
-        Audi audi = new Audi(YEAR, ModelAudi.A4, EngineVolumeAudi.BIG_VOLUME, ColourAudi.RED, WheelSizeAudi.VERY_SMALL, new HashSet<>(), Transmission.AUTOMATIC);
+        Audi audi = new Audi(YEAR, ModelAudi.A4, EngineVolumeAudi.BIG_VOLUME, ColourAudi.RED,
+                WheelSizeAudi.VERY_SMALL, new HashSet<>(), Transmission.AUTOMATIC);
         this.storage.addCarToStorage(audi);
         Set<Option> option = new HashSet<>();
         option.add(Option.REAR_VIEW_CAMERA);
-        audi = new Audi(YEAR, ModelAudi.A8, EngineVolumeAudi.MEDIUM_VOLUME, ColourAudi.BLUE, WheelSizeAudi.MEDIUM, new HashSet<>(), Transmission.MANUAL);
+        audi = new Audi(YEAR, ModelAudi.A8, EngineVolumeAudi.MEDIUM_VOLUME, ColourAudi.BLUE,
+                WheelSizeAudi.MEDIUM, new HashSet<>(), Transmission.MANUAL);
         this.storage.addCarToStorage(audi);
     }
 
