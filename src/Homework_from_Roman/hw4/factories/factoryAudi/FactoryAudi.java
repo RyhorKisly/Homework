@@ -3,14 +3,8 @@ package Homework_from_Roman.hw4.factories.factoryAudi;
 import Homework_from_Roman.hw4.cars.Audi;
 import Homework_from_Roman.hw4.cars.Car;
 import Homework_from_Roman.hw4.enums.*;
-import Homework_from_Roman.hw4.enums.enumAudi.ColourAudi;
-import Homework_from_Roman.hw4.enums.enumAudi.EngineVolumeAudi;
-import Homework_from_Roman.hw4.enums.enumAudi.ModelAudi;
-import Homework_from_Roman.hw4.enums.enumAudi.Transmission;
-import Homework_from_Roman.hw4.enums.enumAudi.WheelSizeAudi;
-import Homework_from_Roman.hw4.enums.enumBMW.*;
-import Homework_from_Roman.hw4.factories.Factory;
-import Homework_from_Roman.hw4.factories.Storage;
+import Homework_from_Roman.hw4.enums.enumAudi.*;
+import Homework_from_Roman.hw4.factories.*;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -18,7 +12,8 @@ import java.util.Set;
 
 import static java.lang.String.format;
 
-public class FactoryAudi extends Factory {
+public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C extends ColourAudi,
+        W extends WheelSizeAudi, S extends Transmission> extends Factory<M, E, C, W, S> {
 
     private static final int YEAR = 2022;
 
@@ -34,10 +29,9 @@ public class FactoryAudi extends Factory {
     }
 
     @Override
-    protected Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
-                         Set<Option> option, SpecialOption transmission) {
+    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S transmission) {
         Audi audi = (Audi) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
-                option, (Transmission) transmission);
+                option, transmission);
         if (audi != null) {
             if (audi.getColor() != colour) {
                 audi.setColor(colour);
@@ -51,14 +45,7 @@ public class FactoryAudi extends Factory {
             System.out.println("Автомобиль Audi взяли со склада");
             return audi;
         }
-        return new Audi(YEAR, (ModelAudi) model, (EngineVolumeAudi) engineVolume, (ColourAudi) colour,
-                (WheelSizeAudi) wheelSize, option, (Transmission) transmission);
-    }
-
-    public Car createAudi(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize,
-                          Set<Option> option, Transmission transmission) {
-        return createCar(model, engineVolume, colour, wheelSize,
-                option, transmission);
+        return new Audi(YEAR, model, engineVolume, colour, wheelSize, option, transmission);
     }
 
     public String getConfigurations() {
@@ -73,7 +60,6 @@ public class FactoryAudi extends Factory {
     }
 
     public void fillStorageWithCars() {
-        // Any custom logic about creating initial cars.
         Audi audi = new Audi(YEAR, ModelAudi.A4, EngineVolumeAudi.BIG_VOLUME, ColourAudi.RED,
                 WheelSizeAudi.VERY_SMALL, new HashSet<>(), Transmission.AUTOMATIC);
         this.storage.addCarToStorage(audi);

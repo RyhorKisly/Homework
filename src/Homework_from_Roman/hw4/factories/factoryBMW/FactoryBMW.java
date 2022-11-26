@@ -13,7 +13,9 @@ import java.util.Set;
 
 import static java.lang.String.format;
 
-public class FactoryBMW extends Factory {
+public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends ColourBMW,
+        W extends WheelSizeBMW, S extends FuelType> extends Factory<M, E, C, W, S> {
+
     private static final int YEAR = 2022;
     private final FuelType[] fuelTypes;
     private final Storage<FuelType> storage;
@@ -27,9 +29,8 @@ public class FactoryBMW extends Factory {
     }
 
     @Override
-    protected Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
-                         Set<Option> option, SpecialOption fuelType) {
-        BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, (FuelType) fuelType);
+    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S fuelType) {
+        BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, fuelType);
         if (bmw != null) {
             if (bmw.getColor() != colour) {
                 bmw.setColor(colour);
@@ -43,15 +44,7 @@ public class FactoryBMW extends Factory {
             System.out.println("Автомобиль BMW взяли со склада");
             return bmw;
         }
-
-        return new BMW(YEAR, (ModelBMW) model, (EngineVolumeBMW) engineVolume, (ColourBMW) colour,
-                (WheelSizeBMW) wheelSize, option, (FuelType) fuelType);
-    }
-
-    public Car createBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize,
-                         Set<Option> option, FuelType fuelType) {
-        return createCar(model, engineVolume, colour, wheelSize,
-                option, fuelType);
+        return new BMW(YEAR, model, engineVolume, colour, wheelSize, option, fuelType);
     }
 
     public String getConfigurations() {

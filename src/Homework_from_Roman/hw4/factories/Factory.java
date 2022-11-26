@@ -13,7 +13,7 @@ import java.util.Set;
 
 import static java.lang.String.format;
 
-public abstract class Factory {
+public abstract class Factory<M, E, C, W, S> {
 
     private final Colour[] colour;
     private final Model[] model;
@@ -27,7 +27,7 @@ public abstract class Factory {
         this.engineVolume = engineVolume;
     }
 
-    protected abstract Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize, Set<Option> option, SpecialOption specialOption);
+    public abstract Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S specialOption);
 
     public String getConfigurations() {
         return format(

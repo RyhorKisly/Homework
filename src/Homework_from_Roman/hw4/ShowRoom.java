@@ -34,15 +34,15 @@ public class ShowRoom {
     }
 
     public Car orderMercedes(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
-        return factoryMercedes.createMercedes(model, engineVolume, colour, wheelSize, option, wheelDrive);
+        return factoryMercedes.createCar(model, engineVolume, colour, wheelSize, option, wheelDrive);
     }
 
     public Car orderAudi(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize, Set<Option> option, Transmission transmission) {
-        return factoryAudi.createAudi(model, engineVolume, colour, wheelSize, option, transmission);
+        return factoryAudi.createCar(model, engineVolume, colour, wheelSize, option, transmission);
     }
 
     public Car orderBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize, Set<Option> options, FuelType fuelType) {
-        return factoryBMW.createBMW(model, engineVolume, colour, wheelSize, options, fuelType);
+        return factoryBMW.createCar(model, engineVolume, colour, wheelSize, options, fuelType);
     }
 
     public void changeColor(Car car, Colour colour) {

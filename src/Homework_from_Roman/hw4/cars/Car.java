@@ -5,18 +5,18 @@ import Homework_from_Roman.hw4.enums.*;
 
 import java.util.Set;
 
-public class Car {
+public class Car<T> {
 
     private final int year;
     private final Model model;
     private final EngineVolume engineVolume;
-    private final SpecialOption specialOption;
+    private final T specialOption;
     private Colour color;
     private WheelSize wheelSize;
     private Set<Option> option;
 
 
-    public Car(int year, Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option, SpecialOption specialOption) {
+    public Car(int year, Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option, T specialOption) {
         this.year = year;
         this.model = model;
         this.engineVolume = engineVolume;
@@ -30,7 +30,7 @@ public class Car {
         return color;
     }
 
-    public SpecialOption getSpecialOption() {
+    public T getSpecialOption() {
         return specialOption;
     }
 
