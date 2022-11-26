@@ -1,6 +1,9 @@
 package Homework_from_Roman.hw4;
 
+import Homework_from_Roman.hw4.cars.Audi;
+import Homework_from_Roman.hw4.cars.BMW;
 import Homework_from_Roman.hw4.cars.Car;
+import Homework_from_Roman.hw4.cars.Mercedes;
 import Homework_from_Roman.hw4.enums.Option;
 import Homework_from_Roman.hw4.enums.enumAudi.*;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
@@ -32,7 +35,7 @@ public class Main {
         showRoom.printFactoryMercedesSettings();
 
         System.out.println();
-        Car bmw = showRoom.orderBMW(
+        BMW bmw = (BMW) showRoom.orderBMW(
                 ModelBMW.SERIES3,
                 EngineVolumeBMW.BIG_VOLUME,
                 ColourBMW.BLACK,
@@ -40,14 +43,14 @@ public class Main {
                 new HashSet<>(),
                 FuelType.DIESEL);
         System.out.println();
-        Car audi = showRoom.orderAudi(
+        Audi audi = (Audi) showRoom.orderAudi(
                 ModelAudi.A4,
                 EngineVolumeAudi.MEDIUM_VOLUME,
                 ColourAudi.RED, WheelSizeAudi.MEDIUM,
                 new HashSet<>(Option.REAR_VIEW_CAMERA.ordinal()),
                 Transmission.AUTOMATIC);
         System.out.println();
-        Car mercedes = showRoom.orderMercedes(
+        Mercedes mercedes = (Mercedes) showRoom.orderMercedes(
                 ModelMercedes.CLASS_C,
                 EngineVolumeMercedes.BIG_VOLUME,
                 ColourMercedes.GREY, WheelSizeMercedes.VERY_BIG,
