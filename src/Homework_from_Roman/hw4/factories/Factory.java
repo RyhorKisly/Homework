@@ -27,7 +27,8 @@ public abstract class Factory {
         this.engineVolume = engineVolume;
     }
 
-    protected abstract Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize, Set<Option> option, SpecialOption specialOption);
+    protected abstract Car createCar(Model model, EngineVolume engineVolume, Colour colour, WheelSize wheelSize,
+                                     Set<Option> option, SpecialOption specialOption);
 
     public String getConfigurations() {
         return format(
