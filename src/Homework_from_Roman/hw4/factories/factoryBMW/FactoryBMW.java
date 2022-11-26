@@ -14,9 +14,6 @@ import java.util.Set;
 import static java.lang.String.format;
 
 public class FactoryBMW extends Factory {
-
-    ModelBMW modelBMW;
-
     private static final int YEAR = 2022;
     private final FuelType[] fuelTypes;
     private final Storage<FuelType> storage;
@@ -46,8 +43,8 @@ public class FactoryBMW extends Factory {
             System.out.println("Автомобиль BMW взяли со склада");
             return bmw;
         }
-        modelBMW = (ModelBMW) model;
-        return new BMW(YEAR, modelBMW, (EngineVolumeBMW) engineVolume, (ColourBMW) colour,
+
+        return new BMW(YEAR, (ModelBMW) model, (EngineVolumeBMW) engineVolume, (ColourBMW) colour,
                 (WheelSizeBMW) wheelSize, option, (FuelType) fuelType);
     }
 
