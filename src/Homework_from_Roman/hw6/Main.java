@@ -22,11 +22,30 @@
 
 package Homework_from_Roman.hw6;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        Store store = new Store();
+        Factory store = new Factory();
+        List<List <Robot>> army1 = new ArrayList<>();
+        List<List <Robot>> army2 = new ArrayList<>();
+        List<Robot> robot1 = new ArrayList<>();
+        List<Robot> robot2 = new ArrayList<>();
+        Country usa = new Country("USA", army1, robot1, store);
+        Country northKorea = new Country("North Korea", army2, robot2, store);
+        store.start();
+        usa.start();
+        northKorea.start();
+        try {
+            store.join();
+            usa.join();
+            northKorea.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
 
 

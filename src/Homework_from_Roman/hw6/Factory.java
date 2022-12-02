@@ -2,26 +2,36 @@ package Homework_from_Roman.hw6;
 
 import java.util.*;
 
-public class Store extends Thread {
+public class Factory extends Thread{
 
-    private static final Random RANDOM = new Random();
-    private static final  List<Robot> ROBOT = List.of(
+    private final Random RANDOM = new Random();
+    private final  List<Robot> ROBOT = List.of(
             Robot.LEFT_HAND, Robot.RIGHT_HAND,
             Robot.LEFT_LEG, Robot.RIGHT_LEG,
             Robot.BODY, Robot.HEAD);
-    private static List<Robot> robotParts = new ArrayList<>();
+    private final List<Robot> storage = new ArrayList<>();
 
-//    createRobotParts
+    public List<Robot> getStorage() {
+        return storage;
+    }
+
+    //    createRobotParts
     public void run() {
         while(true) {
             try {
-                robotParts.add(ROBOT.get(RANDOM.nextInt(6)));
-                Thread.sleep(1000);
-                System.out.println(robotParts);
+            if(Country.isCountry()) {
+
+                    synchronized (storage) {
+                        storage.add(ROBOT.get(RANDOM.nextInt(6)));
+                        System.out.println("Склад частей робота на заводе: " + storage);
+                    }
+                    Thread.sleep(10);
+            }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
+
     }
 
 
