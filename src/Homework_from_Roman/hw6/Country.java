@@ -7,8 +7,8 @@ public class Country extends Thread{
     private static final Integer LIMIT = 20;
     public static boolean country = true;
 
-    private List<List<Robot>> army = new ArrayList<>();
-    private List<Robot> robot = new ArrayList<>();
+    private List<List<Robot>> army;
+    private List<Robot> robot;
     private Factory factory;
 
     public Country(String name, List<List<Robot>> army, List<Robot> robot, Factory factory) {
@@ -44,9 +44,7 @@ public class Country extends Thread{
                         if (counterForArmy == LIMIT) {
                             System.out.println(Thread.currentThread().getName() + " армия готова!!!");
                             country = false;
-                            break;
                         }
-                        System.out.println(Thread.currentThread().getName() + " начинаем создавать следующего робота");
                     }
                 }
             }
