@@ -5,14 +5,14 @@ public class MainNew{
 
     public static void main(String[] args) {
 
-        if(!aBoolean) {
-            MethodOne();
-        }
+        MethodOne();
 
     }
 
     public static void MethodOne() {
+        if(aBoolean) {
         System.out.println("Метод один");
+        }
     }
 
     public static void methodTwo() {
