@@ -20,34 +20,26 @@
 //
 //        Программа должна корректно завершиться.
 
-package Homework_from_Roman.hw6;
+package Homework_from_Roman.hw6New;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        Factory store = new Factory();
-        List<List <Robot>> army1 = new ArrayList<>();
-        List<List <Robot>> army2 = new ArrayList<>();
-        List<Robot> robot1 = new ArrayList<>();
-        List<Robot> robot2 = new ArrayList<>();
-        Country usa = new Country("USA", army1, robot1, store);
-        Country northKorea = new Country("North Korea", army2, robot2, store);
-        store.start();
-        usa.start();
-        northKorea.start();
-        try {
-            store.join();
-            usa.join();
-            northKorea.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-
-
+        Factory storage = new Factory();
+        Country usa = new Country(storage, "USA");
+        Country northKorea = new Country(storage, "NorthKorea");
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        Runnable factory = (storage::factorySetRobotParts);
+        Runnable usaThread = (usa::getArmy);
+        Runnable northKoreaThread = (northKorea::getArmy);
+        executorService.execute(factory);
+        executorService.execute(usaThread);
+        executorService.execute(northKoreaThread);
     }
+
 }

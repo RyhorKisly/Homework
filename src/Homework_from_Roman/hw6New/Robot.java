@@ -1,4 +1,4 @@
-package Homework_from_Roman.hw6;
+package Homework_from_Roman.hw6New;
 
 public enum Robot {
 
