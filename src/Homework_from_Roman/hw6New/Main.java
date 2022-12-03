@@ -22,28 +22,44 @@
 
 package Homework_from_Roman.hw6New;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main {
+    protected static final List<Robot> ROBOT = List.of(
+            Robot.LEFT_HAND, Robot.RIGHT_HAND,
+            Robot.LEFT_LEG, Robot.RIGHT_LEG,
+            Robot.BODY, Robot.HEAD);
 
     public static void main(String[] args) {
         Factory storage = new Factory();
         Country usa = new Country(storage, "USA");
         Country northKorea = new Country(storage, "NorthKorea");
-        Country russia = new Country(storage, "Russia");
-        Country kazahstan = new Country(storage, "Kazahstan");
+
         ExecutorService executorService = Executors.newCachedThreadPool();
         Runnable factory = (storage::factorySetRobotParts);
+
         Runnable usaThread = (usa::getArmy);
         Runnable northKoreaThread = (northKorea::getArmy);
-        Runnable russiaThread = (russia::getArmy);
-        Runnable kazahstanThread = (kazahstan::getArmy);
+
         executorService.execute(factory);
         executorService.execute(usaThread);
         executorService.execute(northKoreaThread);
-        executorService.execute(russiaThread);
-        executorService.execute(kazahstanThread);
+
+    }
+
+
+    public void getArmy() {
+        while (country) {
+            synchronized (ROBOT) {
+                if (!temp.isEmpty()) {
+                    getRobotParts();
+                } else if (temp.isEmpty()) {
+                    getRobot();
+                }
+            }
+        }
     }
 
 }

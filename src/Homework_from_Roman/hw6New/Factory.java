@@ -4,14 +4,13 @@ import java.util.*;
 
 
 import static Homework_from_Roman.hw6New.Country.country;
+import static Homework_from_Roman.hw6New.Main.ROBOT;
+
 
 
 public class Factory {
     private final Random RANDOM = new Random();
-    protected static final List<Robot> ROBOT = List.of(
-            Robot.LEFT_HAND, Robot.RIGHT_HAND,
-            Robot.LEFT_LEG, Robot.RIGHT_LEG,
-            Robot.BODY, Robot.HEAD);
+
     protected final List<Robot> storage = new ArrayList<>();
     protected static int step = 0;
 
@@ -20,7 +19,7 @@ public class Factory {
     public void factorySetRobotParts() {
         while (country) {
             try {
-                    synchronized (storage) {
+                    synchronized (ROBOT) {
                         int x = RANDOM.nextInt(6);
                         step++;
                         System.out.print("Ход " + step + ": ");
@@ -44,13 +43,12 @@ public class Factory {
         System.out.println("на фабрике есть: " + storage);
     }
 
-//    public Robot checkStorageElement(List<Robot> robot) {
+//    public void checkStorageElement(List<Robot> temp) {
 //        for (Robot element : storage) {
-//            if (!robot.contains(element)) {
-//                return element;
-//            }
+//            if(temp.contains(element))
+//                temp.remove(element);
 //        }
-//        return null;
+//
 //    }
 
 

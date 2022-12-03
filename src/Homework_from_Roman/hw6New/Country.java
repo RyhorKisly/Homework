@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static Homework_from_Roman.hw6New.Factory.ROBOT;
+import static Homework_from_Roman.hw6New.Main.ROBOT;
 import static Homework_from_Roman.hw6New.Factory.step;
 
 public class Country {
@@ -15,10 +15,9 @@ public class Country {
             Robot.LEFT_HAND, Robot.RIGHT_HAND,
             Robot.LEFT_LEG, Robot.RIGHT_LEG,
             Robot.BODY, Robot.HEAD));
+    private List<Robot> tempStorage = new ArrayList<>();
     private List<Robot> robot = new ArrayList<>();
     private List<List<Robot>> army = new ArrayList<>();
-
-    private int counterOfRobotParts;
     private int counterForArmy;
     private Factory factory;
     private String nameOfCountry;
@@ -30,10 +29,10 @@ public class Country {
 
     public void getArmy() {
         while (country) {
-            synchronized (factory.storage) {
-                if (counterOfRobotParts < 6) {
+            synchronized (ROBOT) {
+                if (!temp.isEmpty()) {
                     getRobotParts();
-                } else if (counterOfRobotParts == 6) {
+                } else if (temp.isEmpty()) {
                     getRobot();
                 }
             }
@@ -51,7 +50,6 @@ public class Country {
                 System.out.print("армии " + nameOfCountry + " нужно еще: " + temp + "; ");
                 factory.factoryRemoveElement(element);
                 factory.factoryHas();
-                ++counterOfRobotParts;
                 break;
             }
         }
@@ -62,7 +60,6 @@ public class Country {
         army.add(robot);
         robot.clear();
         temp.addAll(ROBOT);
-        counterOfRobotParts = 0;
         counterForArmy++;
         System.out.print("Армия " + nameOfCountry + " получила +1 робот; ");
         System.out.print("Количество роботв в армии: " + counterForArmy + "; ");
