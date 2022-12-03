@@ -70,6 +70,10 @@ public class Country {
             System.out.println("Армии " + nameOfCountry + " нужно: " + temp + ".");
         }
     }
+
+    public List<Robot> getTemp() {
+        return temp;
+    }
 }
 
 

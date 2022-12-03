@@ -25,6 +25,7 @@ package Homework_from_Roman.hw6New;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Main {
     protected static final List<Robot> ROBOT = List.of(
@@ -33,15 +34,46 @@ public class Main {
             Robot.BODY, Robot.HEAD);
 
     public static void main(String[] args) {
+        AtomicBoolean atomicBoolean = new AtomicBoolean(true);
         Factory storage = new Factory();
         Country usa = new Country(storage, "USA");
         Country northKorea = new Country(storage, "NorthKorea");
 
         ExecutorService executorService = Executors.newCachedThreadPool();
-        Runnable factory = (storage::factorySetRobotParts);
+        Runnable factory = () -> {
+            while(atomicBoolean.get()) {
+                storage.setRobotParts();
+            }
+        };
 
-        Runnable usaThread = (usa::getArmy);
-        Runnable northKoreaThread = (northKorea::getArmy);
+        Runnable usaThread = () -> {
+            while(atomicBoolean.get()) {
+                synchronized (ROBOT) {
+                    if (!usa.getTemp().isEmpty()) {
+                        usa.getRobotParts();
+                    } else if (usa.getTemp().isEmpty()) {
+                        usa.getRobot();
+                    }
+                    if(!usa.country){
+                        atomicBoolean.set(false);
+                    }
+                }
+            }
+        };
+        Runnable northKoreaThread = () -> {
+            while(atomicBoolean.get()) {
+                synchronized (ROBOT) {
+                    if (!northKorea.getTemp().isEmpty()) {
+                        northKorea.getRobotParts();
+                    } else if (northKorea.getTemp().isEmpty()) {
+                        northKorea.getRobot();
+                    }
+                    if(!northKorea.country){
+                        atomicBoolean.set(false);
+                    }
+                }
+            }
+        };
 
         executorService.execute(factory);
         executorService.execute(usaThread);
@@ -49,17 +81,5 @@ public class Main {
 
     }
 
-
-    public void getArmy() {
-        while (country) {
-            synchronized (ROBOT) {
-                if (!temp.isEmpty()) {
-                    getRobotParts();
-                } else if (temp.isEmpty()) {
-                    getRobot();
-                }
-            }
-        }
-    }
 
 }

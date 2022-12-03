@@ -16,7 +16,7 @@ public class Factory {
 
 
 
-    public void factorySetRobotParts() {
+    public void setRobotParts() {
         while (country) {
             try {
                     synchronized (ROBOT) {
