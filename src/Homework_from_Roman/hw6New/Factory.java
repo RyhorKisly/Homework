@@ -4,6 +4,7 @@ import java.util.*;
 
 import static Homework_from_Roman.hw6New.Country.country;
 
+
 public class Factory {
     private final Random RANDOM = new Random();
     protected static final List<Robot> ROBOT = List.of(
