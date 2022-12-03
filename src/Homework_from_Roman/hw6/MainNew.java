@@ -1,7 +1,5 @@
 package Homework_from_Roman.hw6;
 
-import java.util.Random;
-
 public class MainNew{
     private static boolean aBoolean = true;
 
