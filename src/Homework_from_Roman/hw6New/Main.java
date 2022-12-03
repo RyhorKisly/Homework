@@ -31,13 +31,19 @@ public class Main {
         Factory storage = new Factory();
         Country usa = new Country(storage, "USA");
         Country northKorea = new Country(storage, "NorthKorea");
+        Country russia = new Country(storage, "Russia");
+        Country kazahstan = new Country(storage, "Kazahstan");
         ExecutorService executorService = Executors.newCachedThreadPool();
         Runnable factory = (storage::factorySetRobotParts);
         Runnable usaThread = (usa::getArmy);
         Runnable northKoreaThread = (northKorea::getArmy);
+        Runnable russiaThread = (russia::getArmy);
+        Runnable kazahstanThread = (kazahstan::getArmy);
         executorService.execute(factory);
         executorService.execute(usaThread);
         executorService.execute(northKoreaThread);
+        executorService.execute(russiaThread);
+        executorService.execute(kazahstanThread);
     }
 
 }

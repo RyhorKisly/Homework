@@ -2,6 +2,7 @@ package Homework_from_Roman.hw6New;
 
 import java.util.*;
 
+
 import static Homework_from_Roman.hw6New.Country.country;
 
 
@@ -43,21 +44,13 @@ public class Factory {
         System.out.println("на фабрике есть: " + storage);
     }
 
-//    public void checkStorageElement(List<Robot> robot, List<Robot> temp, int counterOfRobotParts) {
+//    public Robot checkStorageElement(List<Robot> robot) {
 //        for (Robot element : storage) {
 //            if (!robot.contains(element)) {
-//                step++;
-//                System.out.print("Ход " + step + ": ");
-//                robot.add(element);
-//                System.out.print("Армия USA берет c фабрики: " + Collections.singletonList(element) + "; ");
-//                temp.remove(element);
-//                System.out.print("армии USA нужно еще: " + temp + "; ");
-//                factoryRemoveElement(element);
-//                factoryHas();
-//                ++counterOfRobotParts;
-//                break;
+//                return element;
 //            }
 //        }
+//        return null;
 //    }
 
 
