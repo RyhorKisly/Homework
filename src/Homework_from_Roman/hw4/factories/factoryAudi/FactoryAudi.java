@@ -2,9 +2,11 @@ package Homework_from_Roman.hw4.factories.factoryAudi;
 
 import Homework_from_Roman.hw4.cars.Audi;
 import Homework_from_Roman.hw4.cars.Car;
-import Homework_from_Roman.hw4.enums.*;
+import Homework_from_Roman.hw4.enums.Option;
 import Homework_from_Roman.hw4.enums.enumAudi.*;
-import Homework_from_Roman.hw4.factories.*;
+import Homework_from_Roman.hw4.factories.Factory;
+import Homework_from_Roman.hw4.factories.Storage;
+import Homework_from_Roman.hw4.specialOptions.SpecialOptionsAudi;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -13,7 +15,7 @@ import java.util.Set;
 import static java.lang.String.format;
 
 public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C extends ColourAudi,
-        W extends WheelSizeAudi, S extends Transmission> extends Factory<M, E, C, W, S> {
+        W extends WheelSizeAudi, S extends SpecialOptionsAudi> extends Factory<M, E, C, W, S> {
 
     private static final int YEAR = 2022;
 
@@ -29,9 +31,9 @@ public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C exte
     }
 
     @Override
-    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S transmission) {
+    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S specialOptionsAudi) {
         Audi audi = (Audi) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
-                option, transmission);
+                option);
         if (audi != null) {
             if (audi.getColor() != colour) {
                 audi.setColor(colour);
@@ -42,10 +44,13 @@ public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C exte
             if (!audi.getOption().equals(option)) {
                 audi.setOption(option);
             }
+            if (audi.getTransmission() != specialOptionsAudi.getTransmission()) {
+                audi.setTransmission(specialOptionsAudi.getTransmission());
+            }
             System.out.println("Автомобиль Audi взяли со склада");
             return audi;
         }
-        return new Audi(YEAR, model, engineVolume, colour, wheelSize, option, transmission);
+        return new Audi(YEAR, model, engineVolume, colour, wheelSize, option, specialOptionsAudi.getTransmission());
     }
 
     public String getConfigurations() {
@@ -66,7 +71,7 @@ public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C exte
         Set<Option> option = new HashSet<>();
         option.add(Option.REAR_VIEW_CAMERA);
         audi = new Audi(YEAR, ModelAudi.A8, EngineVolumeAudi.MEDIUM_VOLUME, ColourAudi.BLUE,
-                WheelSizeAudi.MEDIUM, new HashSet<>(), Transmission.MANUAL);
+                WheelSizeAudi.MEDIUM, option, Transmission.MANUAL);
         this.storage.addCarToStorage(audi);
     }
 

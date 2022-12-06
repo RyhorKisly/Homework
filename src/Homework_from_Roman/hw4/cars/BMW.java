@@ -2,15 +2,32 @@ package Homework_from_Roman.hw4.cars;
 
 import Homework_from_Roman.hw4.enums.Option;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
+import Homework_from_Roman.hw4.specialOptions.SpecialOptionsBMW;
 
 import java.util.Set;
 
-public class BMW extends Car{
+public class BMW extends Car {
 
-    private final FuelType fuelType;
+    private DiscBrakes discBrakes;
+    private FuelType fuelType;
 
-    public BMW(int year, ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW color, WheelSizeBMW wheelSize, Set<Option> option, FuelType fuelType) {
-        super(year, model, engineVolume, color, wheelSize, option, fuelType);
+    public BMW(int year, ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW color, WheelSizeBMW wheelSize, Set<Option> option, DiscBrakes discBrakes, FuelType fuelType) {
+        super(year, model, engineVolume, color, wheelSize, option, new SpecialOptionsBMW(discBrakes, fuelType));
+        this.discBrakes = discBrakes;
+        this.fuelType = fuelType;
+    }
+
+    public DiscBrakes getDiscBrakes() {
+        return discBrakes;
+    }
+
+    public FuelType getFuelType() {
+        return fuelType;
+    }
+    public void setDiscBrakes(DiscBrakes discBrakes) {
+        this.discBrakes = discBrakes;
+    }
+    public void setFuelType(FuelType fuelType) {
         this.fuelType = fuelType;
     }
 
@@ -18,7 +35,8 @@ public class BMW extends Car{
     public String toString() {
         return "BMW {" +
                 super.toString() +
-                ", fuelType=" + fuelType +
+                ", DiscBrakes=" + discBrakes +
+                ", FuelType=" + fuelType +
                 '}';
     }
 }

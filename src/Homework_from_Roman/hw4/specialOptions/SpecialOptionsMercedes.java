@@ -1,7 +1,7 @@
-package Homework_from_Roman.hw4_new.specialOptions;
+package Homework_from_Roman.hw4.specialOptions;
 
 
-import Homework_from_Roman.hw4_new.enums.enumMercedes.WheelDrive;
+import Homework_from_Roman.hw4.enums.enumMercedes.WheelDrive;
 
 public class SpecialOptionsMercedes implements SpecialOptions{
     private WheelDrive wheelDrive;

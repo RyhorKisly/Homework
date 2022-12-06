@@ -3,7 +3,10 @@ package Homework_from_Roman.hw4.factories;
 import Homework_from_Roman.hw4.cars.Car;
 import Homework_from_Roman.hw4.enums.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 public class Storage<T> {
 
@@ -13,13 +16,13 @@ public class Storage<T> {
         cars.add(car);
     }
 
-    public Car getCarFromStorage(Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option, T specialOption) {
+    public Car getCarFromStorage(Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option) {
         Iterator<Car> iterator = cars.listIterator();
         List<Car> removed = new ArrayList<>();
         Car car = null;
         while (iterator.hasNext()) {
             Car temp = iterator.next();
-            if (verifyModelEngine(temp, model, engineVolume, specialOption)) {
+            if (verifyModelEngine(temp, model, engineVolume)) {
                 if (car == null) {
                     car = temp;
                     iterator.remove();
@@ -52,8 +55,8 @@ public class Storage<T> {
         return car;
     }
 
-    private boolean verifyModelEngine(Car car, Model model, EngineVolume engineVolume, T specialOption) {
-        return car.getModel() == model && car.getEngineVolume() == engineVolume && car.getSpecialOption() == specialOption;
+    private boolean verifyModelEngine(Car car, Model model, EngineVolume engineVolume) {
+        return car.getModel() == model && car.getEngineVolume() == engineVolume;
     }
 
 }

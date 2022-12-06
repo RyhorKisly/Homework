@@ -2,35 +2,40 @@ package Homework_from_Roman.hw4.factories.factoryBMW;
 
 import Homework_from_Roman.hw4.cars.BMW;
 import Homework_from_Roman.hw4.cars.Car;
-import Homework_from_Roman.hw4.enums.*;
+import Homework_from_Roman.hw4.enums.Option;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.factories.Factory;
 import Homework_from_Roman.hw4.factories.Storage;
+import Homework_from_Roman.hw4.specialOptions.SpecialOptionsBMW;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static java.lang.String.format;
 
 public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends ColourBMW,
-        W extends WheelSizeBMW, S extends FuelType> extends Factory<M, E, C, W, S> {
+        W extends WheelSizeBMW, S extends SpecialOptionsBMW> extends Factory<M, E, C, W, S> {
 
     private static final int YEAR = 2022;
+    private final DiscBrakes[] discBrakes;
     private final FuelType[] fuelTypes;
     private final Storage<FuelType> storage;
 
+
     public FactoryBMW(ColourBMW[] colour, ModelBMW[] model, WheelSizeBMW[] wheelSize,
-                      EngineVolumeBMW[] engineVolume, FuelType[] fuelTypes) {
+                      EngineVolumeBMW[] engineVolume, DiscBrakes[] discBrakes, FuelType[] fuelTypes) {
         super(colour, model, wheelSize, engineVolume);
         this.fuelTypes = fuelTypes;
+        this.discBrakes = discBrakes;
         this.storage = new Storage<>();
         fillStorageWithCars();
     }
 
     @Override
-    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S fuelType) {
-        BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, fuelType);
+    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S specialOptionsBMW) {
+        BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option);
         if (bmw != null) {
             if (bmw.getColor() != colour) {
                 bmw.setColor(colour);
@@ -41,10 +46,18 @@ public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends
             if (!bmw.getOption().equals(option)) {
                 bmw.setOption(option);
             }
+            if (bmw.getDiscBrakes() != specialOptionsBMW.getDiscBrakes()) {
+                bmw.setDiscBrakes(specialOptionsBMW.getDiscBrakes());
+            }
+            if (bmw.getFuelType() != specialOptionsBMW.getFuelType()) {
+                bmw.setFuelType(specialOptionsBMW.getFuelType());
+            }
             System.out.println("Автомобиль BMW взяли со склада");
             return bmw;
         }
-        return new BMW(YEAR, model, engineVolume, colour, wheelSize, option, fuelType);
+        return new BMW(
+                YEAR, model, engineVolume, colour, wheelSize, option,
+                specialOptionsBMW.getDiscBrakes(), specialOptionsBMW.getFuelType());
     }
 
     public String getConfigurations() {
@@ -54,18 +67,19 @@ public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends
                 Arrays.toString(ModelBMW.values()),
                 Arrays.toString(WheelSizeBMW.values()),
                 Arrays.toString(EngineVolumeBMW.values()),
+                Arrays.toString(discBrakes),
                 Arrays.toString(fuelTypes)
         );
     }
 
     public void fillStorageWithCars() {
-        BMW bmw = new BMW(YEAR, ModelBMW.SERIES3, EngineVolumeBMW.BIG_VOLUME, ColourBMW.BLACK,
-                WheelSizeBMW.SMALL, new HashSet<>(), FuelType.DIESEL);
+        BMW bmw = new BMW(YEAR, ModelBMW.SERIES3, EngineVolumeBMW.SMALL_VOLUME, ColourBMW.VIOLET,
+                WheelSizeBMW.SMALL, new HashSet<>(List.of(Option.REAR_VIEW_CAMERA)), DiscBrakes.FRONT, FuelType.DIESEL);
         this.storage.addCarToStorage(bmw);
         Set<Option> option = new HashSet<>();
         option.add(Option.REAR_VIEW_CAMERA);
-        bmw = new BMW(YEAR, ModelBMW.SERIES5, EngineVolumeBMW.MEDIUM_VOLUME, ColourBMW.BLACK,
-                WheelSizeBMW.BIG, new HashSet<>(), FuelType.PETROL);
+        bmw = new BMW(YEAR, ModelBMW.SERIES3, EngineVolumeBMW.SMALL_VOLUME, ColourBMW.BLACK,
+                WheelSizeBMW.BIG, option, DiscBrakes.ALL_WHEELS, FuelType.PETROL);
         this.storage.addCarToStorage(bmw);
     }
 

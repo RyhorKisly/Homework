@@ -1,19 +1,15 @@
 package Homework_from_Roman.hw4.factories;
 
-import Homework_from_Roman.hw4.cars.BMW;
 import Homework_from_Roman.hw4.cars.Car;
 import Homework_from_Roman.hw4.enums.*;
-import Homework_from_Roman.hw4.enums.enumBMW.*;
+import Homework_from_Roman.hw4.specialOptions.SpecialOptions;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
-
 
 import static java.lang.String.format;
 
-public abstract class Factory<M, E, C, W, S> {
+public abstract class Factory<M extends Model, E extends EngineVolume, C extends Colour, W extends WheelSize, S extends SpecialOptions> {
 
     private final Colour[] colour;
     private final Model[] model;
@@ -27,7 +23,7 @@ public abstract class Factory<M, E, C, W, S> {
         this.engineVolume = engineVolume;
     }
 
-    public abstract Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S specialOption);
+    public abstract Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S specialOptions);
 
     public String getConfigurations() {
         return format(

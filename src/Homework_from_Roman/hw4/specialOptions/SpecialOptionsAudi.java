@@ -1,7 +1,7 @@
-package Homework_from_Roman.hw4_new.specialOptions;
+package Homework_from_Roman.hw4.specialOptions;
 
 
-import Homework_from_Roman.hw4_new.enums.enumAudi.Transmission;
+import Homework_from_Roman.hw4.enums.enumAudi.Transmission;
 
 public class SpecialOptionsAudi implements SpecialOptions{
     private Transmission transmission;
