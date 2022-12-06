@@ -1,4 +1,4 @@
-package Homework_from_Roman.hw5_new;
+package Homework_from_Roman.hw5_new.exercise1;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
