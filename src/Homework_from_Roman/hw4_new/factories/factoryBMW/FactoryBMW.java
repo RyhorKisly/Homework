@@ -16,7 +16,7 @@ import java.util.Set;
 import static java.lang.String.format;
 
 public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends ColourBMW,
-        W extends WheelSizeBMW, S> extends Factory<M, E, C, W, S> {
+        W extends WheelSizeBMW, S extends SpecialOptionsBMW> extends Factory<M, E, C, W, S> {
 
     private static final int YEAR = 2022;
     private final DiscBrakes[] discBrakes;
@@ -34,7 +34,7 @@ public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends
     }
 
     @Override
-    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S bmwSpecialOptions) {
+    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S specialOptionsBMW) {
         BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option);
         if (bmw != null) {
             if (bmw.getColor() != colour) {
@@ -46,19 +46,18 @@ public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends
             if (!bmw.getOption().equals(option)) {
                 bmw.setOption(option);
             }
-            if (bmw.getDiscBrakes() != ((SpecialOptionsBMW) bmwSpecialOptions).getDiscBrakes()) {
-                bmw.setDiscBrakes(((SpecialOptionsBMW) bmwSpecialOptions).getDiscBrakes());
+            if (bmw.getDiscBrakes() != specialOptionsBMW.getDiscBrakes()) {
+                bmw.setDiscBrakes(specialOptionsBMW.getDiscBrakes());
             }
-            if (bmw.getFuelType() != ((SpecialOptionsBMW) bmwSpecialOptions).getFuelType()) {
-                bmw.setFuelType(((SpecialOptionsBMW) bmwSpecialOptions).getFuelType());
+            if (bmw.getFuelType() != specialOptionsBMW.getFuelType()) {
+                bmw.setFuelType(specialOptionsBMW.getFuelType());
             }
             System.out.println("Автомобиль BMW взяли со склада");
             return bmw;
         }
         return new BMW(
-                YEAR, model, engineVolume, colour, wheelSize, option, ((SpecialOptionsBMW)
-                bmwSpecialOptions).getDiscBrakes(), ((SpecialOptionsBMW) bmwSpecialOptions).getFuelType()
-        );
+                YEAR, model, engineVolume, colour, wheelSize, option,
+                specialOptionsBMW.getDiscBrakes(), specialOptionsBMW.getFuelType());
     }
 
     public String getConfigurations() {

@@ -14,7 +14,9 @@ import Homework_from_Roman.hw4_new.factories.factoryMercedes.FactoryMercedes;
 import Homework_from_Roman.hw4_new.service.ServiceColor;
 import Homework_from_Roman.hw4_new.service.ServiceOption;
 import Homework_from_Roman.hw4_new.service.ServiceWheels;
+import Homework_from_Roman.hw4_new.specialOptions.SpecialOptionsAudi;
 import Homework_from_Roman.hw4_new.specialOptions.SpecialOptionsBMW;
+import Homework_from_Roman.hw4_new.specialOptions.SpecialOptionsMercedes;
 
 import java.util.Set;
 
@@ -26,7 +28,6 @@ public class ShowRoom {
     private final FactoryMercedes factoryMercedes;
     private final FactoryAudi factoryAudi;
     private final FactoryBMW factoryBMW;
-    SpecialOptionsBMW bmwSpecialOptions;
 
     public ShowRoom(ServiceColor serviceColor, ServiceWheels serviceWheels, ServiceOption serviceOption, FactoryMercedes factoryMercedes, FactoryAudi factoryAudi, FactoryBMW factoryBMW) {
         this.serviceColor = serviceColor;
@@ -39,11 +40,11 @@ public class ShowRoom {
     }
 
     public Car orderMercedes(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
-        return factoryMercedes.createCar(model, engineVolume, colour, wheelSize, option, wheelDrive);
+        return factoryMercedes.createCar(model, engineVolume, colour, wheelSize, option, new SpecialOptionsMercedes(wheelDrive));
     }
 
     public Car orderAudi(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize, Set<Option> option, Transmission transmission) {
-        return factoryAudi.createCar(model, engineVolume, colour, wheelSize, option, transmission);
+        return factoryAudi.createCar(model, engineVolume, colour, wheelSize, option, new SpecialOptionsAudi(transmission));
     }
 
     public Car orderBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize, Set<Option> options, DiscBrakes discBrakes, FuelType fuelType) {

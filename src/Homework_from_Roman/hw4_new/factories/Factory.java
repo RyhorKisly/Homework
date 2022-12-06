@@ -2,13 +2,14 @@ package Homework_from_Roman.hw4_new.factories;
 
 import Homework_from_Roman.hw4_new.cars.Car;
 import Homework_from_Roman.hw4_new.enums.*;
+import Homework_from_Roman.hw4_new.specialOptions.SpecialOptions;
 
 import java.util.Arrays;
 import java.util.Set;
 
 import static java.lang.String.format;
 
-public abstract class Factory<M, E, C, W, S> {
+public abstract class Factory<M extends Model, E extends EngineVolume, C extends Colour, W extends WheelSize, S extends SpecialOptions> {
 
     private final Colour[] colour;
     private final Model[] model;

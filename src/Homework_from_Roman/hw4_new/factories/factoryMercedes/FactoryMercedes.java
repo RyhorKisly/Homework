@@ -6,6 +6,7 @@ import Homework_from_Roman.hw4_new.enums.Option;
 import Homework_from_Roman.hw4_new.enums.enumMercedes.*;
 import Homework_from_Roman.hw4_new.factories.Factory;
 import Homework_from_Roman.hw4_new.factories.Storage;
+import Homework_from_Roman.hw4_new.specialOptions.SpecialOptionsMercedes;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -14,7 +15,7 @@ import java.util.Set;
 import static java.lang.String.format;
 
 public class FactoryMercedes<M extends ModelMercedes, E extends EngineVolumeMercedes, C extends ColourMercedes,
-        W extends WheelSizeMercedes, S extends WheelDrive> extends Factory<M, E, C, W, S> {
+        W extends WheelSizeMercedes, S extends SpecialOptionsMercedes> extends Factory<M, E, C, W, S> {
 
     private static final int YEAR = 2022;
     private WheelDrive[] wheelDrives;
@@ -29,7 +30,7 @@ public class FactoryMercedes<M extends ModelMercedes, E extends EngineVolumeMerc
     }
 
     @Override
-    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S wheelDrive) {
+    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S specialOptionsMercedes) {
         Mercedes mercedes = (Mercedes) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
                 option);
         if (mercedes != null) {
@@ -42,10 +43,14 @@ public class FactoryMercedes<M extends ModelMercedes, E extends EngineVolumeMerc
             if (!mercedes.getOption().equals(option)) {
                 mercedes.setOption(option);
             }
+            if (mercedes.getWheelDrive() != specialOptionsMercedes.getWheelDrive()) {
+                mercedes.setWheelDrive(specialOptionsMercedes.getWheelDrive());
+            }
             System.out.println("Автомобиль Mercedes взяли со склада");
             return mercedes;
         }
-        return new Mercedes(YEAR, model, engineVolume, colour, wheelSize, option, wheelDrive);
+        return new Mercedes(
+                YEAR, model, engineVolume, colour, wheelSize, option, specialOptionsMercedes.getWheelDrive());
     }
 
     public String getConfigurations() {

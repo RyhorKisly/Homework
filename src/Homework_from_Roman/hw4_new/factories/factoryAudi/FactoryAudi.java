@@ -6,6 +6,7 @@ import Homework_from_Roman.hw4_new.enums.Option;
 import Homework_from_Roman.hw4_new.enums.enumAudi.*;
 import Homework_from_Roman.hw4_new.factories.Factory;
 import Homework_from_Roman.hw4_new.factories.Storage;
+import Homework_from_Roman.hw4_new.specialOptions.SpecialOptionsAudi;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -14,7 +15,7 @@ import java.util.Set;
 import static java.lang.String.format;
 
 public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C extends ColourAudi,
-        W extends WheelSizeAudi, S extends Transmission> extends Factory<M, E, C, W, S> {
+        W extends WheelSizeAudi, S extends SpecialOptionsAudi> extends Factory<M, E, C, W, S> {
 
     private static final int YEAR = 2022;
 
@@ -30,7 +31,7 @@ public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C exte
     }
 
     @Override
-    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S transmission) {
+    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S specialOptionsAudi) {
         Audi audi = (Audi) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
                 option);
         if (audi != null) {
@@ -43,10 +44,13 @@ public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C exte
             if (!audi.getOption().equals(option)) {
                 audi.setOption(option);
             }
+            if (audi.getTransmission() != specialOptionsAudi.getTransmission()) {
+                audi.setTransmission(specialOptionsAudi.getTransmission());
+            }
             System.out.println("Автомобиль Audi взяли со склада");
             return audi;
         }
-        return new Audi(YEAR, model, engineVolume, colour, wheelSize, option, transmission);
+        return new Audi(YEAR, model, engineVolume, colour, wheelSize, option, specialOptionsAudi.getTransmission());
     }
 
     public String getConfigurations() {
