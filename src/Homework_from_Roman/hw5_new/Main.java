@@ -5,56 +5,25 @@
 
 package Homework_from_Roman.hw5_new;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-    private final static Random RANDOM = new Random();
+
+    public static final String INPUT_1 = "C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\" +
+            "Homework_from_Roman\\hw5_new\\INPUT_1";
+    public static final String INPUT_2 = "C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\" +
+            "Homework_from_Roman\\hw5_new\\INPUT_2";
+    public static final String OUTPUT = "C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\" +
+            "Homework_from_Roman\\hw5_new\\OUTPUT";
+
 
     public static void main(String[] args) {
-        int[] numbers = new int[1000];
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5_new\\INPUT_1"))) {
-            for(int element : numbers) {
-                element = RANDOM.nextInt(100000) + 1;
-                String str = element + "\n";
-                bw.write(str);
-            };
-        } catch(IOException | NoSuchElementException | ArrayIndexOutOfBoundsException ex){
-            System.out.println(ex.getMessage());
-        }
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5_new\\INPUT_2"))) {
-            for(int element : numbers) {
-                element = RANDOM.nextInt(100000) + 1;
-                String str = element + "\n";
-                bw.write(str);
-            };
-        } catch(IOException | NoSuchElementException | ArrayIndexOutOfBoundsException ex){
-            System.out.println(ex.getMessage());
-        }
 
-
-
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5_new\\OUTPUT")))
-        {
-            List<Integer> list = new ArrayList<>();
-                    Files.lines(Paths.get("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5_new\\INPUT_1"), StandardCharsets.UTF_8)
-                    .forEach(i -> list.add(Integer.valueOf(i)));
-            Files.lines(Paths.get("C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\Homework_from_Roman\\hw5_new\\INPUT_2"), StandardCharsets.UTF_8)
-                    .forEach(i -> list.add(Integer.valueOf(i)));
-            Collections.sort(list);
-                    for(int i = 0; i < list.size(); i++) {
-                        String str = list.get(i) + "\n";
-                        bw.write(str);
-                    }
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Mover mover = new Mover();
+        mover.writeNumbers(INPUT_1, 1000);
+        mover.writeNumbers(INPUT_2, 1000);
+        mover.writeSortedNumber(OUTPUT, mover.readNumbers(INPUT_1, INPUT_2));
 
     }
 }
