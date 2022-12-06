@@ -1,0 +1,74 @@
+package Homework_from_Roman.hw4_new.factories.factoryBMW;
+
+import Homework_from_Roman.hw4_new.cars.BMW;
+import Homework_from_Roman.hw4_new.cars.Car;
+import Homework_from_Roman.hw4_new.enums.Option;
+import Homework_from_Roman.hw4_new.enums.enumBMW.*;
+import Homework_from_Roman.hw4_new.factories.Factory;
+import Homework_from_Roman.hw4_new.factories.Storage;
+import Homework_from_Roman.hw4_new.specialOptions.BMWSpecialOptions;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+import static java.lang.String.format;
+
+public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends ColourBMW,
+        W extends WheelSizeBMW, S> extends Factory<M, E, C, W, S> {
+
+    private static final int YEAR = 2022;
+    private final FuelType[] fuelTypes;
+    private final Storage<FuelType> storage;
+
+    public FactoryBMW(ColourBMW[] colour, ModelBMW[] model, WheelSizeBMW[] wheelSize,
+                      EngineVolumeBMW[] engineVolume, FuelType[] fuelTypes) {
+        super(colour, model, wheelSize, engineVolume);
+        this.fuelTypes = fuelTypes;
+        this.storage = new Storage<>();
+        fillStorageWithCars();
+    }
+
+    @Override
+    public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S bmwSpecialOptions) {
+        BMW bmw = (BMW) storage.getCarFromStorage(model, engineVolume, colour, wheelSize, option, bmwSpecialOptions);
+        if (bmw != null) {
+            if (bmw.getColor() != colour) {
+                bmw.setColor(colour);
+            }
+            if (bmw.getWheelSize() != wheelSize) {
+                bmw.setWheelSize(wheelSize);
+            }
+            if (!bmw.getOption().equals(option)) {
+                bmw.setOption(option);
+            }
+            System.out.println("Автомобиль BMW взяли со склада");
+            return bmw;
+        }
+        return new BMW(YEAR, model, engineVolume, colour, wheelSize, option, fuelType);
+    }
+
+    public String getConfigurations() {
+        return format(
+                "FactoryBMW can produce: colors: %s, models: %s, wheelSizes: %s, engineVolumes: %s, fuelTypes: %s",
+                Arrays.toString(ColourBMW.values()),
+                Arrays.toString(ModelBMW.values()),
+                Arrays.toString(WheelSizeBMW.values()),
+                Arrays.toString(EngineVolumeBMW.values()),
+                Arrays.toString(fuelTypes)
+        );
+    }
+
+    public void fillStorageWithCars() {
+        BMW bmw = new BMW(YEAR, ModelBMW.SERIES3, EngineVolumeBMW.BIG_VOLUME, ColourBMW.BLACK,
+                WheelSizeBMW.SMALL, new HashSet<>(), FuelType.DIESEL);
+        this.storage.addCarToStorage(bmw);
+        Set<Option> option = new HashSet<>();
+        option.add(Option.REAR_VIEW_CAMERA);
+        bmw = new BMW(YEAR, ModelBMW.SERIES5, EngineVolumeBMW.MEDIUM_VOLUME, ColourBMW.BLACK,
+                WheelSizeBMW.BIG, new HashSet<>(), FuelType.PETROL);
+        this.storage.addCarToStorage(bmw);
+    }
+
+
+}
