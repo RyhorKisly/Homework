@@ -31,7 +31,7 @@ public class FactoryMercedes<M extends ModelMercedes, E extends EngineVolumeMerc
     @Override
     public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S wheelDrive) {
         Mercedes mercedes = (Mercedes) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
-                option, wheelDrive);
+                option);
         if (mercedes != null) {
             if (mercedes.getColor() != colour) {
                 mercedes.setColor(colour);
@@ -66,7 +66,7 @@ public class FactoryMercedes<M extends ModelMercedes, E extends EngineVolumeMerc
         Set<Option> option = new HashSet<>();
         option.add(Option.LEATHER_SEATS);
         mercedes = new Mercedes(YEAR, ModelMercedes.CLASS_E, EngineVolumeMercedes.MEDIUM_VOLUME,
-                ColourMercedes.WHITE, WheelSizeMercedes.VERY_BIG, new HashSet<>(), WheelDrive.REAR);
+                ColourMercedes.WHITE, WheelSizeMercedes.VERY_BIG, option, WheelDrive.REAR);
         this.storage.addCarToStorage(mercedes);
     }
 

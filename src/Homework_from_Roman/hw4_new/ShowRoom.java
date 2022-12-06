@@ -14,7 +14,7 @@ import Homework_from_Roman.hw4_new.factories.factoryMercedes.FactoryMercedes;
 import Homework_from_Roman.hw4_new.service.ServiceColor;
 import Homework_from_Roman.hw4_new.service.ServiceOption;
 import Homework_from_Roman.hw4_new.service.ServiceWheels;
-import Homework_from_Roman.hw4_new.specialOptions.BMWSpecialOptions;
+import Homework_from_Roman.hw4_new.specialOptions.SpecialOptionsBMW;
 
 import java.util.Set;
 
@@ -26,7 +26,7 @@ public class ShowRoom {
     private final FactoryMercedes factoryMercedes;
     private final FactoryAudi factoryAudi;
     private final FactoryBMW factoryBMW;
-    BMWSpecialOptions bmwSpecialOptions;
+    SpecialOptionsBMW bmwSpecialOptions;
 
     public ShowRoom(ServiceColor serviceColor, ServiceWheels serviceWheels, ServiceOption serviceOption, FactoryMercedes factoryMercedes, FactoryAudi factoryAudi, FactoryBMW factoryBMW) {
         this.serviceColor = serviceColor;
@@ -47,7 +47,7 @@ public class ShowRoom {
     }
 
     public Car orderBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize, Set<Option> options, DiscBrakes discBrakes, FuelType fuelType) {
-        return factoryBMW.createCar(model, engineVolume, colour, wheelSize, options, new BMWSpecialOptions(discBrakes, fuelType));
+        return factoryBMW.createCar(model, engineVolume, colour, wheelSize, options, new SpecialOptionsBMW(discBrakes, fuelType));
     }
 
     public void changeColor(Car car, Colour colour) {

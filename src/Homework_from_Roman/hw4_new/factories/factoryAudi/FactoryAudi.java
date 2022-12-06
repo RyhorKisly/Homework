@@ -32,7 +32,7 @@ public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C exte
     @Override
     public Car createCar(M model, E engineVolume, C colour, W wheelSize, Set<Option> option, S transmission) {
         Audi audi = (Audi) storage.getCarFromStorage(model, engineVolume, colour, wheelSize,
-                option, transmission);
+                option);
         if (audi != null) {
             if (audi.getColor() != colour) {
                 audi.setColor(colour);
@@ -67,7 +67,7 @@ public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C exte
         Set<Option> option = new HashSet<>();
         option.add(Option.REAR_VIEW_CAMERA);
         audi = new Audi(YEAR, ModelAudi.A8, EngineVolumeAudi.MEDIUM_VOLUME, ColourAudi.BLUE,
-                WheelSizeAudi.MEDIUM, new HashSet<>(), Transmission.MANUAL);
+                WheelSizeAudi.MEDIUM, option, Transmission.MANUAL);
         this.storage.addCarToStorage(audi);
     }
 

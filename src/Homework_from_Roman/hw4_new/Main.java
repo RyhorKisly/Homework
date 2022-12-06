@@ -15,6 +15,7 @@ import Homework_from_Roman.hw4_new.service.ServiceOption;
 import Homework_from_Roman.hw4_new.service.ServiceWheels;
 
 import java.util.HashSet;
+import java.util.List;
 
 
 public class Main {
@@ -25,7 +26,7 @@ public class Main {
         ServiceWheels serviceWheels = new ServiceWheels();
         ServiceOption serviceOption = new ServiceOption();
 
-        FactoryBMW factoryBMW = new FactoryBMW(ColourBMW.values(), ModelBMW.values(), WheelSizeBMW.values(), EngineVolumeBMW.values(), FuelType.values());
+        FactoryBMW factoryBMW = new FactoryBMW(ColourBMW.values(), ModelBMW.values(), WheelSizeBMW.values(), EngineVolumeBMW.values(), DiscBrakes.values(), FuelType.values());
         FactoryAudi factoryAudi = new FactoryAudi(ColourAudi.values(), ModelAudi.values(), WheelSizeAudi.values(), EngineVolumeAudi.values(), Transmission.values());
         FactoryMercedes factoryMercedes = new FactoryMercedes(ColourMercedes.values(), ModelMercedes.values(), WheelSizeMercedes.values(), EngineVolumeMercedes.values(), WheelDrive.values());
 
@@ -38,17 +39,17 @@ public class Main {
         System.out.println();
         BMW bmw = (BMW) showRoom.orderBMW(
                 ModelBMW.SERIES3,
-                EngineVolumeBMW.BIG_VOLUME,
-                ColourBMW.BLACK,
+                EngineVolumeBMW.SMALL_VOLUME,
+                ColourBMW.VIOLET,
                 WheelSizeBMW.SMALL,
-                new HashSet<>(),
+                new HashSet<>(), DiscBrakes.ALL_WHEELS,
                 FuelType.DIESEL);
         System.out.println();
         Audi audi = (Audi) showRoom.orderAudi(
                 ModelAudi.A4,
                 EngineVolumeAudi.MEDIUM_VOLUME,
                 ColourAudi.RED, WheelSizeAudi.MEDIUM,
-                new HashSet<>(Option.REAR_VIEW_CAMERA.ordinal()),
+                new HashSet<>(List.of(Option.LEATHER_SEATS)),
                 Transmission.AUTOMATIC);
         System.out.println();
         Mercedes mercedes = (Mercedes) showRoom.orderMercedes(

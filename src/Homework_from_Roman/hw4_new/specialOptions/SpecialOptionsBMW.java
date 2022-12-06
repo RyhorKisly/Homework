@@ -3,12 +3,12 @@ package Homework_from_Roman.hw4_new.specialOptions;
 import Homework_from_Roman.hw4_new.enums.enumBMW.DiscBrakes;
 import Homework_from_Roman.hw4_new.enums.enumBMW.FuelType;
 
-public class BMWSpecialOptions {
+public class SpecialOptionsBMW {
 
     private DiscBrakes discBrakes;
     private FuelType fuelType;
 
-    public BMWSpecialOptions(DiscBrakes discBrakes, FuelType fuelType) {
+    public SpecialOptionsBMW(DiscBrakes discBrakes, FuelType fuelType) {
         this.discBrakes = discBrakes;
         this.fuelType = fuelType;
     }
