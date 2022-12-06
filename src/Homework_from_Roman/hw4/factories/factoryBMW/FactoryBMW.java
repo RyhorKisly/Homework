@@ -21,7 +21,7 @@ public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends
     private static final int YEAR = 2022;
     private final DiscBrakes[] discBrakes;
     private final FuelType[] fuelTypes;
-    private final Storage<FuelType> storage;
+    private final Storage storage;
 
 
     public FactoryBMW(ColourBMW[] colour, ModelBMW[] model, WheelSizeBMW[] wheelSize,
@@ -29,7 +29,7 @@ public class FactoryBMW<M extends ModelBMW, E extends EngineVolumeBMW, C extends
         super(colour, model, wheelSize, engineVolume);
         this.fuelTypes = fuelTypes;
         this.discBrakes = discBrakes;
-        this.storage = new Storage<>();
+        this.storage = new Storage();
         fillStorageWithCars();
     }
 

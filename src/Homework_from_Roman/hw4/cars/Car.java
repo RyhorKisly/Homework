@@ -15,7 +15,8 @@ public class Car<T> {
     private Set<Option> option;
 
 
-    public Car(int year, Model model, EngineVolume engineVolume, Colour color, WheelSize wheelSize, Set<Option> option, T specialOptions) {
+    public Car(int year, Model model, EngineVolume engineVolume, Colour color,
+               WheelSize wheelSize, Set<Option> option, T specialOptions) {
         this.year = year;
         this.model = model;
         this.engineVolume = engineVolume;

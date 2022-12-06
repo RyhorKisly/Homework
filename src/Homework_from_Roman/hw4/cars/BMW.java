@@ -11,7 +11,8 @@ public class BMW extends Car {
     private DiscBrakes discBrakes;
     private FuelType fuelType;
 
-    public BMW(int year, ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW color, WheelSizeBMW wheelSize, Set<Option> option, DiscBrakes discBrakes, FuelType fuelType) {
+    public BMW(int year, ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW color,
+               WheelSizeBMW wheelSize, Set<Option> option, DiscBrakes discBrakes, FuelType fuelType) {
         super(year, model, engineVolume, color, wheelSize, option, new SpecialOptionsBMW(discBrakes, fuelType));
         this.discBrakes = discBrakes;
         this.fuelType = fuelType;

@@ -20,13 +20,13 @@ public class FactoryAudi<M extends ModelAudi, E extends EngineVolumeAudi, C exte
     private static final int YEAR = 2022;
 
     private final Transmission[] transmission;
-    private final Storage<Transmission> storage;
+    private final Storage storage;
 
     public FactoryAudi(ColourAudi[] colour, ModelAudi[] model, WheelSizeAudi[] wheelSize,
                        EngineVolumeAudi[] engineVolume, Transmission[] transmission) {
         super(colour, model, wheelSize, engineVolume);
         this.transmission = transmission;
-        this.storage = new Storage<>();
+        this.storage = new Storage();
         fillStorageWithCars();
     }
 

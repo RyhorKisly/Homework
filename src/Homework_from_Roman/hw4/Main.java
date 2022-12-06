@@ -7,6 +7,7 @@ import Homework_from_Roman.hw4.enums.Option;
 import Homework_from_Roman.hw4.enums.enumAudi.*;
 import Homework_from_Roman.hw4.enums.enumBMW.*;
 import Homework_from_Roman.hw4.enums.enumMercedes.*;
+import Homework_from_Roman.hw4.factories.Storage;
 import Homework_from_Roman.hw4.factories.factoryAudi.FactoryAudi;
 import Homework_from_Roman.hw4.factories.factoryBMW.FactoryBMW;
 import Homework_from_Roman.hw4.factories.factoryMercedes.FactoryMercedes;
@@ -25,10 +26,14 @@ public class Main {
         ServiceColor serviceColor = new ServiceColor();
         ServiceWheels serviceWheels = new ServiceWheels();
         ServiceOption serviceOption = new ServiceOption();
+        Storage storage = new Storage();
 
-        FactoryBMW factoryBMW = new FactoryBMW(ColourBMW.values(), ModelBMW.values(), WheelSizeBMW.values(), EngineVolumeBMW.values(), DiscBrakes.values(), FuelType.values());
-        FactoryAudi factoryAudi = new FactoryAudi(ColourAudi.values(), ModelAudi.values(), WheelSizeAudi.values(), EngineVolumeAudi.values(), Transmission.values());
-        FactoryMercedes factoryMercedes = new FactoryMercedes(ColourMercedes.values(), ModelMercedes.values(), WheelSizeMercedes.values(), EngineVolumeMercedes.values(), WheelDrive.values());
+        FactoryBMW factoryBMW = new FactoryBMW(ColourBMW.values(), ModelBMW.values(), WheelSizeBMW.values(),
+                EngineVolumeBMW.values(), DiscBrakes.values(), FuelType.values());
+        FactoryAudi factoryAudi = new FactoryAudi(ColourAudi.values(), ModelAudi.values(), WheelSizeAudi.values(),
+                EngineVolumeAudi.values(), Transmission.values());
+        FactoryMercedes factoryMercedes = new FactoryMercedes(ColourMercedes.values(), ModelMercedes.values(),
+                WheelSizeMercedes.values(), EngineVolumeMercedes.values(), WheelDrive.values());
 
         ShowRoom showRoom = new ShowRoom(serviceColor, serviceWheels, serviceOption, factoryMercedes, factoryAudi, factoryBMW);
 
@@ -42,7 +47,8 @@ public class Main {
                 EngineVolumeBMW.SMALL_VOLUME,
                 ColourBMW.VIOLET,
                 WheelSizeBMW.SMALL,
-                new HashSet<>(), DiscBrakes.ALL_WHEELS,
+                new HashSet<>(),
+                DiscBrakes.ALL_WHEELS,
                 FuelType.DIESEL);
         System.out.println();
         Audi audi = (Audi) showRoom.orderAudi(

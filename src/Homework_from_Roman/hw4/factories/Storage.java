@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class Storage<T> {
+public class Storage {
 
     public final List<Car> cars = new ArrayList<>();
 

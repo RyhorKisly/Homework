@@ -19,13 +19,13 @@ public class FactoryMercedes<M extends ModelMercedes, E extends EngineVolumeMerc
 
     private static final int YEAR = 2022;
     private WheelDrive[] wheelDrives;
-    private final Storage<WheelDrive> storage;
+    private final Storage storage;
 
     public FactoryMercedes(ColourMercedes[] colour, ModelMercedes[] model, WheelSizeMercedes[] wheelSize,
                            EngineVolumeMercedes[] engineVolume, WheelDrive[] wheelDrives) {
         super(colour, model, wheelSize, engineVolume);
         this.wheelDrives = wheelDrives;
-        this.storage = new Storage<>();
+        this.storage = new Storage();
         fillStorageWithCars();
     }
 
