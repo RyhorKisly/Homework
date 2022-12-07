@@ -34,7 +34,7 @@ public class Main {
                 }
             }
         } catch (IOException e) {
-            // log error
+            throw new RuntimeException(e);
         }
         System.out.println("Количекство символов 'a' в файле: " + amountOfCharA);
 
