@@ -11,15 +11,12 @@ import java.util.*;
 public class Mover {
 
     private final static Random RANDOM = new Random();
-    private int element;
-    private List<Integer> list = new ArrayList<>();
 
 
     public void writeNumbers(String path, int lengthOfNumbers) {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
             for(int i = 0; i < lengthOfNumbers; i++) {
-                element = RANDOM.nextInt(100000) + 1;
-                String str = element + "\n";
+                String str = (RANDOM.nextInt(100000) + 1) + "\n";
                 bw.write(str);
             };
         } catch(IOException | NoSuchElementException | ArrayIndexOutOfBoundsException ex){
@@ -27,10 +24,10 @@ public class Mover {
         }
     }
 
-    public List<Integer> readNumbers(String path, String path2) {
+    public List<Integer> readNumbers(String path) {
+        List<Integer> list = new ArrayList<>();
         try {
             Files.lines(Paths.get(path), StandardCharsets.UTF_8).forEach(i -> list.add(Integer.valueOf(i)));
-            Files.lines(Paths.get(path2), StandardCharsets.UTF_8).forEach(i -> list.add(Integer.valueOf(i)));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

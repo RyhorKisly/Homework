@@ -5,6 +5,9 @@
 
 package Homework_from_Roman.hw5_new.exercise1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     private static final String INPUT_1 = "C:\\Users\\Workstation\\IdeaProjects\\Homework\\src\\" +
@@ -16,11 +19,13 @@ public class Main {
 
 
     public static void main(String[] args) {
-
+        List<Integer> list = new ArrayList<>();
         Mover mover = new Mover();
         mover.writeNumbers(INPUT_1, 1000);
         mover.writeNumbers(INPUT_2, 1000);
-        mover.writeSortedNumber(OUTPUT, mover.readNumbers(INPUT_1, INPUT_2));
+        list.addAll(mover.readNumbers(INPUT_1));
+        list.addAll(mover.readNumbers(INPUT_2));
+        mover.writeSortedNumber(OUTPUT, list);
 
     }
 }
