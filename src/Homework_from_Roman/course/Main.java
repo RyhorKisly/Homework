@@ -42,7 +42,7 @@ public class Main {
         showRoom.printFactoryMercedesSettings();
 
         System.out.println();
-        BMW bmw = (BMW) showRoom.orderBMW(
+        BMW bmw = showRoom.orderBMW(
                 ModelBMW.SERIES3,
                 EngineVolumeBMW.SMALL_VOLUME,
                 ColourBMW.VIOLET,
@@ -51,14 +51,14 @@ public class Main {
                 DiscBrakes.ALL_WHEELS,
                 FuelType.DIESEL);
         System.out.println();
-        Audi audi = (Audi) showRoom.orderAudi(
+        Audi audi = showRoom.orderAudi(
                 ModelAudi.A4,
                 EngineVolumeAudi.MEDIUM_VOLUME,
                 ColourAudi.RED, WheelSizeAudi.MEDIUM,
                 new HashSet<>(List.of(Option.LEATHER_SEATS)),
                 Transmission.AUTOMATIC);
         System.out.println();
-        Mercedes mercedes = (Mercedes) showRoom.orderMercedes(
+        Mercedes mercedes = showRoom.orderMercedes(
                 ModelMercedes.CLASS_C,
                 EngineVolumeMercedes.BIG_VOLUME,
                 ColourMercedes.GREY, WheelSizeMercedes.VERY_BIG,
