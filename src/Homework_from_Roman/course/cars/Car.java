@@ -4,7 +4,7 @@ import Homework_from_Roman.course.enums.*;
 
 import java.util.Set;
 
-public class Car<T> {
+public class Car {
 
     private final int year;
     private final Model model;

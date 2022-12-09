@@ -9,7 +9,7 @@ import Homework_from_Roman.course.exeptions.WrongWheelSizeException;
 
 import java.util.Arrays;
 
-public class ServiceWheels implements Service {
+public class ServiceWheels {
 
     public void changeWheels(Car car, WheelSize wheelSize) {
         try {

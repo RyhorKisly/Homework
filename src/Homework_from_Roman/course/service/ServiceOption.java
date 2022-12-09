@@ -3,7 +3,7 @@ package Homework_from_Roman.course.service;
 import Homework_from_Roman.course.cars.Car;
 import Homework_from_Roman.course.enums.Option;
 
-public class ServiceOption implements Service {
+public class ServiceOption {
 
     public void addOption(Car car, Option option) {
         try {

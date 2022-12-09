@@ -9,7 +9,7 @@ import Homework_from_Roman.course.exeptions.WrongColourException;
 
 import java.util.Arrays;
 
-public class ServiceColor implements Service {
+public class ServiceColor {
 
     public void changeColor(Car car, Colour colour) {
         try {
