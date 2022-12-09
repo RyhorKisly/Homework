@@ -1,7 +1,10 @@
 package Homework_from_Roman.course;
 
 
+import Homework_from_Roman.course.cars.Audi;
+import Homework_from_Roman.course.cars.BMW;
 import Homework_from_Roman.course.cars.Car;
+import Homework_from_Roman.course.cars.Mercedes;
 import Homework_from_Roman.course.enums.Colour;
 import Homework_from_Roman.course.enums.Option;
 import Homework_from_Roman.course.enums.WheelSize;
@@ -39,16 +42,16 @@ public class ShowRoom {
 
     }
 
-    public Car orderMercedes(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
-        return factoryMercedes.createCar(model, engineVolume, colour, wheelSize, option, new SpecialOptionsMercedes(wheelDrive));
+    public Mercedes orderMercedes(ModelMercedes model, EngineVolumeMercedes engineVolume, ColourMercedes colour, WheelSizeMercedes wheelSize, Set<Option> option, WheelDrive wheelDrive) {
+        return (Mercedes) factoryMercedes.createCar(model, engineVolume, colour, wheelSize, option, new SpecialOptionsMercedes(wheelDrive));
     }
 
-    public Car orderAudi(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize, Set<Option> option, Transmission transmission) {
-        return factoryAudi.createCar(model, engineVolume, colour, wheelSize, option, new SpecialOptionsAudi(transmission));
+    public Audi orderAudi(ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi colour, WheelSizeAudi wheelSize, Set<Option> option, Transmission transmission) {
+        return (Audi) factoryAudi.createCar(model, engineVolume, colour, wheelSize, option, new SpecialOptionsAudi(transmission));
     }
 
-    public Car orderBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize, Set<Option> options, DiscBrakes discBrakes, FuelType fuelType) {
-        return factoryBMW.createCar(model, engineVolume, colour, wheelSize, options, new SpecialOptionsBMW(discBrakes, fuelType));
+    public BMW orderBMW(ModelBMW model, EngineVolumeBMW engineVolume, ColourBMW colour, WheelSizeBMW wheelSize, Set<Option> options, DiscBrakes discBrakes, FuelType fuelType) {
+        return (BMW) factoryBMW.createCar(model, engineVolume, colour, wheelSize, options, new SpecialOptionsBMW(discBrakes, fuelType));
     }
 
     public void changeColor(Car car, Colour colour) {

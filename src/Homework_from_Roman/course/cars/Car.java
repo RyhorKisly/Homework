@@ -9,29 +9,23 @@ public class Car<T> {
     private final int year;
     private final Model model;
     private final EngineVolume engineVolume;
-    private final T specialOptions;
     private Colour color;
     private WheelSize wheelSize;
     private Set<Option> option;
 
 
     public Car(int year, Model model, EngineVolume engineVolume, Colour color,
-               WheelSize wheelSize, Set<Option> option, T specialOptions) {
+               WheelSize wheelSize, Set<Option> option) {
         this.year = year;
         this.model = model;
         this.engineVolume = engineVolume;
         this.color = color;
         this.wheelSize = wheelSize;
         this.option = option;
-        this.specialOptions = specialOptions;
     }
 
     public Colour getColor() {
         return color;
-    }
-
-    public T getSpecialOptions() {
-        return specialOptions;
     }
 
     public Model getModel() {

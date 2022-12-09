@@ -11,7 +11,7 @@ public class Audi extends Car {
 
     public Audi(int year, ModelAudi model, EngineVolumeAudi engineVolume, ColourAudi color,
                 WheelSizeAudi wheelSize, Set<Option> option, Transmission transmission) {
-        super(year, model, engineVolume, color, wheelSize, option, transmission);
+        super(year, model, engineVolume, color, wheelSize, option);
         this.transmission = transmission;
     }
 
