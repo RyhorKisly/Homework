@@ -12,7 +12,8 @@ import java.util.Arrays;
 public class ServiceColor {
 
     public void changeColor(Car car, Colour colour) {
-                    car.setColor(colour);
+            car.setColor(colour);
+
     }
 
 }

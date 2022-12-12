@@ -26,7 +26,6 @@ public class Main {
         ServiceColor serviceColor = new ServiceColor();
         ServiceWheels serviceWheels = new ServiceWheels();
         ServiceOption serviceOption = new ServiceOption();
-        Storage storage = new Storage();
 
         FactoryBMW factoryBMW = new FactoryBMW(ColourBMW.values(), ModelBMW.values(), WheelSizeBMW.values(),
                 EngineVolumeBMW.values(), DiscBrakes.values(), FuelType.values());
