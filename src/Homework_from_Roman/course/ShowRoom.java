@@ -54,12 +54,24 @@ public class ShowRoom {
         return (BMW) factoryBMW.createCar(model, engineVolume, colour, wheelSize, options, new SpecialOptionsBMW(discBrakes, fuelType));
     }
 
-    public void changeColor(Car car, Colour colour) {
-        serviceColor.changeColor(car, colour);
+    public void changeColorBMW(BMW bmw, ColourBMW colourBMW) {
+        serviceColor.changeColor(bmw, colourBMW);
+    }
+    public void changeColorAudi(Audi audi, ColourAudi colourAudi) {
+        serviceColor.changeColor(audi, colourAudi);
+    }
+    public void changeColorMercedes(Mercedes mercedes, ColourMercedes colourMercedes) {
+        serviceColor.changeColor(mercedes, colourMercedes);
     }
 
-    public void changeWheels(Car car, WheelSize wheelSize) {
-        serviceWheels.changeWheels(car, wheelSize);
+    public void changeWheelsBMW(BMW bmw, WheelSizeBMW wheelSizeBMW) {
+        serviceWheels.changeWheels(bmw, wheelSizeBMW);
+    }
+    public void changeWheelsAudi(Audi audi, WheelSizeAudi wheelSizeAudi) {
+        serviceWheels.changeWheels(audi, wheelSizeAudi);
+    }
+    public void changeWheelsMercedes(Mercedes mercedes, WheelSizeMercedes wheelSizeMercedes) {
+        serviceWheels.changeWheels(mercedes, wheelSizeMercedes);
     }
 
 

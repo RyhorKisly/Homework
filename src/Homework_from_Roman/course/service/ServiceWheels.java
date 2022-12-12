@@ -12,24 +12,7 @@ import java.util.Arrays;
 public class ServiceWheels {
 
     public void changeWheels(Car car, WheelSize wheelSize) {
-        try {
-            if (car != null && wheelSize != null && !wheelSize.equals(car.getWheelSize())) {
-                if (Arrays.toString(WheelSizeBMW.values()).contains(wheelSize.toString()) &&
-                        Arrays.toString(WheelSizeBMW.values()).contains(car.getWheelSize().toString())) {
                     car.setWheelSize(wheelSize);
-                } else if (Arrays.toString(WheelSizeAudi.values()).contains(wheelSize.toString()) &&
-                        Arrays.toString(WheelSizeAudi.values()).contains(car.getWheelSize().toString())) {
-                    car.setWheelSize(wheelSize);
-                } else if (Arrays.toString(WheelSizeMercedes.values()).contains(wheelSize.toString()) &&
-                        Arrays.toString(WheelSizeMercedes.values()).contains(car.getWheelSize().toString())) {
-                    car.setWheelSize(wheelSize);
-                } else {
-                    throw new WrongWheelSizeException("WRONG WHEEL_SIZE");
-                }
-            }
-        } catch (WrongWheelSizeException | NullPointerException ex) {
-            ex.printStackTrace();
-        }
     }
 
 }

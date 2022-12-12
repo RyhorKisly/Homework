@@ -65,8 +65,8 @@ public class Main {
                 new HashSet<>(),
                 WheelDrive.ALL);
 
-        showRoom.changeColor(bmw, ColourBMW.ORANGE);
-        showRoom.changeWheels(audi, WheelSizeAudi.VERY_SMALL);
+        showRoom.changeColorBMW(bmw, ColourBMW.ORANGE);
+        showRoom.changeWheelsAudi(audi, WheelSizeAudi.VERY_SMALL);
         showRoom.addOption(bmw, Option.WINDSHIELD_HEATING);
         showRoom.addOption(bmw, Option.LEATHER_SEATS);
         showRoom.deleteOption(bmw, Option.WINDSHIELD_HEATING);

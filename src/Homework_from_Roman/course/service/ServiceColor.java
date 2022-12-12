@@ -12,24 +12,7 @@ import java.util.Arrays;
 public class ServiceColor {
 
     public void changeColor(Car car, Colour colour) {
-        try {
-            if (car != null && colour != null && !colour.equals(car.getColor())) {
-                if (Arrays.toString(ColourBMW.values()).contains(colour.toString()) &&
-                        Arrays.toString(ColourBMW.values()).contains(car.getColor().toString())) {
                     car.setColor(colour);
-                } else if (Arrays.toString(ColourAudi.values()).contains(colour.toString()) &&
-                        Arrays.toString(ColourAudi.values()).contains(car.getColor().toString())) {
-                    car.setColor(colour);
-                } else if (Arrays.toString(ColourMercedes.values()).contains(colour.toString()) &&
-                        Arrays.toString(ColourMercedes.values()).contains(car.getColor().toString())) {
-                    car.setColor(colour);
-                } else {
-                    throw new WrongColourException("WRONG COLOUR");
-                }
-            }
-        } catch (WrongColourException | NullPointerException ex) {
-            ex.printStackTrace();
-        }
     }
 
 }
