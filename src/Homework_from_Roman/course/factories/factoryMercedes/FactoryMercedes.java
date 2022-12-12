@@ -6,7 +6,7 @@ import Homework_from_Roman.course.enums.Option;
 import Homework_from_Roman.course.enums.enumMercedes.*;
 import Homework_from_Roman.course.factories.Factory;
 import Homework_from_Roman.course.factories.Storage;
-import Homework_from_Roman.course.specialOptions.SpecialOptionsMercedes;
+import Homework_from_Roman.course.cars.specialOptions.SpecialOptionsMercedes;
 
 import java.util.Arrays;
 import java.util.HashSet;

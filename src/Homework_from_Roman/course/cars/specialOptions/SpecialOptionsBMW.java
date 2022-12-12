@@ -1,4 +1,4 @@
-package Homework_from_Roman.course.specialOptions;
+package Homework_from_Roman.course.cars.specialOptions;
 
 import Homework_from_Roman.course.enums.enumBMW.DiscBrakes;
 import Homework_from_Roman.course.enums.enumBMW.FuelType;

@@ -2,7 +2,7 @@ package Homework_from_Roman.course.factories;
 
 import Homework_from_Roman.course.cars.Car;
 import Homework_from_Roman.course.enums.*;
-import Homework_from_Roman.course.specialOptions.SpecialOptions;
+import Homework_from_Roman.course.cars.specialOptions.SpecialOptions;
 
 import java.util.Arrays;
 import java.util.Set;

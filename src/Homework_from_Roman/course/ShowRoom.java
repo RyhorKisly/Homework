@@ -17,9 +17,9 @@ import Homework_from_Roman.course.factories.factoryMercedes.FactoryMercedes;
 import Homework_from_Roman.course.service.ServiceColor;
 import Homework_from_Roman.course.service.ServiceOption;
 import Homework_from_Roman.course.service.ServiceWheels;
-import Homework_from_Roman.course.specialOptions.SpecialOptionsAudi;
-import Homework_from_Roman.course.specialOptions.SpecialOptionsBMW;
-import Homework_from_Roman.course.specialOptions.SpecialOptionsMercedes;
+import Homework_from_Roman.course.cars.specialOptions.SpecialOptionsAudi;
+import Homework_from_Roman.course.cars.specialOptions.SpecialOptionsBMW;
+import Homework_from_Roman.course.cars.specialOptions.SpecialOptionsMercedes;
 
 import java.util.Set;
 
