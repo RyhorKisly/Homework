@@ -1,7 +1,5 @@
 package IT_Academy_Tutorial.exercise35_36_37;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 
 public class TestSeasons {
 
@@ -27,27 +25,11 @@ public class TestSeasons {
         }
     }
 
-    public void printNextSeason(Seasons season) {
-        this.season = season;
-        int i = 0;
-        int count = 0;
-        String temp = null;
-        for(Seasons element : Seasons.values()) {
-            if(count == 0) {
-                temp = element.name();
-            }
-            if(i == 1) {
-                System.out.println(element.name());
-                break;
-            }
-            if(count == season.values().length - 1) {
-                System.out.println(temp);
-                break;
-            }
-            if(element == season) {
-                i++;
-            }
-            count++;
+    public Seasons printNextSeason(Seasons season) {
+        if(season.ordinal() == season.values().length - 1) {
+            return season.values()[0];
+        } else{
+            return season.values()[season.ordinal() + 1];
         }
     }
 
